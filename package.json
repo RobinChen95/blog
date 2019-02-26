@@ -1,4 +1,30 @@
 {
+<<<<<<< HEAD
+  "name": "template",
+  "version": "1.0.0",
+  "description": "template",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "keywords": [
+    "vuepress",
+    "theme",
+    "material design"
+  ],
+  "dependencies": {
+    "element-ui": "^2.5.4",
+    "vssue": "^0.7.1",
+    "vuepress-theme-indigo-material": "^1.0.6"
+  },
+  "devDependencies": {
+    "vuepress": "^1.0.0-alpha.39",
+    "babel-plugin-component": "^1.1.1",
+    "moment": "^2.24.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0"
+  }
+=======
   "name": "blog",
   "version": "1.0.0",
   "description": "",
@@ -10,4 +36,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
+>>>>>>> e3b4ac26aa7bdc3bb1f0338ad03e6253b5b98172
 }
