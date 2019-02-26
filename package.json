@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "template",
   "version": "1.0.0",
   "description": "template",
@@ -24,17 +23,4 @@
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0"
   }
-=======
-  "name": "blog",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev":"vuepress dev docs",
-    "build":"vuepress build docs"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
->>>>>>> e3b4ac26aa7bdc3bb1f0338ad03e6253b5b98172
 }
