@@ -5,7 +5,7 @@ echo "git add ."
 git add .
 
 echo "acquiring time now"
-time = 'date +%F'
+time=$(date "+%Y-%m-%d %H:%M:%S")
 echo "now is $time"
 
 echo "git commit $time updated"
