@@ -90,3 +90,43 @@ meta:                                 # If you have cover image
 
 5. HTML5的音频与视频播放器：
 
+> 今天，大多数音频是通过插件（比如 Flash）来播放的。然而，并非所有浏览器都拥有同样的插件。
+
+> HTML5 规定了一种通过 audio 元素来包含音频的标准方法。
+
+> audio 元素能够播放声音文件或者音频流。
+
+> 今天，大多数视频是通过插件（比如 Flash）来显示的。然而，并非所有浏览器都拥有同样的插件。
+
+> HTML5 规定了一种通过 video 元素来包含视频的标准方法。
+```
+HTML音频插件使用方法如下：
+<audio src="http://www.w3school.com.cn/i/song.ogg" controls="controls">
+Your browser does not support the audio element.
+</audio>
+```
+> 效果如下：
+<audio src="http://www.w3school.com.cn/i/song.ogg" controls="controls">
+Your browser does not support the audio element.
+</audio>
+
+```
+HTML视频插件使用方法用法如下：
+<video src="http://www.w3school.com.cn/i/movie.ogg"  width="320" height="240" controls="controls">
+Your browser does not support the video tag.
+</video>
+```
+> 效果如下：
+<video src="http://www.w3school.com.cn/i/movie.ogg"  width="320" height="240" controls="controls">
+Your browser does not support the video tag.
+</video>
+
+
+```
+未完待续
+这篇文档是现学vuepress主题vuepress-theme-ktquez
+https://github.com/ktquez/vuepress-theme-ktquez
+和markdown文法写的
+以后有时间会完善
+感谢ktquez提供主题
+```
