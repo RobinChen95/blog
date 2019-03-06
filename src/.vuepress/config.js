@@ -9,8 +9,7 @@ module.exports = {
   head,
   themeConfig,
   base: '/',
-  title: `MY TITLE`,  
-  ga: `MY TRACKING CODE GOOGLE ANALYTICS`,
+  title: `建筑建筑建筑工`,  
   evergreen: true,  // For modern browsers
   serviceWorker: true,
   locales: {

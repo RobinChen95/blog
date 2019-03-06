@@ -3,18 +3,16 @@ view: author
 lang: en
 title: Posts of
 description: 
-name: Alan Ktquez
-nickname: ktquez
-role: Web developer
-avatar: /autores/ktquez.png
-created_at: 2018-08-22
+name: Chen Guoqiang
+nickname: 
+role: Student of PKUSE
+avatar: /autores/avatar.jpg
+created_at: 2019-03-05
 social:
-  - name: twitter
-    url: https://twitter.com/ktquez
   - name: github
-    url: https://github.com/ktquez
+    url: https://github.com/RobinChen95
   - name: site
-    url: https://ktquez.com
+    url: https://101.200.53.152
 meta:
   - property: og:image
     content: https://ktquez.com/autores/ktquez.png
