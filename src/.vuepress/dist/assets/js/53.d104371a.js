@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[52],{219:function(e,t,n){"use strict";
+(window.webpackJsonp=window.webpackJsonp||[]).push([[53],{219:function(e,t,n){"use strict";
 /**
  * vue-global-events v1.1.2
  * (c) 2019 Damian Dulisz <damian.dulisz@gmail.com>, Eduardo San Martin Morote <posva13@gmail.com>
