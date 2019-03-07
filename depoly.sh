@@ -1,6 +1,9 @@
 
 #!/bin/bash
 
+
+git config --global credential.helper store
+
 echo "git add ."
 git add .
 
