@@ -5,11 +5,11 @@ const themeConfig = require('./config/themeConfig')
 const resolve = pathName => path.join(__dirname, pathName)
 
 module.exports = {
-  theme: 'ktquez',
+
   head,
   themeConfig,
   base: '/',
-  title: `建筑建筑建筑工`,  
+  title: `建筑建筑建筑工`,
   evergreen: true,  // For modern browsers
   serviceWorker: true,
   locales: {

@@ -10,7 +10,7 @@ module.exports = [
   ['meta', { name: 'rating', content: 'general' }],
   ['meta', { name: 'robots', content: 'index,follow' }],
   ['meta', { name: 'googlebot', content: 'index,follow' }],
-  
+
   // Microsoft
   ['meta', { name: 'application-name', content: `MY APP NAME` }],
   ['meta', { name: 'msapplication-TileColor', content: `MY COLOR THEME` }],
@@ -19,7 +19,7 @@ module.exports = [
   ['meta', { name: 'msapplication-TileImage', content: '/favicon/ms-icon-144x144.png' }],
   ['meta', { name: 'msapplication-square150x150logo', content: '/favicon/mstile-150x150.png' }],
   ['meta', { name: 'msapplication-wide310x150logo', content: '/favicon/ms-icon-310x310.png' }],
-  
+
   // Twitter
   ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
   ['meta', { name: 'twitter:site', content: '@ktquez' }],
@@ -31,7 +31,7 @@ module.exports = [
   ['meta', { property: 'og:image:height', content: '1200' }],
   ['meta', { property: 'og:image:width', content: '360' }],
   ['meta', { property: 'og:image:type', content: 'image/png' }],
-  
+
   ['meta', {  name: 'google-site-verification', content: `MY VERIFICATION KEY` }], // google
   ['meta', {  name: 'msvalidate.01', content: `MY VERIFICATION KEY` }], // bing
   ['meta', {  name: 'yandex-verification', content: `MY VERIFICATION KEY` }], // Yandex
@@ -41,7 +41,7 @@ module.exports = [
   ['link', { rel: 'author', href: `MY URL GOOGLE PLUS` }],
   ['link', { rel: 'author', href: '/humans.txt' }],
   ['link', { rel: 'manifest', href: '/manifest.json' }],
-  
+
   ['link', { rel: 'apple-touch-icon', sizes: '57x57', href: '/favicon/apple-icon-57x57.png' }],
   ['link', { rel: 'apple-touch-icon', sizes: '60x60', href: '/favicon/apple-icon-60x60.png' }],
   ['link', { rel: 'apple-touch-icon', sizes: '72x72', href: '/favicon/apple-icon-72x72.png' }],
@@ -56,7 +56,7 @@ module.exports = [
   ['link', { rel: 'icon', type: 'image/png', href: '/favicon/favicon-96x96.png', sizes: '96x96' }],
   ['link', { rel: 'icon', type: 'image/png', href: '/favicon/favicon-32x32.png', sizes: '32x32' }],
   ['link', { rel: 'icon', type: 'image/png', href: '/favicon/favicon-16x16.png', sizes: '16x16' }],
-  
+
   ['link', { rel: 'mask-icon', href: '/favicon/safari-pinned-tab.svg', color: '#ff5733' }],
   ['link', { rel: 'shortcut icon', href: '/favicon/favicon.ico' }],
 

@@ -10,9 +10,9 @@ module.exports = {
     '/es/': es
   },
   serviceWorker: {
-    updatePopup: { 
-      message: "New content 🎉🎉", 
-      buttonText: "Update" 
+    updatePopup: {
+      message: "New content 🎉🎉",
+      buttonText: "Update"
     }
   },
   disqus: 'ktquez',
