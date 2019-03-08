@@ -1,7 +1,2 @@
 node_modules
 *.log
-.npmrc
-.firebase
-.firebaserc
-firebase.json
-package-lock.json
