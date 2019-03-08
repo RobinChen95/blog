@@ -47,6 +47,8 @@
           :target="network.target">
         </a>
       </li>
+      <i class="fab fa-lg"
+             :class="`fas fa-link`"></i>
       <!-- 执行拷贝本页链接 -->
        <li ripple
         class="share__item"
