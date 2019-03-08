@@ -1,6 +1,6 @@
-/*
-以下内容已注释，因为facebook等分享内容对于国内不实际
+
 <template>
+<!--
   <div class="share">
     <ul class="share__list">
       <li class="share__item">
@@ -25,6 +25,50 @@
     </ul>
     <div id="fb-root"></div>
   </div>
+-->
+  <div class="share">
+    <ul class="share__list">
+      <li class="share__item">
+        <span class="txt-share">{{ $t('share') }}:</span>
+      </li>
+      <!-- 显示network.js里定义的分享链接 -->
+      <li 
+        class="share__item" 
+        v-for="(network, index) in networks" 
+        :key="`${network.name}-${index}`"
+        v-if="network.active">
+      <a  style="font-size: 20px;"
+          @click="handle(network)"
+          role="button"
+          class="link share__link"
+          :class="`${network.name}`"
+          :href="getLinkInfo(post, network)"
+          :title="network.label"
+          :target="network.target">
+        </a>
+      </li>
+      <!-- 执行拷贝本页链接 -->
+       <li ripple
+        class="share__item"
+        :key="copy"
+        @click="copyLink">
+      <a  style="font-size: 20px;"
+          role="button"
+          class="link share__link"
+          :class="`fas fa-link`">
+
+      <input type="text"
+           :value="url"
+           ref="copyEl"
+           tabindex="-1"
+           aria-hidden="true"
+           class="fake-hide">
+        </a> 
+      </li> 
+
+    </ul>
+    <div id="fb-root"></div>
+  </div>
 </template>
 
 <script>
@@ -43,7 +87,8 @@
 
     data () {
       return {
-        networks
+        networks,
+        url: ''
       }
     },
 
@@ -52,7 +97,29 @@
       this.snippetTwitter()
     },
 
+    beforeMount() {
+        const createShare = () => {
+          const url = location.origin + location.pathname
+          const { title, excerpt: summary } = this.$page
+          const origin = location.origin + this.$site.base
+          const pic = ''
+          this.url = url
+        }
+        this.$watch('$route', createShare)
+        createShare()
+      
+    },
+
     methods: {
+
+      copyLink() {
+        const $el = this.$refs.copyEl
+        $el.focus()
+        $el.select()
+        document.execCommand('copy')
+        $el.blur()
+      },
+
       getFullURL (source) {
         return this.$themeConfig.url + this.post.path + `?utm_source=${source}&amp;utm_medium=single-post&amp;utm_campaign=share`
       },
@@ -67,64 +134,62 @@
         )
       },
 
-      snippetFacebook () {
-        if (window.FB) return
-        /* facebook */
-        window.fbAsyncInit = () => {
-          window.FB.init({
-            appId: this.$themeConfig.share.facebook.appId,
-            xfbml: true,
-            version: this.$themeConfig.share.facebook.version
-          })
-          window.FB.AppEvents.logPageView()
-        }
+      // snippetFacebook () {
+      //   if (window.FB) return
+      //   window.fbAsyncInit = () => {
+      //     window.FB.init({
+      //       appId: this.$themeConfig.share.facebook.appId,
+      //       xfbml: true,
+      //       version: this.$themeConfig.share.facebook.version
+      //     })
+      //     window.FB.AppEvents.logPageView()
+      //   }
 
-        ;(function (d, s, id, ctx) {
-          let js = null
-          let fjs = d.getElementsByTagName(s)[0]
-          if (d.getElementById(id)) { return }
-          js = d.createElement(s); js.id = id
-          js.src = `//connect.facebook.net/${ctx.$lang.replace('-', '_')}/sdk.js`
-          fjs.parentNode.insertBefore(js, fjs)
-        }(document, 'script', 'facebook-jssdk', this))
-      },
+      //   ;(function (d, s, id, ctx) {
+      //     let js = null
+      //     let fjs = d.getElementsByTagName(s)[0]
+      //     if (d.getElementById(id)) { return }
+      //     js = d.createElement(s); js.id = id
+      //     js.src = `//connect.facebook.net/${ctx.$lang.replace('-', '_')}/sdk.js`
+      //     fjs.parentNode.insertBefore(js, fjs)
+      //   }(document, 'script', 'facebook-jssdk', this))
+      // },
 
-      facebook (fb) {
-        const meta = fb.meta(
-          this.post.title, this.$el.baseURI, 
-          `${this.$themeConfig.url}${this.post.coverName}.${this.$themeConfig.responsive.ext}`,
-          this.post.excerpt, 
-          this.$themeLocaleConfig.share.facebookCaption
-        )
-        window.FB.ui({
-          method: 'feed',
-          display: 'popup',
-          name: meta.name,
-          link: meta.link + '?utm_source=facebook&amp;utm_medium=single-post&amp;utm_campaign=share',
-          picture: meta.picture,
-          caption: meta.caption,
-          description: meta.description
-        })
-      },
+      // facebook (fb) {
+      //   const meta = fb.meta(
+      //     this.post.title, this.$el.baseURI, 
+      //     `${this.$themeConfig.url}${this.post.coverName}.${this.$themeConfig.responsive.ext}`,
+      //     this.post.excerpt, 
+      //     this.$themeLocaleConfig.share.facebookCaption
+      //   )
+      //   window.FB.ui({
+      //     method: 'feed',
+      //     display: 'popup',
+      //     name: meta.name,
+      //     link: meta.link + '?utm_source=facebook&amp;utm_medium=single-post&amp;utm_campaign=share',
+      //     picture: meta.picture,
+      //     caption: meta.caption,
+      //     description: meta.description
+      //   })
+      // },
 
-      snippetTwitter () {
-        if (window.twttr) return
-        /* twitter */
-        window.twttr = ((d, s, id) => {
-          var fjs = d.getElementsByTagName(s)[0]
-          var t = window.twttr || {}
-          if (d.getElementById(id)) return t
-          let js = d.createElement(s)
-          js.id = id
-          js.src = 'https://platform.twitter.com/widgets.js'
-          fjs.parentNode.insertBefore(js, fjs)
-          t._e = []
-          t.ready = (f) => {
-            t._e.push(f)
-          }
-          return t
-        })(document, 'script', 'twitter-wjs')
-      },
+      // snippetTwitter () {
+      //   if (window.twttr) return
+      //   window.twttr = ((d, s, id) => {
+      //     var fjs = d.getElementsByTagName(s)[0]
+      //     var t = window.twttr || {}
+      //     if (d.getElementById(id)) return t
+      //     let js = d.createElement(s)
+      //     js.id = id
+      //     js.src = 'https://platform.twitter.com/widgets.js'
+      //     fjs.parentNode.insertBefore(js, fjs)
+      //     t._e = []
+      //     t.ready = (f) => {
+      //       t._e.push(f)
+      //     }
+      //     return t
+      //   })(document, 'script', 'twitter-wjs')
+      // },
 
       handle (network) {
         if (network.name !== 'facebook') return
@@ -136,6 +201,42 @@
 
 <style lang="stylus">
 @import '~@theme/styles/config.styl'
+
+@import 'https://use.fontawesome.com/releases/v5.7.2/css/all.css'
+
+.fab
+    font-size: 13px
+    width: 24px
+    height: 14px
+    text-align: center
+    cursor: pointer
+    display: inline-flex
+    font-size: 18px
+    top: -12px
+
+.fas
+    font-size: 13px
+    width: 24px
+    height: 14px
+    text-align: center
+    cursor: pointer
+    display: inline-flex
+    font-size: 18px
+    top: -12px
+
+.fake-hide
+  position: absolute;
+  top: -9999px;
+  right: -9999px;
+  z-index: -1;
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  opacity: 0;
 
 .share
   &__item
@@ -170,4 +271,3 @@
     margin-top: 1px
     margin-left: 5px
 </style>
-*/

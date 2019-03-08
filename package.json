@@ -30,6 +30,8 @@
     "vuepress": "^0.14.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.6",
+    "vue-clipboard2": "^0.3.0",
     "vuepress-theme-ktquez": "^0.2.15"
   }
 }

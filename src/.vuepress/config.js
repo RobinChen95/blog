@@ -9,7 +9,7 @@ module.exports = {
   head,
   themeConfig,
   base: '/',
-  title: `建筑建筑建筑工`,
+  title: `La Rosa`,
   evergreen: true,  // For modern browsers
   serviceWorker: true,
   locales: {
