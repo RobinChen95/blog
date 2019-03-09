@@ -1,37 +1,13 @@
 
 <template>
-<!--
   <div class="share">
     <ul class="share__list">
+<!--       
+      这段代码yarn run build放在服务器上面会出错
       <li class="share__item">
         <span class="txt-share">{{ $t('share') }}:</span>
       </li>
-      <li 
-        class="share__item" 
-        v-for="(network, index) in networks" 
-        :key="`${network.name}-${index}`"
-        v-if="network.active">
-        <a
-          @click="handle(network)"
-          role="button"
-          class="link share__link"
-          :class="`link--filler-s-${network.name}`"
-          :href="getLinkInfo(post, network)"
-          :title="network.label"
-          :target="network.target">
-            <span class="icon">{{ network.name }}share</span>
-        </a>
-      </li>
-    </ul>
-    <div id="fb-root"></div>
-  </div>
--->
-  <div class="share">
-    <ul class="share__list">
-      <li class="share__item">
-        <span class="txt-share">{{ $t('share') }}:</span>
-      </li>
-      <!-- 显示network.js里定义的分享链接 -->
+
       <li 
         class="share__item" 
         v-for="(network, index) in networks" 
@@ -49,7 +25,8 @@
       </li>
       <i class="fab fa-lg"
              :class="`fas fa-link`"></i>
-      <!-- 执行拷贝本页链接 -->
+
+
        <li ripple
         class="share__item"
         :key="copy"
@@ -66,7 +43,42 @@
            aria-hidden="true"
            class="fake-hide">
         </a> 
-      </li> 
+      </li>  -->
+
+      <li
+        class="share__item" >
+        <span class="txt-share">{{ $t('share') }}:</span>
+      </li>
+
+      <li 
+        class="share__item" 
+        v-for="(network, index) in networks" 
+        :key="`${network.name}-${index}`"
+        v-if="network.active">
+      <a  style="font-size: 20px;"
+          @click="handle(network)"
+          role="button"
+          class="link share__link"
+          :class="`${network.name}`"
+          :href="getLinkInfo(post, network)"
+          :title="network.label"
+          :target="network.target">
+        </a>
+      </li>
+
+<!--       <li
+        class="share__item" >
+      <i class="fab fa-lg"
+             :class="`fab fa-qq link share__link`"></i>
+      </li> -->
+
+
+      <li
+        class="share__item" >
+      <i class="fab fa-lg"
+             :class="`fas fa-link link share__link`"></i>
+      </li>
+
 
     </ul>
     <div id="fb-root"></div>
@@ -214,7 +226,7 @@
     cursor: pointer
     display: inline-flex
     font-size: 18px
-    top: -12px
+    top: -3px
 
 .fas
     font-size: 13px
@@ -224,7 +236,7 @@
     cursor: pointer
     display: inline-flex
     font-size: 18px
-    top: -12px
+    top: -3px
 
 .fake-hide
   position: absolute;
