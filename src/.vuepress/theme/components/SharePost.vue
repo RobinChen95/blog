@@ -50,6 +50,9 @@
         <span class="txt-share">{{ $t('share') }}:</span>
       </li>
 
+      <i class="fab fa-lg"
+        :class="`fas fa-link`"></i>
+
       <li 
         class="share__item" 
         v-for="(network, index) in networks" 
