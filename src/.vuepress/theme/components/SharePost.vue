@@ -2,8 +2,7 @@
 <template>
   <div class="share">
     <ul class="share__list">
-<!--       
-      这段代码yarn run build放在服务器上面会出错
+      
       <li class="share__item">
         <span class="txt-share">{{ $t('share') }}:</span>
       </li>
@@ -16,7 +15,7 @@
       <a  style="font-size: 20px;"
           @click="handle(network)"
           role="button"
-          class="link share__link"
+          class=""
           :class="`${network.name}`"
           :href="getLinkInfo(post, network)"
           :title="network.label"
@@ -33,7 +32,7 @@
         @click="copyLink">
       <a  style="font-size: 20px;"
           role="button"
-          class="link share__link"
+          class=""
           :class="`fas fa-link`">
 
       <input type="text"
@@ -43,9 +42,9 @@
            aria-hidden="true"
            class="fake-hide">
         </a> 
-      </li>  -->
+      </li> 
 
-      <li
+<!--       <li
         class="share__item" >
         <span class="txt-share">{{ $t('share') }}:</span>
       </li>
@@ -76,7 +75,7 @@
       </li> -->
 
       <i class="fab fa-lg"
-             :class="`fas fa-link link share__link`"></i>
+             :class="`fas fa-link link share__link`"></i> -->
 
 
     </ul>
