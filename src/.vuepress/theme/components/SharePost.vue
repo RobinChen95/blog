@@ -22,10 +22,7 @@
           :target="network.target">
         </a>
       </li>
-      <i class="fab fa-lg"
-             :class="`fas fa-link`"></i>
-
-
+      
        <li ripple
         class="share__item"
         :key="copy"
