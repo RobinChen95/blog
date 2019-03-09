@@ -51,7 +51,7 @@
       </li>
 
       <i class="fab fa-lg"
-        :class="`fas fa-link`"></i>
+        :class="`fas fa-link link share__link`"></i>
 
       <li 
         class="share__item" 
