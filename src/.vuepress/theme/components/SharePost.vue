@@ -44,7 +44,7 @@
         </a> 
       </li> 
 
-<!--       <li
+<!--      <li
         class="share__item" >
         <span class="txt-share">{{ $t('share') }}:</span>
       </li>
@@ -67,16 +67,7 @@
           :target="network.target">
         </a>
       </li>
-
-<!--       <li
-        class="share__item" >
-      <i class="fab fa-lg"
-             :class="`fab fa-qq link share__link`"></i>
-      </li> -->
-
-      <i class="fab fa-lg"
-             :class="`fas fa-link link share__link`"></i> -->
-
+ -->
 
     </ul>
     <div id="fb-root"></div>
