@@ -72,12 +72,8 @@
              :class="`fab fa-qq link share__link`"></i>
       </li> -->
 
-
-      <li
-        class="share__item" >
       <i class="fab fa-lg"
              :class="`fas fa-link link share__link`"></i>
-      </li>
 
 
     </ul>
