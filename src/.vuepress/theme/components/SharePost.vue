@@ -22,7 +22,7 @@
           :target="network.target">
         </a>
       </li>
-      
+
        <li ripple
         class="share__item"
         :key="copy"
@@ -30,7 +30,7 @@
       <a  style="font-size: 20px;"
           role="button"
           class=""
-          :class="`fas fa-link`">
+          :class="`far fa-copy`">
 
       <input type="text"
            :value="url"
@@ -118,6 +118,7 @@
         $el.select()
         document.execCommand('copy')
         $el.blur()
+        alert("复制本文链接成功！")
       },
 
       getFullURL (source) {
@@ -211,18 +212,18 @@
     text-align: center
     cursor: pointer
     display: inline-flex
-    font-size: 18px
     top: -3px
+    color:#239a3b
 
-.fas
+.far
     font-size: 13px
     width: 24px
     height: 14px
     text-align: center
     cursor: pointer
     display: inline-flex
-    font-size: 18px
     top: -3px
+    color:#239a3b
 
 .fake-hide
   position: absolute;
