@@ -1,4 +1,4 @@
-
+<!-- 本页已被魔改，图标网站：https://fontawesome.com/icons -->
 <template>
   <div class="share">
     <ul class="share__list">
@@ -40,32 +40,6 @@
            class="fake-hide">
         </a> 
       </li> 
-
-<!--      <li
-        class="share__item" >
-        <span class="txt-share">{{ $t('share') }}:</span>
-      </li>
-
-      <i class="fab fa-lg"
-        :class="`fas fa-link link share__link`"></i>
-
-      <li 
-        class="share__item" 
-        v-for="(network, index) in networks" 
-        :key="`${network.name}-${index}`"
-        v-if="network.active">
-      <a  style="font-size: 20px;"
-          @click="handle(network)"
-          role="button"
-          class="link share__link"
-          :class="`${network.name}`"
-          :href="getLinkInfo(post, network)"
-          :title="network.label"
-          :target="network.target">
-        </a>
-      </li>
- -->
-
     </ul>
     <div id="fb-root"></div>
   </div>
