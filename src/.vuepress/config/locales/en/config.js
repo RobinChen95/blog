@@ -22,13 +22,13 @@ module.exports = {
     provider: 'mailchimp',
     action: ''
   },
-  copy: `2018 © MY_BLOG_NAME - 
+  copy: `2019 © La Rosa - 
         <a href="https://vuepress.vuejs.org/" rel="noopener" target="_blank">
           MADE WITH VUEPRESS
         </a>`,
   footer: {
     nav1: {
-      title: 'Ktquez Play',
+      title: 'Robin Chen\'s place',
       items: [
         {
           label: 'ABOUT',
@@ -56,12 +56,12 @@ module.exports = {
   },
   social: [
     {
-      name: 'twitter',
-      link: `https://www.twitter.com/MY_TWITTER_NICKNAME`
+      name: 'weibo',
+      link: ``
     },
     {
       name: 'github',
-      link: `https://www.github.com/MY_TWITTER_NICKNAME`
+      link: `https://www.github.com/RobinChen95`
     }
   ]
 }
