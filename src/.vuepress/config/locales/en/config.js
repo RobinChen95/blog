@@ -53,7 +53,7 @@ module.exports = {
         },
         {
           label: '西安交通大学',
-          link: 'https://www.xjtu.edu.cn/'   
+          link: 'http://www.xjtu.edu.cn/'   
         }
       ]
     }
