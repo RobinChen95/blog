@@ -1,12 +1,11 @@
 ---
 view: category
 lang: en
-order: 1     # Order of display in list categories
+order: 1      # Order of display in list categories
 top: true     # Include category in navigation Top
-title: HTML
-description: A HTML Conclusion
-excerpt: HTML is the most successful language in recent years
-slug: HTML
+title: Blog
+description: 开发博客的技术总结，不定时更新
+slug: blog
 meta:
   - property: og:image
     content: /image-social-share.png

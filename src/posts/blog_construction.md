@@ -11,10 +11,9 @@ coverAlt:
 demo:
 categories:
   - HTML
+  - History
 tags:
   - vuejs
-  - vuepress
-  - static site
 created_at: 2019-03-07 17:00
 updated_at: 2019-03-07 17:00
 meta:                                 # If you have cover image
