@@ -39,8 +39,10 @@ meta:                                 # If you have cover image
 
 >由于之前学过HTML，所以在这里只总结自己生疏的HTML标签
 
-1. 由于HTML页面的汉字经常乱码，一般会在`<head>`标签内加入：`<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />`，防止乱码
-2. `<table>标签定义表格，一般可以用例如border="1"指定边框宽度为1。每个表格均有若干行（由 <tr> 标签定义），每行被分割为若干单元格（由 <td> 标签定义）。字母 td 指表格数据（table data），即数据单元格的内容。表格的表头使用 <th> 标签进行定义。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。`
+### 1.HTML的乱码问题：
+由于HTML页面的汉字经常乱码，一般会在`<head>`标签内加入：`<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />`
+### 2.HTML的表格：
+`<table>标签定义表格，一般可以用例如border="1"指定边框宽度为1。每个表格均有若干行（由 <tr> 标签定义），每行被分割为若干单元格（由 <td> 标签定义）。字母 td 指表格数据（table data），即数据单元格的内容。表格的表头使用 <th> 标签进行定义。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。`
 + 举例，代码：
 ```
 <table border="1">
@@ -74,7 +76,7 @@ meta:                                 # If you have cover image
 </tr>
 </table>
 
-3. HTML内置框架iframe，可以用于在网页内展示网页
+### 3. HTML内置框架iframe，可以用于在网页内展示网页
 + 代码：
 ```
 <iframe src="http://101.200.53.152/posts/conclusion_HTML.html" frameborder="0"></iframe>
@@ -82,13 +84,13 @@ meta:                                 # If you have cover image
 > 显示效果为：
 <iframe src="http://101.200.53.152/posts/conclusion_HTML.html" frameborder="0" width="800" height="400"></iframe>
 
-4. `<del>`标签可以用于删除文本，特定场合比较有用，如；
+### 4. `<del>`标签可以用于删除文本，特定场合比较有用，如；
 ```
 <del>PHP是世界上最辣鸡的语言</del>
 ```
 <del>PHP是世界上最辣鸡的语言</del>
 
-5. HTML5的音频与视频播放器：
+### 5. HTML5的音频与视频播放器：
 
 > 今天，大多数音频是通过插件（比如 Flash）来播放的。然而，并非所有浏览器都拥有同样的插件。
 
@@ -121,6 +123,9 @@ Your browser does not support the video tag.
 Your browser does not support the video tag.
 </video>
 
+### 6. HTML实现点击按钮切换页面
+实现效果如下：
+![./public/MultiSelect.png]
 
 ```
 未完待续
