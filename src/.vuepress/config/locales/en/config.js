@@ -28,7 +28,7 @@ module.exports = {
         </a>`,
   footer: {
     nav1: {
-      title: 'Robin Chen\'s place',
+      title: '陈国强个人介绍',
       items: [
         {
           label: 'ABOUT',
@@ -45,11 +45,15 @@ module.exports = {
       ]
     },
     nav2: {
-      title: '',
+      title: '友情链接',
       items: [
         {
           label: '北京大学',
           link: 'https://www.pku.edu.cn/'
+        },
+        {
+          label: '西安交通大学',
+          link: 'https://www.xjtu.edu.cn/'   
         }
       ]
     }
