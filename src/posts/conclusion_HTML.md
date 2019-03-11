@@ -125,7 +125,7 @@ Your browser does not support the video tag.
 
 ### 6. HTML实现点击按钮切换页面
 实现效果如下：
-![./public/MultiSelect.png]
+![系统截图](../public/MultiSelect.png)
 
 ```
 未完待续
