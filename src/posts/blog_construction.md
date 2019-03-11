@@ -85,4 +85,9 @@ git push origin master
 
 
 ## 前端
+
 ## 其他
+
+## 问题记录
+
+1. 制作分享栏的时候，遇到了`yarn run build`与`yarn run dev`的网页效果不一样的问题。在开发的时候`yarn run dev`是没有问题的，但是`yarn run build`的时候分享列表的图标显示不出来，排查出来的问题是~/theme/components/SharePost.Vue下面引用了一个异常的类`class="share__item list"`导致了这个问题，原因不明。
