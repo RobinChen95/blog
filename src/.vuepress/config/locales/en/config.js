@@ -45,11 +45,11 @@ module.exports = {
       ]
     },
     nav2: {
-      title: 'Community',
+      title: '',
       items: [
         {
-          label: 'FB GROUP',
-          link: 'https://www.facebook.com/groups/MY_GROUP'
+          label: '北京大学',
+          link: 'https://www.pku.edu.cn/'
         }
       ]
     }
