@@ -1,11 +1,12 @@
 ---
 view: category
 lang: en
-order: 1      # Order of display in list categories
+order: 1     # Order of display in list categories
 top: true     # Include category in navigation Top
 title: History
-description: 闲暇时间看历史书籍的感悟
-slug: history
+description: A HTML Conclusion
+excerpt: 闲暇阅读历史书的感悟
+slug: History
 meta:
   - property: og:image
     content: /image-social-share.png
