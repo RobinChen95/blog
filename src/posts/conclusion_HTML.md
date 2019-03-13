@@ -88,7 +88,7 @@ meta:                                 # If you have cover image
 ```
 <del>PHP是世界上最辣鸡的语言</del>
 ```
-<del>PHP是世界上最辣鸡的语言</del>
+~~PHP是世界上最辣鸡的语言~~
 
 ### 5. HTML5的音频与视频播放器：
 
