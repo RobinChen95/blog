@@ -11,7 +11,7 @@ coverAlt:
 demo:
 categories:
   - HTML
-  - 前端开发
+  - fore_end
   - 互联网软件开发课程
 tags: 
   - vuejs

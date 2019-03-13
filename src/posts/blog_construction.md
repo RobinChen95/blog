@@ -12,8 +12,8 @@ demo:
 categories:
   - Blog
   - vuejs
-  - 前端开发
-  - 后端开发
+  - fore_end
+  - back_end
 tags:
   - vuejs
 created_at: 2019-03-07 17:00
