@@ -10,9 +10,9 @@ cover: false                         # Leave false if the post does not have cov
 coverAlt:
 demo:
 categories:
+  - Software_course
   - HTML
   - Fore_end
-  - Software_course
 tags: 
   - vuejs
   - vuepress
