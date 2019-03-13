@@ -10,10 +10,10 @@ cover: false                         # Leave false if the post does not have cov
 coverAlt:
 demo:
 categories:
-  - Blog
-  - Vuejs
   - Fore_end
   - Back_end
+  - Blog
+  - Vuejs
 tags:
   - vuejs
 created_at: 2019-03-07 17:00
