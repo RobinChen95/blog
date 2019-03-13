@@ -3,7 +3,7 @@ view: category
 lang: en
 order: 1     # Order of display in list categories
 top: true     # Include category in navigation Top
-title: Blog
+title: 博客搭建
 description: A Blog Conclusion
 excerpt: 博客搭建总结
 slug: Blog

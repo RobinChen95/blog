@@ -3,7 +3,7 @@ view: category
 lang: en
 order: 1     # Order of display in list categories
 top: true     # Include category in navigation Top
-title: History
+title: 历史与社会
 description: A HTML Conclusion
 excerpt: 闲暇阅读历史书的感悟
 slug: History

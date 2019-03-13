@@ -3,7 +3,7 @@ view: category
 lang: en
 order: 1     # Order of display in list categories
 top: true     # Include category in navigation Top
-title: Linux
+title: Linux学习记录
 description: A Linux Conclusion
 excerpt: Linux学习记录
 slug: Linux
