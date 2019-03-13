@@ -11,9 +11,9 @@ coverAlt:
 demo:
 categories:
   - Blog
-  - vuejs
-  - fore_end
-  - back_end
+  - Vuejs
+  - Fore_end
+  - Back_end
 tags:
   - vuejs
 created_at: 2019-03-07 17:00

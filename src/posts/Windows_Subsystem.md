@@ -12,7 +12,7 @@ demo:
 categories:
   - Linux
   - Blog
-  - back_end
+  - Back_end
 tags:
   - vue.js
 created_at: 2019-03-13 00:00
