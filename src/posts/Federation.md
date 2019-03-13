@@ -55,6 +55,6 @@ meta:                                 # If you have cover image
 
 ## 参考文献
 
-[1]:[维基百科：联邦制](https://zh.wikipedia.org/wiki/%E8%81%94%E9%82%A6%E5%88%B6)
+[1] [维基百科：联邦制](https://zh.wikipedia.org/wiki/%E8%81%94%E9%82%A6%E5%88%B6)
 
-[2]:[维基百科：邦联制](https://zh.wikipedia.org/wiki/%E9%82%A6%E8%81%94%E5%88%B6)
+[2] [维基百科：邦联制](https://zh.wikipedia.org/wiki/%E9%82%A6%E8%81%94%E5%88%B6)

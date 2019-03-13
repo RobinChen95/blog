@@ -6,7 +6,7 @@ top: true     # Include category in navigation Top
 title: 生活记录
 description: A Life Conclusion
 excerpt: 记录日常生活
-slug: Life_Trace
+slug: Life
 meta:
   - property: og:image
     content: /image-social-share.png
