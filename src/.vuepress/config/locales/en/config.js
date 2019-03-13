@@ -54,6 +54,10 @@ module.exports = {
         {
           label: '西安交通大学',
           link: 'http://www.xjtu.edu.cn/'   
+        },
+		{
+          label: '慧强dalao博客',
+          link: 'https://wyydsb.xin/'   
         }
       ]
     }
