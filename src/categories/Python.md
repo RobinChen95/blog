@@ -6,7 +6,7 @@ top: true     # Include category in navigation Top
 title: Python语言
 description: A Language Conclusion
 excerpt: Python语言开发记录
-slug: Python语言
+slug: Python
 meta:
   - property: og:image
     content: /image-social-share.png
