@@ -3,7 +3,7 @@ view: post
 layout: post                          # Only in unique we use the "layout: post"
 lang: en                              # Lang is required
 author: 陈国强
-title: 联邦与邦联的区别
+title: 联邦制与邦联制的区别
 description:
 excerpt:
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
@@ -55,6 +55,6 @@ meta:                                 # If you have cover image
 
 ## 参考文献
 
-[1]: [维基百科：联邦制:https://zh.wikipedia.org/wiki/%E8%81%94%E9%82%A6%E5%88%B6](https://zh.wikipedia.org/wiki/%E8%81%94%E9%82%A6%E5%88%B6)
+[1]:[维基百科：联邦制](https://zh.wikipedia.org/wiki/%E8%81%94%E9%82%A6%E5%88%B6)
 
-[2]: [维基百科：邦联制:https://zh.wikipedia.org/wiki/%E9%82%A6%E8%81%94%E5%88%B6](https://zh.wikipedia.org/wiki/%E9%82%A6%E8%81%94%E5%88%B6)
+[2]:[维基百科：邦联制](https://zh.wikipedia.org/wiki/%E9%82%A6%E8%81%94%E5%88%B6)
