@@ -11,6 +11,7 @@ coverAlt:
 demo:
 categories:
   - History
+  - Life
 tags:
   - vuejs
 created_at: 2019-03-13 17:00
