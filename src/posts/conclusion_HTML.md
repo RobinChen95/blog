@@ -12,7 +12,7 @@ demo:
 categories:
   - HTML
   - Fore_end
-  - Sofeware_course
+  - Software_course
 tags: 
   - vuejs
   - vuepress
