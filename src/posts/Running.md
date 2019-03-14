@@ -5,14 +5,14 @@ lang: en                              # Lang is required
 author: 陈国强
 title: 肥宅今天运动了吗
 description:
-excerpt:记录每天的运动情况
+excerpt:
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
 categories:
   - Life
 tags: 
-  - vuejs
+  - HTML
 created_at: 2019-03-14 14:00
 updated_at: 2019-03-14 14:00
 meta:                                 # If you have cover image
@@ -21,6 +21,7 @@ meta:                                 # If you have cover image
   - name: twitter:image
     content: /images/posts/my-first-post.png
 ---
+
 
 # 记录每天的运动情况
 
