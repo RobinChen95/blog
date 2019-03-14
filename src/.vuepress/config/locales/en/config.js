@@ -2,8 +2,8 @@ const ads = require('./ads')
 
 module.exports = {
   languages: {
-    label: 'English',
-    shortname: 'EN'
+    label: '中文',
+    shortname: 'CN'
   },
   translation: {
     news_title: 'Receive our articles, videos and more directly in your inbox and stay up to date.',
