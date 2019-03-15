@@ -26,13 +26,13 @@ meta:                                 # If you have cover image
     content: /images/posts/my-first-post.png
 ---
 
-# Chen Guoqiang
+# Chen Guoqiang Intro
 
 Chen Guoqiang, born in 1995, now is a student majors in Software Engineering of Peking University.
 
 ---
 
-## Brief Intro to Chen Guoqiang
+## Brief Intro to me
 
 I have a large range of interets in the entire computer ecosystem, from computer manufacture/repairing to CPU/Memory work principle, also in artificial intelligence. 
 
@@ -61,4 +61,5 @@ I have a large range of interets in the entire computer ecosystem, from computer
 + Weather forecast application based on Android,2018.10-2018.12
 + Ticket recommendation system based on Web,2018.04-2018.06
 + Brick game based on X86 Assemble language,2016.11-2016.12
++ C compiler based on Java, 2016.09-2016.10
 

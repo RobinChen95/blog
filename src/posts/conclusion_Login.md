@@ -28,3 +28,5 @@ meta:                                 # If you have cover image
 > Adobe PhotoShop是一款强大的图片处理工具，之前仅仅只是听闻PS大名，从来没有使用过，然而稍微学习之后便了解到了PS的强大之处
 
 ![系统截图](../img/PS.png)
+
++ 未完待续
