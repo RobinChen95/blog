@@ -3,18 +3,20 @@ view: post
 layout: post                          # Only in unique we use the "layout: post"
 lang: en                              # Lang is required
 author: 陈国强
-title: 肥宅今天运动了吗
+title: 使用PSD文件制作登录注册页面
 description:
 excerpt:
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
 categories:
-  - Life
-tags: 
+  - Software_course
   - HTML
-created_at: 2019-03-14 14:00
-updated_at: 2019-03-14 14:00
+  - Fore_end
+tags: 
+  - vuejs
+created_at: 2019-03-15 16:00
+updated_at: 2019-03-15 16:00
 meta:                                 # If you have cover image
   - property: og:image
     content: /images/posts/my-first-post.png
@@ -22,13 +24,7 @@ meta:                                 # If you have cover image
     content: /images/posts/my-first-post.png
 ---
 
+---
+> Adobe PhotoShop是一款强大的图片处理工具，之前仅仅只是听闻PS大名，从来没有使用过，然而稍微学习之后便了解到了PS的强大之处
 
-# 记录每天的运动情况
-
-## 记录表
-
-|日期|运动了吗|天气|运动状况|备注|
-|:----:|:-----:|:----:|:----:|:----:|
-|2019-3-13 |否|适合运动|xxx|偷懒|
-|2019-3-14 |是|大风|校外跑步3KM|<img src="../img/2019-03-14.jpg" height="320" width="150">|
-|2019-3-15 |否|适合运动|xxx|偷懒|
+![系统截图](../img/PS.png)

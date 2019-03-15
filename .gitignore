@@ -1,3 +1,4 @@
 node_modules
 *.log
 src/.vuepress/dist
+./node_modules
