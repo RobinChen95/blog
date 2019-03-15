@@ -5,7 +5,7 @@ lang: en                              # Lang is required
 author: 陈国强
 title: SlefIntro with CSS
 description:
-excerpt:
+excerpt: Introduce me in English with CSS
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
