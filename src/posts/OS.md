@@ -13,7 +13,7 @@ categories:
   - Os_course
   - Linux
 tags: 
-  - vuejs
+  - Os_course
 created_at: 2019-03-18 01:00
 updated_at: 2019-03-18 01:00
 meta:                                 # If you have cover image
