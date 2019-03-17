@@ -3,19 +3,18 @@ view: post
 layout: post                          # Only in unique we use the "layout: post"
 lang: en                              # Lang is required
 author: 陈国强
-title: Nachos学习记录
+title: Nachos修改记录
 description:
 excerpt:
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
 categories:
-  - Os_course
-  - Linux
-tags:
-  - vue.js
-created_at: 2019-03-17 13:00
-updated_at: 2019-03-17 13:00
+  - Life
+tags: 
+  - HTML
+created_at: 2019-03-18 01:00
+updated_at: 2019-03-18 01:00
 meta:                                 # If you have cover image
   - property: og:image
     content: /images/posts/my-first-post.png
