@@ -33,3 +33,4 @@ meta:                                 # If you have cover image
 |2019-3-14 |是|大风|校外跑步3KM|<img src="../img/2019-03-14.jpg" height="300" width="150">|
 |2019-3-15 |是|适合运动|校外跑步3.5KM|<img src="../img/2019-03-15.png" height="300" width="150">|
 |2019-3-16 |是|适合运动|校外跑步1042千焦|<img src="../img/2019-03-16.png" height="300" width="150">|
+|2019-3-17 |是|有风|校外跑步3.5KM|<img src="../img/2019-03-17.png" height="300" width="150">|
