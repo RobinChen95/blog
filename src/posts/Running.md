@@ -17,9 +17,9 @@ created_at: 2019-03-14 14:00
 updated_at: 2019-03-14 14:00
 meta:                                 # If you have cover image
   - property: og:image
-    content: ../img/2019-03-15.png
+    content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
   - name: twitter:image
-    content: ../img/2019-03-15.png
+    content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
 ---
 
 
