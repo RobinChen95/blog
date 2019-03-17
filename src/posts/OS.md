@@ -18,7 +18,7 @@ created_at: 2019-03-18 01:00
 updated_at: 2019-03-18 01:00
 meta:                                 # If you have cover image
   - property: og:image
-    content: ../img/2019-03-17.png
+    content: /images/posts/my-first-post.png
   - name: twitter:image
     content: /images/posts/my-first-post.png
 ---
