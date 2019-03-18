@@ -42,11 +42,25 @@ meta:                                 # If you have cover image
 
 ## 如何在Windows上启动Linux子系统
 
-+ 请确认你的Windows 10版本在 build 14393以上
++ 请确认你安装的是Windows 10，并且版本在 build 16299以上
 
-+ 如何确认？按<i class="fab fa-windows"></i>+R，输入cmd进入命令行，输入ver
++ 如何查看版本？按   <i class="fab fa-windows"></i>+R，输入cmd进入命令行，输入ver即可
 
-+ <img src="../img/windows-version.png"/>
+<img src="../img/windows-version.png"/>
+
++ 接下来按   <i class="fab fa-windows"></i>+S，在搜索框中输入“启用或关闭Windows功能”
+
+<img src="../img/search-for-windows.png"/>
+
+在下拉选项中找到适用于Linux的Windows子系统（可能需要重启）：
+
+<img src="../img/windows-function-panel.png"/>
+
+然后在Microsoft Store中搜索Linux，点击安装即可：
+
+<img src="../img/MSstore.png"/>
+
+安装完成后，需要打开界面，等待软件installing的提示结束，就安装成功啦  <i class="fas fa-grin-wink"></i>
 
 ## 报错记录
 
