@@ -40,7 +40,13 @@ meta:                                 # If you have cover image
 
 + 同时拥有Windows和Linux两个系统，没有虚拟机复制文件的烦恼，也省去了双系统切换的功夫，~~还能打游戏，做PPT~~ヽ（゜▽゜)ノ，完美解决了Linux所有弊端。
 
-## 安装Ubuntu子系统
+## 如何在Windows上启动Linux子系统
+
++ 请确认你的Windows 10版本在 build 14393以上
+
++ 如何确认？按<i class="fab fa-windows"></i>+R，输入cmd进入命令行，输入ver
+
++ <img src="../img/windows-version.png"/>
 
 ## 报错记录
 
