@@ -12,7 +12,7 @@ demo:
 categories:
   - Life
   - Os_course
-  _ Software_course
+  - Software_course
 tags: 
   - Vuejs
 created_at: 2019-03-17 00:00
