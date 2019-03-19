@@ -67,6 +67,10 @@ meta:                                 # If you have cover image
 > 1. 当修改了Windows计算机名称时报了一个错误：WslRegisterDistribution failed with error: 0x800703fa
 >> 解决方法：在运行窗口中执行“services.msc”指令，在本地服务中重启 LxssManager 服务
 
+> 2. 当想用脚本cd打开到工作目录的时候，出现了一直执行`sh start.sh`还是在原目录的情况
+>> 这是因为Shell会fork一个子进程，然后子进程通过exec执行程序，所以每次执行完都会停留在原目录。
+>> 如果要强制父bash执行呢？加入修饰符`source`或者`.`，即使用指令`. ./start.sh`或者`source start.sh`
+
 ## 结语
 
 微软是一个人民的好公司，不仅做出了在Windwos10里面塞一个完整的Linux子系统的骚操作，还收购了Github提供了私有仓库，~~感谢微软爸爸~~。今天的遭遇再次印证了当初的那个想法，Windows其实比Mac更适合编程，(~~Linus本人也夸过微软的姿势水平高~~)只是我等菜鸡还没有达到那个水平，把Mac高度集成的系统错认为了好用。
