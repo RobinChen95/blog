@@ -11,16 +11,24 @@ meta:
     content: https://ktquez.com/share/ktquez-play-image-share.png
 ---
 
+---
 
-# Chen Guoqiang Intro
+# Chen Guoqiang’s Intro
 
 Chen Guoqiang, born in 1995, now is a student majors in Software Engineering of Peking University.
 
+He has a large range of interets in the entire computer ecosystem, from computer manufacture/repairing to CPU/Memory work principle.
+
+He has been learnt about the software enginering systematiclly for more than five years, and is experiential in many projects.
+
+He has done lots of work on software researching, compiler, operating system, artificial intelligence, and Big data.
+
+
 ---
 
-## Brief Intro to me
+## Brief Intro to Chen
 
-I have a large range of interets in the entire computer ecosystem, from computer manufacture/repairing to CPU/Memory work principle, also in artificial intelligence. 
+He has a large range of interets in the entire computer ecosystem, from computer manufacture/repairing to CPU/Memory work principle, also in artificial intelligence. 
 
 ---
 
@@ -48,3 +56,4 @@ I have a large range of interets in the entire computer ecosystem, from computer
 + Ticket recommendation system based on Web,2018.04-2018.06
 + Brick game based on X86 Assemble language,2016.11-2016.12
 + C compiler based on Java, 2016.09-2016.10
+
