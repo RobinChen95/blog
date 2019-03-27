@@ -3,7 +3,7 @@ view: post
 layout: post                          # Only in unique we use the "layout: post"
 lang: en                              # Lang is required
 author: 陈国强
-title: HTML总结
+title: HTML那些事儿
 description:
 excerpt:
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
@@ -17,7 +17,7 @@ tags:
   - vuejs
   - vuepress
   - static site
-created_at: 2019-03-05 17:00
+created_at: 2019-03-27 17:00
 updated_at: 2019-03-27 20:00
 meta:                                 # If you have cover image
   - property: og:image
