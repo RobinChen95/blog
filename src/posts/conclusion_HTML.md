@@ -27,7 +27,9 @@ meta:                                 # If you have cover image
 ---
 
 # HTML标签学习总结
+
 ---
+
 ## 什么是 HTML？
 
 
@@ -42,8 +44,11 @@ meta:                                 # If you have cover image
 >由于之前学过HTML，所以在这里只总结自己生疏的HTML标签
 
 ### 1.HTML的乱码问题：
+
 由于HTML页面的汉字经常乱码，一般会在`<head>`标签内加入：`<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />`
+
 ### 2.HTML的表格：
+
 `<table>`标签定义表格，一般可以用例如border="1"指定边框宽度为1。每个表格均有若干行（由` <tr>` 标签定义），每行被分割为若干单元格（由 `<td>` 标签定义）。字母 td 指表格数据（table data），即数据单元格的内容。表格的表头使用` <th>` 标签进行定义。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。
 + 举例，代码：
 ```
@@ -79,6 +84,7 @@ meta:                                 # If you have cover image
 </table>
 
 ### 3. HTML内置框架iframe，可以用于在网页内展示网页
+
 + 代码：
 ```
 <iframe src="http://101.200.53.152/posts/conclusion_HTML.html" frameborder="0"></iframe>
@@ -87,6 +93,7 @@ meta:                                 # If you have cover image
 <iframe src="http://101.200.53.152/posts/conclusion_HTML.html" frameborder="0" width="800" height="400"></iframe>
 
 ### 4. `<del>`标签可以用于删除文本，特定场合比较有用，如；
+
 ```
 <del>PHP是世界上最辣鸡的语言</del>
 ```
