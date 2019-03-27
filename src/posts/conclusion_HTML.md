@@ -18,7 +18,7 @@ tags:
   - vuepress
   - static site
 created_at: 2019-03-05 17:00
-updated_at: 2019-03-10 16:00
+updated_at: 2019-03-27 20:00
 meta:                                 # If you have cover image
   - property: og:image
     content: /images/posts/my-first-post.png
@@ -131,193 +131,8 @@ Your browser does not support the video tag.
 
 代码如下：
 
-```HTML
-<!-- Right Panel -->
-<div id="right-panel" class="right-panel">
-    <!-- Header-->
-    <header id="header" class="header">
-        <div class="top-left">
-            <div class="navbar-header">
-                <a class="navbar-brand"><img src="/resources/images/logo_v5.png" alt="Logo"></a>
-                <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
-            </div>
-        </div>
-    </header>
-    <!-- /#header -->
+[代码链接](https://github.com/RobinChen95/Backup-ThinkPHP/blob/master/application/manager/view/plugin_content/index.html)
 
-    <div class="content">
-        <div class="animated fadeIn">
-            <div class="row">
-
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                          <div >
-                            <strong class="card-title" style="float:left;">待修改数据</strong>
-                            <div class="row" style="float:left;width:25%;margin-right:5%;margin-left:4.75%; overflow:hidden; text-overflow:ellipsis;">
-                                <button type="button" class="btn btn-outline-danger btn-lg btn-block" name="r"
-                                        id="Page1">固定车辆入校须知
-                                </button>
-                            </div>
-                            <div class="row" style="float:left;width:25%;margin-right:2%;margin-left:2%;overflow:hidden; text-overflow:ellipsis;">
-                                <button type="button" class="btn btn-outline-danger btn-lg btn-block" name="r"
-                                        id="Page2">临时车辆入校须知
-                                </button>
-                            </div>
-                            <div class="row" style="float:left;width:25%;margin-left:5%; overflow:hidden; text-overflow:ellipsis;">
-                                <button type="button" class="btn btn-outline-danger btn-lg btn-block" name="r"
-                                        id="Page3">临时人员入校须知
-                                </button>
-                            </div>
-                           </div>
-                            <div name="pages">
-
-                                <div class="card-body">
-                                    <div>
-                                        <form role="form" action="{:url('plugin_content/doModify')}" method="post">
-                                            <div class="row form-group">
-                                                <div class="col col-md-1"><label for="password-input"
-                                                                                 class=" form-control-label">标题</label>
-                                                </div>
-                                                <div class="col-12 col-md-11">
-                                                    <input type="hidden" id="Page0" name="Page0" value="Page0"/>
-                                                    <textarea id="title" name="title" rows="1" cols="30"
-                                                              class="form-control">{$data[0]['title']}</textarea>
-                                                    <small id="modified_time" name="modified_time"
-                                                           class="help-block form-text"><span>上次修改时间：</span>{$data[0]['modified_time']}
-                                                    </small>
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-1"><label for="textarea-input"
-                                                                                 class=" form-control-label">内容</label>
-                                                </div>
-                                                <div class="col-12 col-md-11"><textarea id="content" name="content"
-                                                                                        rows="20" cols="100"
-                                                                                        class="form-control">{$data[0]['content']}</textarea>
-                                                    <button type="submit"
-                                                            class="btn btn-outline-danger btn-lg btn-block"
-                                                            style="margin-top:15px">修改
-                                                    </button>
-                                                </div>
-                                            </div>
-
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div name="pages" style="display:none">
-                                <div class="card-body">
-                                    <div>
-                                        <form role="form" action="{:url('plugin_content/doModify')}" method="post">
-                                            <div class="row form-group">
-                                                <div class="col col-md-1"><label for="password-input"
-                                                                                 class=" form-control-label">标题</label>
-                                                </div>
-                                                <div class="col-12 col-md-11">
-                                                    <input type="hidden" id="Page1" name="Page1" value="Page1"/>
-                                                    <textarea id="title" name="title" rows="1" cols="30"
-                                                              class="form-control">{$data[1]['title']}</textarea>
-                                                    <small id="modified_time" name="modified_time"
-                                                           class="help-block form-text"><span>上次修改时间：</span>{$data[1]['modified_time']}
-                                                    </small>
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-1"><label for="textarea-input"
-                                                                                 class=" form-control-label">内容</label>
-                                                </div>
-                                                <div class="col-12 col-md-11"><textarea id="content" name="content"
-                                                                                        rows="20" cols="100"
-                                                                                        class="form-control">{$data[1]['content']}</textarea>
-                                                    <button type="submit"
-                                                            class="btn btn-outline-danger btn-lg btn-block"
-                                                            style="margin-top:15px">修改
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div name="pages" style="display:none">
-                                <div class="card-body">
-                                    <div>
-                                        <form role="form" action="{:url('plugin_content/doModify')}" method="post">
-                                            <div class="row form-group">
-                                                <div class="col col-md-1"><label for="password-input"
-                                                                                 class=" form-control-label">标题</label>
-                                                </div>
-                                                <div class="col-12 col-md-11">
-                                                    <input type="hidden" id="Page2" name="Page2" value="Page2"/>
-                                                    <textarea id="title" name="title" rows="1" cols="30"
-                                                              class="form-control">{$data[2]['title']}</textarea>
-                                                    <small id="modified_time" name="modified_time"
-                                                           class="help-block form-text"><span>上次修改时间：</span>{$data[2]['modified_time']}
-                                                    </small>
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-1"><label for="textarea-input"
-                                                                                 class=" form-control-label">内容</label>
-                                                </div>
-                                                <div class="col-12 col-md-11"><textarea id="content" name="content"
-                                                                                        rows="20" cols="100"
-                                                                                        class="form-control">{$data[2]['content']}</textarea>
-
-                                                    <button type="submit"
-                                                            class="btn btn-outline-danger btn-lg btn-block"
-                                                            style="margin-top:15px">修改
-                                                    </button>
-
-                                                </div>
-                                            </div>
-
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
-
-    <div class="clearfix"></div>
-</div>
-<!-- /#right-panel -->
-```
-```JavaScript
-<!-- /#right-panel -->
-<script>
-      window.onload = function ()
-      {
-          var rs = document.getElementsByName('r');
-          var divs = document.getElementsByName('pages');
-          var index = 0;
-          var anonymous = function (i)
-          {
-              rs[i].onclick = function ()
-              {
-                  divs[index].style.display = "none";
-                  divs[i].style.display = "block";
-                  index = i;
-              };
-          };
-
-          for ( var i = 0; i < rs.length; i++)
-          {
-              anonymous (i);
-          }
-          rs[index].checked = true;
-          divs[index].style.display = "block";
-      };
-    
-</script>
-```
 实现解析：使用JS判断，将不需要显示的`<div>`的`style`设置为`display:none`，从而实现只显示一个页面
 ```
 未完待续
@@ -327,3 +142,54 @@ https://github.com/ktquez/vuepress-theme-ktquez
 以后有时间会完善
 感谢ktquez提供主题
 ```
+
+### 7.HTML的DOM事件对象，很重要
+`<input onclick = "send_form()"/>`
+[文章链接](http://www.runoob.com/jsref/dom-obj-event.html)
+---
+鼠标键盘事件
+---
+|函数|功能|
+|:----:|:----:|
+|onclick|当用户点击之后触发|
+|ondblclick|当用户双击之后触发|
+|onmouseenter|当鼠标移动到某元素上时触发|
+|onmouseover|当鼠标移动到某元素之上触发 *有些许区别|
+|onkeydown|某个键被按下|
+
+---
+框架与对象事件
+---
+|函数|功能|
+|:----:|:----:|
+|onbeforeunload|当用户在即将离开页面时触发|
+|onload|当图像或页面完成加载时触发|
+|onpageshow|当用户访问页面时触发|
+|onpagehide|该事件在用户离开当前网页跳转到另外一个页面时触发|
+|onsroll|文档被滚动时触发的事件|
+|onunload| 当用户退出页面
+
+---
+表单事件
+---
+
+|函数|功能|
+|:----:|:----:|
+|onblur|当元素失去焦点时触发|
+|onfocus|当元素获得焦点时触发|
+|onchange|当元素内容改变并且失去焦点时触发|
+|oninput|当元素获得用户输入时触发|
+|onselect|当用户选取文本时触发|
+|onsubmit|当表单提交时触发|
+
+---
+剪贴板与打印事件
+---
+
+|函数|功能|
+|:----:|:----:|
+|oncopy|当用户拷贝时触发|
+|oncut|当用户剪切时触发|
+|onpaste|当用户粘贴时触发|
+|onafterprint|当页面已经开始打印或者打印完成时触发|
+|onbeforeprint|当页面即将打印时触发|
