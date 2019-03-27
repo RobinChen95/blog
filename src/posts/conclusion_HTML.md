@@ -125,7 +125,7 @@ Your browser does not support the video tag.
 Your browser does not support the video tag.
 </video>
 
-### 6. HTML实现点击按钮切换页面
+## 3. HTML实现点击按钮切换页面
 实现效果如下：
 ![系统截图](../img/MultiSelect.png)
 
@@ -143,9 +143,12 @@ https://github.com/ktquez/vuepress-theme-ktquez
 感谢ktquez提供主题
 ```
 
-### 7.HTML的DOM事件对象，很重要
+## 4.HTML的DOM事件对象总结
+
 `<input onclick = "send_form()"/>`
+
 [文章链接](http://www.runoob.com/jsref/dom-obj-event.html)
+
 ---
 鼠标键盘事件
 ---
