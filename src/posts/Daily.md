@@ -14,7 +14,7 @@ categories:
 tags: 
   - HTML
 created_at: 2019-03-18 19:00
-updated_at: 2019-03-18 19:00
+updated_at: 2019-03-28 21:00
 meta:                                 # If you have cover image
   - property: og:image
     content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
@@ -26,8 +26,8 @@ meta:                                 # If you have cover image
 ---
 |项目|待办|优先级|剩余时间|
 |:----:|:----:|:----:|:----:|
-|做完比赛项目|是|1|12 days|
-|自然辩证法考试|是|2|2 weeks|
+|做完比赛项目|是|1|3 days|
+|自然辩证法考试|是|2|3 days|
 |Nachos代码赶上进度|是|3|4 days|
 |理清项目逻辑|是|4|unlimited|
 ---
