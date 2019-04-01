@@ -14,7 +14,7 @@ categories:
 tags: 
   - HTML
 created_at: 2019-03-18 19:00
-updated_at: 2019-03-28 21:00
+updated_at: 2019-04-02 00:00
 meta:                                 # If you have cover image
   - property: og:image
     content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
@@ -26,10 +26,8 @@ meta:                                 # If you have cover image
 ---
 |项目|待办|优先级|剩余时间|
 |:----:|:----:|:----:|:----:|
-|做完比赛项目|是|1|3 days|
-|自然辩证法考试|是|2|3 days|
-|Nachos代码赶上进度|是|3|4 days|
-|理清项目逻辑|是|4|unlimited|
+|Nachos代码赶上进度|是|1|almost unlimited|
+|理清项目逻辑|是|2|unlimited|
 ---
 
 + 需要理清的项目逻辑
@@ -53,27 +51,19 @@ meta:                                 # If you have cover image
 
 ---
 1. 中特等开课
-2. 投简历
 ---
 
 ## 运动记录表
+
+只记录没有运动的时候
+
+每天晚上10:30-12:00，准时校外跑步
 
 ---
 |日期|运动了吗|天气|运动状况|备注|
 |:----:|:-----:|:----:|:----:|:----:|
 |2019-03-13 |否|适合运动|xxx|偷懒|
-|2019-03-14 |是|大风|校外跑步3KM|<img src="../img/2019-03-14.jpg" height="300" width="150">|
-|2019-03-15 |是|适合运动|校外跑步3.5KM|<img src="../img/2019-03-15.png" height="300" width="150">|
-|2019-03-16 |是|适合运动|校外跑步1042千焦|<img src="../img/2019-03-16.png" height="300" width="150">|
-|2019-03-17 |是|有风|校外跑步3.5KM|<img src="../img/2019-03-17.png" height="300" width="150">|
 |2019-03-18 |否|适合运动|XXX|偷懒,现在已经可以穿一件薄外套跑步了|
-|2019-03-19 |是|适合运动|校外跑步3.4KM|<img src="../img/2019-03-19.png" height="300" width="150">|
-|2019-03-20 |是|有风|校外跑步3.5KM|<img src="../img/2019-03-20.png" height="300" width="150">|
-|2019-03-21 |是|草鸡大风|校外跑步1.64KM|<img src="../img/2019-03-21.png" height="300" width="150">|
 |2019-03-22 |否|适合|xxx|有事|
-|2019-03-23 |是|有风|校外跑步4.67KM|<img src="../img/2019-03-23.png" height="300" width="150">|
-|2019-03-24 |是|适合|校外跑步5.20KM|<img src="../img/2019-03-24.png" height="300" width="150">|
-|2019-03-25 |是|适合|校外跑步894千焦|<img src="../img/2019-03-25.png" height="300" width="150">|
-|2019-03-26 |是|适合|校外跑步3.65KM|<img src="../img/2019-03-26.png" height="300" width="150">|
 |2019-03-27 |否|适合|xxx|有事|
 ---
