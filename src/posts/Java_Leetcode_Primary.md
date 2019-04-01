@@ -5,7 +5,7 @@ lang: en                              # Lang is required
 author: 陈国强
 title: Leetcode初级算法题解
 description: 使用Java语言的Leetcode解题记录
-excerpt:
+excerpt: 使用Java语言的Leetcode解题记录
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
