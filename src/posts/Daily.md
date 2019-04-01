@@ -3,7 +3,7 @@ view: post
 layout: post                          # Only in unique we use the "layout: post"
 lang: en                              # Lang is required
 author: 陈国强
-title: 日常记录
+title: 提醒事项
 description:
 excerpt:
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
@@ -43,8 +43,8 @@ meta:                                 # If you have cover image
 ## 需要长期做的事情
 
 ---
-|日期|每日运动|互联网开发|投资学|英语六级|完善博客|leetcode|备注|
-|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+|每日运动|英语六级|日语N3|完善博客|leetcode|
+|:----:|:----:|:----:|:----:|:----:|
 ---
 
 ## 等待开始的事情：
