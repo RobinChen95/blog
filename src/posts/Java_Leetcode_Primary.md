@@ -29,6 +29,7 @@ meta:                                 # If you have cover image
 本文提供的是Java语言的解法，可能会调用Java自带的API  
 因为算法笔试的时候就是这么要求的，不要重复造轮子  
 如果本文有错误的地方，~~那我也是不会负责的~~  
+本题解仅记录的是我的解法，如果更好的解法，欢迎讨论  
 欢迎其他同学补充更好的解法或者提供其他语言的题解  
 
 
@@ -69,20 +70,20 @@ for (int i = 0; i < len; i++) {
 使用一个number计数器，从0开始遍历数组，由于数组是<span style="color:red">有序</span>的  
 所以遍历的时候，不重复的项，便对number+1，并对num\[number\]进行赋值，最后返回number计数器即可
 ```Java
-    public int removeDuplicates(int[] nums) {
-        // 声明number计数器
-        int number = 0;
-        for (int i = 0; i < nums.length; i++) {
-            // 如果遍历的时候遇到了不重复的数
-            if (nums[i] != nums[number]) {
-                // number计数器右移一位
-                number++;
-                // 赋值
-                nums[number] = nums[i];
-            }
+public int removeDuplicates(int[] nums) {
+    // 声明number计数器
+    int number = 0;
+    for (int i = 0; i < nums.length; i++) {
+        // 如果遍历的时候遇到了不重复的数
+        if (nums[i] != nums[number]) {
+            // number计数器右移一位
+            number++;
+            // 赋值
+            nums[number] = nums[i];
         }
-        return number + 1;
     }
+    return number + 1;
+}
 ```
 
 ### 2. [买卖股票的最佳时机 II](https://leetcode-cn.com/explore/featured/card/top-interview-questions-easy/1/array/22/)
@@ -116,22 +117,22 @@ for (int i = 0; i < len; i++) {
 本题之所以可以这么解，是因为题目<span style="color:red">没有限定每天的购买次数</span>  
 性能优化：分别寻找到附近的极大值与极小值之后再进行买入卖出的操作  
 ```Java
-    public int maxProfit(int[] prices) {
-    if(prices == null || prices.length == 0) return 0;
-    int i = 0;
-    int max = 0;
-    while(i < prices.length){
-        //找到附近最小的数
-        while(i < prices.length - 1 && prices[i+1] <= prices[i])
-            i++;
-        int min = prices[i];
-        //找到附近最大的数
-        while(i < prices.length - 1 && prices[i+1] >= prices[i])
-            i++;
-        max += (i < prices.length) ? (prices[i++] - min) : 0;
-    }
-    return max;
-    }
+public int maxProfit(int[] prices) {
+if(prices == null || prices.length == 0) return 0;
+int i = 0;
+int max = 0;
+while(i < prices.length){
+    //找到附近最小的数
+    while(i < prices.length - 1 && prices[i+1] <= prices[i])
+        i++;
+    int min = prices[i];
+    //找到附近最大的数
+    while(i < prices.length - 1 && prices[i+1] >= prices[i])
+        i++;
+    max += (i < prices.length) ? (prices[i++] - min) : 0;
+}
+return max;
+}
 ```
 
 ### 3. [旋转数组](https://leetcode-cn.com/explore/featured/card/top-interview-questions-easy/1/array/23/)
@@ -165,22 +166,22 @@ for (int i = 0; i < len; i++) {
 写一个函数，每次调用时都会将数组向右旋转一位，然后需要几位移动几位  
 <span style="color:red">本算法性能较差</span>   
 ```Java
-    public void rotate(int[] nums, int k) {
-        //当k超过num.length的时候就取余数
-        k %= nums.length;
-        for (int i = 0; i < k; i++) {
-            rotate_one_num(nums);
-        }
+public void rotate(int[] nums, int k) {
+    //当k超过num.length的时候就取余数
+    k %= nums.length;
+    for (int i = 0; i < k; i++) {
+        rotate_one_num(nums);
     }
-    
-    //本函数实现每次调用就将数组向右旋转一位
-    public void rotate_one_num(int[] nums) {
-        int temp = nums[nums.length - 1];
-        for (int i = nums.length - 1; i > 0; i--) {
-            nums[i] = nums[i - 1];
-        }
-        nums[0] = temp;
+}
+
+//本函数实现每次调用就将数组向右旋转一位
+public void rotate_one_num(int[] nums) {
+    int temp = nums[nums.length - 1];
+    for (int i = nums.length - 1; i > 0; i--) {
+        nums[i] = nums[i - 1];
     }
+    nums[0] = temp;
+}
 ```
 
 + **解法二**    
@@ -189,12 +190,12 @@ System.arraycopy()可以指定拷贝数组的某一段
 所以需要移动几位都可以直接拷贝到对应的位置  
 <span style="color:red">本算法的性能最好，但是不满足O(1)的限制条件</span>  
 ```Java
-    public void rotate(int[] nums, int k) {
-        k %= nums.length;
-        int[] tmp=nums.clone();
-        System.arraycopy(tmp,tmp.length-k,nums,0,k);
-        System.arraycopy(tmp,0,nums,k,tmp.length-k);
-    }
+public void rotate(int[] nums, int k) {
+    k %= nums.length;
+    int[] tmp=nums.clone();
+    System.arraycopy(tmp,tmp.length-k,nums,0,k);
+    System.arraycopy(tmp,0,nums,k,tmp.length-k);
+}
 ```
 
 + **解法三**  
@@ -203,21 +204,77 @@ System.arraycopy()可以指定拷贝数组的某一段
 + 二、把数组从0到k-1对换
 + 三、把数组从k到length-1对换  
 对换的意思是把`nums[0]`与`nums[length-1]`、`nums[1]`与`nums[length-2]`……对换  
-^符号的意思是异或 [关于使用异或的解释](https://blog.csdn.net/u010709324/article/details/77963043)，这里使用异或是为了对换，并提高性能  
+^符号的意思是异或([关于使用异或的解释](https://blog.csdn.net/u010709324/article/details/77963043))，
+这里使用异或是为了对换的同时提高性能    
 ```Java
-    public void rotate(int[] nums, int k) {
-        k %= nums.length;
-        reverse(nums, 0, nums.length - 1);
-        reverse(nums, 0, k - 1);
-        reverse(nums, k, nums.length - 1);
-    }
+public void rotate(int[] nums, int k) {
+    k %= nums.length;
+    reverse(nums, 0, nums.length - 1);
+    reverse(nums, 0, k - 1);
+    reverse(nums, k, nums.length - 1);
+}
 
-    public void reverse(int[] nums, int l, int r){
-        for(int i = l; l < r && i < r; i++){
-            nums[i] = nums[r] ^ nums[i];
-            nums[r] = nums[r] ^ nums[i];
-            nums[i] = nums[r] ^ nums[i];
-            r--;
-        }
+public void reverse(int[] nums, int l, int r){
+    for(int i = l; l < r && i < r; i++){
+        nums[i] = nums[r] ^ nums[i];
+        nums[r] = nums[r] ^ nums[i];
+        nums[i] = nums[r] ^ nums[i];
+        r--;
     }
+}
+```
+
+### 4. [有效的字母异位词](https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/strings/35/)
+
+```Java
+给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的一个字母异位词。
+示例 1:
+输入: s = "anagram", t = "nagaram"
+输出: true
+
+示例 2:
+输入: s = "rat", t = "car"
+输出: false
+
+说明:
+你可以假设字符串只包含小写字母。
+
+进阶:
+如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
+```
+
++ **解法一**  
+最直接的解法就是调用Java自带的API，先将字符串转换为char数组，然后将char数组排序，然后比较即可  
+<span style="color:red">本解法性能中等</span>  
+```Java
+public boolean isAnagram(String s, String t) {
+    char[] s_char = s.toCharArray();
+    char[] t_char = t.toCharArray();
+    Arrays.sort(s_char);
+    Arrays.sort(t_char);
+    if (Arrays.equals(s_char,t_char))return true;
+    else return false;
+}
+```
+
++ **解法二**  
+由于判断的是异位词，所以每个单词的出现的频率相同，并且由于只有小写字母  
+所以可以设置一个计数数组，String s中每一个字符都会使得对应的计数数组中的计数值+1  
+而String t中的每一个字符都会使得对应的计数数组中的计数值-1，最后如果该数组所有数都等于0，则表示s与t是异位词  
+```Java
+public boolean isAnagram(String s, String t) {
+    // 如果长度不相等，则不可能是异位词
+    if (s.length() != t.length())
+        return false;
+    //计数数组
+    int[] count = new int[128];
+    for (int i = 0; i < s.length(); ++i)
+        count[s.charAt(i)]++;
+    for (int i = 0; i < t.length(); ++i)
+        count[t.charAt(i)]--;
+    for (int i = 0; i < count.length; ++i)
+        if (count[i] != 0)
+            return false;
+    return true;
+}
 ```
