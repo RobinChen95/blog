@@ -26,7 +26,7 @@ meta:                                 # If you have cover image
 ## 题解说明
 
 > 本片文章是为了方便实验班的同学们查阅所作的题解  
-本文提供的是Java语言的解法，可能会调用Java自带的系统API  
+本文提供的是Java语言的解法，可能会调用Java自带的API  
 因为算法笔试的时候就是这么要求的，不要重复造轮子  
 如果本文有错误的地方，~~那我也是不会负责的~~  
 欢迎其他同学补充更好的解法或者提供其他语言的题解  
@@ -63,6 +63,26 @@ for (int i = 0; i < len; i++) {
 }  
 ```
 
+**解题思路**
 
+可以只用一次循环和O(1)的额外空间达到效果  
+使用一个number计数器，从0开始遍历数组，由于数组是<span style="color:red">有序</span>的
+所以遍历的时候，每当遇到与当前number不一致的，便对number+1，并对num\[number\]进行赋值，最后返回number计数器即可
+```Java
+public int removeDuplicates(int[] nums) {
+    // 声明number计数器
+    int number = 0;
+    for (int i = 0; i < nums.length; i++) {
+        // 如果遍历的时候遇到了不重复的数
+        if (nums[i] != nums[number]) {
+            // number计数器右移一位
+            number++;
+            // 赋值
+            nums[number] = nums[i];
+        }
+    }
+    return number + 1;
+}
+```
 
 ### 2. 买卖股票的最佳时机 II
