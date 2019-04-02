@@ -67,22 +67,22 @@ for (int i = 0; i < len; i++) {
 
 可以只用一次循环和O(1)的额外空间达到效果  
 使用一个number计数器，从0开始遍历数组，由于数组是<span style="color:red">有序</span>的  
-所以遍历的时候，每当遇到与当前number不一致的，便对number+1，并对num\[number\]进行赋值，最后返回number计数器即可
+所以遍历的时候，不重复的项，便对number+1，并对num\[number\]进行赋值，最后返回number计数器即可
 ```Java
-public int removeDuplicates(int[] nums) {
-    // 声明number计数器
-    int number = 0;
-    for (int i = 0; i < nums.length; i++) {
-        // 如果遍历的时候遇到了不重复的数
-        if (nums[i] != nums[number]) {
-            // number计数器右移一位
-            number++;
-            // 赋值
-            nums[number] = nums[i];
+    public int removeDuplicates(int[] nums) {
+        // 声明number计数器
+        int number = 0;
+        for (int i = 0; i < nums.length; i++) {
+            // 如果遍历的时候遇到了不重复的数
+            if (nums[i] != nums[number]) {
+                // number计数器右移一位
+                number++;
+                // 赋值
+                nums[number] = nums[i];
+            }
         }
+        return number + 1;
     }
-    return number + 1;
-}
 ```
 
 ### 2. [买卖股票的最佳时机 II](https://leetcode-cn.com/explore/featured/card/top-interview-questions-easy/1/array/22/)
@@ -113,10 +113,10 @@ public int removeDuplicates(int[] nums) {
 **解题思路**
 
 这是典型的贪心法问题，即只要第二天的股票价格高于第一天股票的价格，便选择购入  
-本题之所以可以这么解，是因为题目<span style="color:red">没有限定购买次数</span>  
+本题之所以可以这么解，是因为题目<span style="color:red">没有限定每天的购买次数</span>  
 性能优化：分别寻找到附近的极大值与极小值之后再进行买入卖出的操作  
 ```Java
- public int maxProfit(int[] prices) {
+    public int maxProfit(int[] prices) {
     if(prices == null || prices.length == 0) return 0;
     int i = 0;
     int max = 0;
@@ -131,7 +131,7 @@ public int removeDuplicates(int[] nums) {
         max += (i < prices.length) ? (prices[i++] - min) : 0;
     }
     return max;
- }
+    }
 ```
 
 ### 3. [旋转数组](https://leetcode-cn.com/explore/featured/card/top-interview-questions-easy/1/array/23/)
@@ -157,4 +157,67 @@ public int removeDuplicates(int[] nums) {
 说明:
 尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。
 要求使用空间复杂度为 O(1) 的原地算法。
+```
+
+**解题思路**
+
++ **解法一**  
+写一个函数，每次调用时都会将数组向右旋转一位，然后需要几位移动几位  
+<span style="color:red">本算法性能较差</span>   
+```Java
+    public void rotate(int[] nums, int k) {
+        //当k超过num.length的时候就取余数
+        k %= nums.length;
+        for (int i = 0; i < k; i++) {
+            rotate_one_num(nums);
+        }
+    }
+    
+    //本函数实现每次调用就将数组向右旋转一位
+    public void rotate_one_num(int[] nums) {
+        int temp = nums[nums.length - 1];
+        for (int i = nums.length - 1; i > 0; i--) {
+            nums[i] = nums[i - 1];
+        }
+        nums[0] = temp;
+    }
+```
+
++ **解法二**    
+使用Java自带的System.arraycopy()  
+System.arraycopy()可以指定拷贝数组的某一段  
+所以需要移动几位都可以直接拷贝到对应的位置  
+<span style="color:red">本算法的性能最好，但是不满足O(1)的限制条件</span>  
+```Java
+    public void rotate(int[] nums, int k) {
+        k %= nums.length;
+        int[] tmp=nums.clone();
+        System.arraycopy(tmp,tmp.length-k,nums,0,k);
+        System.arraycopy(tmp,0,nums,k,tmp.length-k);
+    }
+```
+
++ **解法三**  
+解法三理解起来相对更困难，设数组长度为length把数组向右旋转k位，等价于  
++ 一、把数组从0到length每个位置依次对换  
++ 二、把数组从0到k-1对换
++ 三、把数组从k到length-1对换  
+对换的意思是把`nums[0]`与`nums[length-1]`、`nums[1]`与`nums[length-2]`……对换  
+^符号的意思是异或 [关于使用异或的解释](https://blog.csdn.net/u010709324/article/details/77963043)，这里使用异或是为了对换，并提高性能  
+```Java
+    public void rotate(int[] nums, int k) {
+        k %= nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
+    }
+
+    public void reverse(int[] nums, int l, int r){
+        for(int i = l; l < r && i < r; i++){
+            nums[i] = nums[r] ^ nums[i];
+            nums[r] = nums[r] ^ nums[i];
+            nums[i] = nums[r] ^ nums[i];
+            r--;
+        }
+    }
 ```
