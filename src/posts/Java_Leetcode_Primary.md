@@ -23,7 +23,7 @@ meta:                                 # If you have cover image
     content: /images/posts/my-first-post.png
 ---
 
-## 题解说明
+## 题解说明  
 
 > 本片文章是为了方便实验班的同学们查阅所作的题解  
 本文提供的是Java语言的解法，可能会调用Java自带的API  
@@ -33,7 +33,7 @@ meta:                                 # If you have cover image
 欢迎其他同学补充更好的解法或者提供其他语言的题解  
 
 
-## 数组
+## 数组  
 
 ### 1. [从排序数组中删除重复项](https://leetcode-cn.com/explore/featured/card/top-interview-questions-easy/1/array/21/)
 ```Java
@@ -223,6 +223,43 @@ public void reverse(int[] nums, int l, int r){
     }
 }
 ```
+
+### 4。[存在重复](https://leetcode-cn.com/explore/featured/card/top-interview-questions-easy/1/array/24/)  
+
+```Java
+给定一个整数数组，判断是否存在重复元素。
+如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。
+
+示例 1:
+输入: [1,2,3,1]
+输出: true
+
+示例 2:
+输入: [1,2,3,4]
+输出: false
+
+示例 3:
+输入: [1,1,1,3,3,4,3,2,4,2]
+输出: true
+```
+
+**解题思路**  
+
+设置一个HashSet遍历数组，当HashSet中存在重复的时候，返回true，否则返回false
+
+```Java
+public boolean containsDuplicate(int[] nums) {
+    HashSet<Integer> hs = new HashSet<>();
+    for (int i = 0; i < nums.length; i++) {
+        //HashSet是不允许重复的，如果add了一个已经存在的重复项，会返回false
+        if (hs.add(nums[i]));
+        else return true;
+    }
+    return false;
+}
+```  
+
+## 字符串  
 
 ### 4. [有效的字母异位词](https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/strings/35/)
 
