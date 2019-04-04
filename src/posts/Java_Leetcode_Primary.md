@@ -249,7 +249,7 @@ public void reverse(int[] nums, int l, int r){
 
 ```Java
 public boolean containsDuplicate(int[] nums) {
-    HashSet<Integer> hs = new HashSet<>();
+    HashSet<Integer> hs = new HashSet<>(); 
     for (int i = 0; i < nums.length; i++) {
         //HashSet是不允许重复的，如果add了一个已经存在的重复项，会返回false
         if (hs.add(nums[i]));
