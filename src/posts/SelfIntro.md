@@ -41,7 +41,7 @@ He has done lots of work on software researching, compiler, operating system, ar
 
 ## Brief Intro to Chen
 
-He has a large range of interets in the entire computer ecosystem, from computer manufacture/repairing to CPU/Memory work principle, also in artificial intelligence. 
+He has a large range of interets in the entire computer ecosystem, from computer manufacture/repairing to CPU/Memory work principle, and also in artificial intelligence. 
 
 ---
 
