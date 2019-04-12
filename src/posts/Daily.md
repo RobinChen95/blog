@@ -14,13 +14,24 @@ categories:
 tags: 
   - HTML
 created_at: 2019-03-18 19:00
-updated_at: 2019-04-02 00:00
+updated_at: 2019-04-12 14:00
 meta:                                 # If you have cover image
   - property: og:image
     content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
   - name: twitter:image
     content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
 ---
+
+## Daily Check
+
+|项目|截止时间|
+|:----:|:----:|
+|投资学作业|2019-04-14|
+|Python语法树|2019-04-14|
+|导出Excel|2019-04-17|
+|Nachos Lab4|2019-04-21|
+|六级刷分|2019-06-15|
+|N3考试|2019-07-07|
 
 ## 一次性能做完的事情
 ---
@@ -39,17 +50,6 @@ meta:                                 # If you have cover image
 |Java mq|是|part-time one week|
 |Java compiler|是|full-time two week|
 ---
-
-## 需要长期做的事情
-
----
-|每日运动|英语六级|日语N3|完善博客|leetcode|
-|:----:|:----:|:----:|:----:|:----:|
----
-
-## 计划
-
-
 
 ## 运动记录表
 
