@@ -3,7 +3,7 @@ view: post
 layout: post                          # Only in unique we use the "layout: post"
 lang: en                              # Lang is required
 author: 陈国强
-title: 编译原理复习
+title: Compiler Remake
 description:
 excerpt:
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
@@ -25,6 +25,10 @@ meta:                                 # If you have cover image
 ## 第一章 引论  
 + 编译器：阅读某一种源语言并把该程序翻译为目标语言的程序  
 解释器：不翻译语言，直接利用用户提供的输入执行源程序中指定的操作
+
++ 编译器结构：  
+
+<img src="../img/compiler_components.PNG"/>
 
 + 上下文无关文法：所有的产生式左边只有一个非终结符  
 上下文有关文法：产生式左边可能有终结符  
@@ -59,7 +63,8 @@ meta:                                 # If you have cover image
  类似地，包含 O 的产生式也约束了动宾搭配的一致性。这样一来，这个语言包含的句子就只有｛人吃饭，天下雨，人吃肉，天下雪｝这四条，都是语义上合理的。
  以”人吃饭“为例，推导过程为：Sent -> SVO -> 人VO -> 人吃O -> 人吃饭其中第三步推导是这样的：非终结符 V 的上文是“人”。
  因此可以应用“人V -> 人吃”这条产生式，得到“人VO -> 人吃O”。第四步也类似。
-```
+```  
+
 
 ## 参考文章  
 [知乎：应该如何理解「上下文无关文法」？](https://www.zhihu.com/question/21833944)
