@@ -96,3 +96,5 @@ git push origin master
 2. 在添加Categories的时候遇到了path错误，这个错误是因为.md文件写错了，以后注意检查
 
 3. 在Windwos下使用新建文本文档会乱码，此时需要在Notepad等软件里面制定使用UTF-8的格式编码，猜测是因为Windwos会在txt文件的开头添加一部分东西，或者指定了GBK编码导致的，[此文章曾经出现乱码](http://101.200.53.152/posts/Federation.html)。
+
+4. Windows下的截屏软件snippingtool会存储后缀名为.PNG的文件，而.PNG在Linux下编译会报错，需要修改为小写的.png
