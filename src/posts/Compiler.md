@@ -27,7 +27,15 @@ meta:                                 # If you have cover image
 解释器：不翻译语言，直接利用用户提供的输入执行源程序中指定的操作
 
 + 编译器结构：  
-<img src="../img/compiler_components.png"/>
+![编译器结构](../img/compiler_components.png)![赋值语句的翻译](../img/translate_sentence.png)  
++ 1. 词法分析器：以**词为单位**，词法分析器分析句子中的每个单词，包括分号，等号等  
+例如 position = initial + rate +60  
+position被映射成<id, 1>，其中id代表identifier，1代表符号表中id所对应的条目，也可以用position代替  
+= 被映射成<=>，不需要第二个分量，因为=是**一词一码**的  
+initial被映射成<id, 2>，2代表initial对应符号表的条目  
+\+、\*均会被映射为<\+>、<\*>  
+空格会被词法分析器忽略  
++ 2. 语法分析
 
 + 上下文无关文法：所有的产生式左边只有一个非终结符  
 上下文有关文法：产生式左边可能有终结符  
