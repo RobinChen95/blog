@@ -14,13 +14,20 @@ categories:
 tags: 
   - vuejs
 created_at: 2019-04-14 15:00
-updated_at: 2019-04-14 15:00
+updated_at: 2019-04-18 19:00
 meta:                                 # If you have cover image
   - property: og:image
     content: /images/posts/my-first-post.png
   - name: twitter:image
     content: /images/posts/my-first-post.png
 ---
+
+## 关于编译原理  
+编译一直是计算机软件中一门很重要的核心课，也是本科计算机四大原理里最难的一门课  
+编译原理主要关注的是将一种计算机语言翻译为另一种计算机语言  
+其中，三地址码是编译原理中一种重要的中间代码，类似于汇编语言  
+编译原理主要研究的是2型文法，即上下文无关文法，编译原理所涉及的思想，也是NLP的研究方法之一    
+本位旨在梳理一个最基本的编译器的基本结构，给出最简单的编译器理论上的实现，阐述清楚以前所做的Java语言C编译器的实现方法。
 
 ## 引论  
 + 编译器：阅读某一种源语言并把该程序翻译为目标语言的程序  
