@@ -38,7 +38,7 @@ meta:                                 # If you have cover image
 |理清项目逻辑|是|2|unlimited|
 ---
 
-+ 需要理清的项目逻辑
++ 需要理清的项目逻辑  
 
 ---
 |项目|待办|预计完成时间|
@@ -46,13 +46,16 @@ meta:                                 # If you have cover image
 |AI后端|是|part-time one week|
 |Java mq|是|part-time one week|
 |Java compiler|是|full-time two week|
----
+---  
 
-## 运动记录表
+## 报错记录  
+1、pycharm中升级pip，不能直接一步升级到19.1，会报错，需要先升级到18.0作为中介  
 
-只记录没有运动的时候
 
-每天晚上10:30-12:00，准时校外跑步
+## 运动记录表  
+
+只记录没有运动的时候  
+每天晚上10:30-12:00，准时校外跑步  
 
 ---
 |日期|运动了吗|天气|运动状况|备注|

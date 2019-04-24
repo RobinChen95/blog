@@ -14,7 +14,7 @@ categories:
 tags: 
   - vuejs
 created_at: 2019-04-14 15:00
-updated_at: 2019-04-18 19:00
+updated_at: 2019-04-24 20:00
 meta:                                 # If you have cover image
   - property: og:image
     content: /images/posts/my-first-post.png
@@ -146,6 +146,18 @@ C语言的静态策略：
 
 ## 语法制导翻译器  
 
+1、首先确定，上下文无关文法是用于组织编译前端的关键。  
+上下文无关文法定义：  
++ 终结符集合，是词法单元，终结符号是该文法定义的语言符号集合，空符号记为ε  
++ 非终结符集合，是词法变量，非终结符表示的是一个终结符号串集合  
++ 一个产生式集合，其中，产生式左部`仅有一个非终结符`
++ 指定一个非终结符作为开始符号  
 
-## 参考文章  
-[知乎：应该如何理解「上下文无关文法」？](https://www.zhihu.com/question/21833944)
+2、语法分析的任务：接受一个终结符号串作为输入，找到从该文法的开始符号推导出这个串的方法，如果不能从文法的开始符号推导得到该终结符号串，那么
+就报告该终结符号串中包含语法错误  
+
+
+
+## 参考文献  
+[Compilers:Principles, Techniques & Tools](https://item.jd.com/25755470698.html)  
+[知乎：应该如何理解「上下文无关文法」？](https://www.zhihu.com/question/21833944)  
