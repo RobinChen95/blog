@@ -168,6 +168,6 @@ C语言的静态策略：
 6、
 
 ## 参考文献  
-1. [Compilers:Principles, Techniques & Tools](https://item.jd.com/25755470698.html)  
-2. [知乎：应该如何理解「上下文无关文法」？](https://www.zhihu.com/question/21833944)  
-3. [自己动手写编译器](https://pandolia.net/tinyc/index.html)
+[1] [Compilers:Principles, Techniques & Tools](https://item.jd.com/25755470698.html)  
+[2] [知乎：应该如何理解「上下文无关文法」？](https://www.zhihu.com/question/21833944)  
+[3] [自己动手写编译器](https://pandolia.net/tinyc/index.html)
