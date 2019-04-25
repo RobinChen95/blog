@@ -161,11 +161,13 @@ C语言的静态策略：
 
 4、+、-、*、/都是左结合的，而 =、+=、指数运算等都是右结合的，这些符号是属于它左方/右方的符号，他们的分析树都是不同的。  
 
-5、构造具有优先级的文法：  
+5、构造具有优先级的文法： 
+设计具有n个优先级的文法，就至少需要n+1个非终结符号   
 ![例2.6](../img/2.6.png)  
 
-
+6、
 
 ## 参考文献  
 [Compilers:Principles, Techniques & Tools](https://item.jd.com/25755470698.html)  
 [知乎：应该如何理解「上下文无关文法」？](https://www.zhihu.com/question/21833944)  
+[自己动手写编译器](https://pandolia.net/tinyc/index.html)
