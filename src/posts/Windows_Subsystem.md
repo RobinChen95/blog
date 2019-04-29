@@ -62,6 +62,32 @@ meta:                                 # If you have cover image
 
 安装完成后，需要打开界面，等待软件installing的提示结束，就安装成功啦  <i class="fas fa-grin-wink"></i>
 
+## 安装Oh-My-Zsh、cmder  
+在上面的步骤中，如果没有遇到报错，那么就会有一个基本能够运行的Linux子系统，到此基本的配置已经结束，Linux系统已经可以使用了，
+此节往后的内容是为了配置一个更友好的Bash界面。   
++  安装Oh-My-Zsh：  
+```shell
+$ sudo apt-get install zsh
+$ zsh --version
+```
+在/home/$name/.bash_profile目录下找到.bash_profile，如果没有就建一个，这是个隐藏的文件，需要ls -a来查看。打开并在末尾加上:
+```shell
+exec zsh
+source .zshrc
+```
+禁止自动更新可以到~/.zshrc下找到DISABLE_AUTO_UPDATE一行，将行首的注释'#'去掉即可。  
+
++ 安装配置cmder：  
+cmder是一个windows下一个好用的命令行软件[下载地址](https://cmder.net/)，点击Download Full，解压之后即可使用。  
+配置cmder：在标题栏右键，选择Settings，然后选择Startup，在Comand line中输入如下：  
+![cmder setting](../img/cmder%20setting.png)  
+```shell
+# 加上后缀-cur_console:p5是为了保证在vim下方向键可用
+%windir%\system32\bash.exe ~ -cur_console:p5
+```
+在BackGround中可以修改背景图片，最后配置好的cmder如图：  
+![cmder setting](../img/cmder.png)  
+最后重启cmder即可。  
 ## 报错记录
 
 > 1. 当修改了Windows计算机名称时报了一个错误：WslRegisterDistribution failed with error: 0x800703fa
@@ -93,3 +119,10 @@ meta:                                 # If you have cover image
 3. 还想过转换http和https、打开VPN等等的骚操作
 
 + ~~没想到最后是连上了室友的移动热点解决了问题，sspku的校园网还是太烂~~
+
+## 参考文章  
+[1] [WIN10下搭建一个linux环境(ubuntu+cmder+oh-my-zsh)](https://blog.csdn.net/lissettecarlr/article/details/81040750)  
+[2] [Windows10终端优化方案：Ubuntu子系统+cmder+oh-my-zsh](https://zhuanlan.zhihu.com/p/34152045)  
+[3] [Mac终端配置教程](https://wyydsb.xin/other/terminal.html)  
+[4] [Windows PowerShell改造教程](https://zhuanlan.zhihu.com/p/56808199)  
+[5] [cmder调用bash后方向键无法使用的问题](https://www.zhihu.com/question/57653031)
