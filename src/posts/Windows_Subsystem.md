@@ -82,6 +82,7 @@ cmder是一个windows下一个好用的命令行软件[下载地址](https://cmd
 最后重启cmder即可。  
 
 + 配置zsh  
+修改~/.zshrc之后不需要source命令，因为source命令是用来使sh脚本生效的，zshrc配置好之后下次进入就可以看见效果了。  
 插件1：zsh-autosuggestions:  
 一个自动提示过去使用过的命令的工具
 ```bash
@@ -89,6 +90,14 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosugges
 vim ~/.zshrc
 # 在.zshrc末尾添加： Load zsh-autosuggestions.
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+```
+插件2：zsh-syntax-highlighting:  
+一个提示shell命令是否正确的提示工具  
+```bash
+# syntax highlighting
+$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+# 此句与上一个在.zshrc末尾添加一个效果
+$ echo "source \$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
 ## 报错记录
 
@@ -143,4 +152,5 @@ docker: failed to register layer: Error processing tar file(exit status 1): inva
 [10] [docker问题：Problem running hello-world image(需要翻墙)](https://www.reddit.com/r/docker/comments/7vxhdu/problem_running_helloworld_image/)  
 [11] [利用window10的Linux子系统实现docker的安装使用](https://www.jianshu.com/p/d1b2b4240256)  
 [12] [docker docs官方文档](https://docs.docker.com/)  
+[13] [DockerToolBox window 下载 与初步使用](https://blog.csdn.net/qq_35568099/article/details/80359824)  
 
