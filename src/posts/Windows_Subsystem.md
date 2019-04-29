@@ -66,12 +66,12 @@ meta:                                 # If you have cover image
 在上面的步骤中，如果没有遇到报错，那么就会有一个基本能够运行的Linux子系统，到此基本的配置已经结束，Linux系统已经可以使用了，
 此节往后的内容是为了配置一个更友好的Bash界面。   
 +  安装Oh-My-Zsh：  
-```text
+```bash
 $ sudo apt-get install zsh
 $ zsh --version
 ```
 在/home/$name/.bash_profile目录下找到.bash_profile，如果没有就建一个，这是个隐藏的文件，需要ls -a来查看。打开并在末尾加上:
-```text
+```bash
 exec zsh
 source .zshrc
 ```
@@ -81,7 +81,7 @@ source .zshrc
 cmder是一个windows下一个好用的命令行软件[下载地址](https://cmder.net/)，点击Download Full，解压之后即可使用。  
 配置cmder：在标题栏右键，选择Settings，然后选择Startup，在Comand line中输入如下：  
 ![cmder setting](../img/cmder_setting.png)  
-```text
+```bash
 # 加上后缀-cur_console:p5是为了保证在vim下方向键可用
 %windir%\system32\bash.exe ~ -cur_console:p5
 ```
