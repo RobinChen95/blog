@@ -108,7 +108,7 @@ $ echo "source \$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlight
 这是因为Shell会fork一个子进程，然后子进程通过exec执行程序，所以每次执行完都会停留在原目录。  
 如果要强制父bash执行呢？加入修饰符`source`或者`.`，即使用指令`. ./start.sh`或者`source start.sh`  
 
-3. 想用docker run hello-world报错：  
+3. 想用`docker run hello-world`报错：  
 docker: failed to register layer: Error processing tar file(exit status 1): invalid argument.  
 原因是在docker上的这一个image不兼容NTFS文件系统，未找到解决方法
 
