@@ -133,7 +133,14 @@ docker: failed to register layer: Error processing tar file(exit status 1): inva
 ## 参考文章  
 [1] [WIN10下搭建一个linux环境(ubuntu+cmder+oh-my-zsh)](https://blog.csdn.net/lissettecarlr/article/details/81040750)  
 [2] [Windows10终端优化方案：Ubuntu子系统+cmder+oh-my-zsh](https://zhuanlan.zhihu.com/p/34152045)  
-[3] [Mac终端配置教程](https://wyydsb.xin/other/terminal.html)  
+[3] [Mac终端配置教程(重要)](https://wyydsb.xin/other/terminal.html)  
 [4] [Windows PowerShell改造教程](https://zhuanlan.zhihu.com/p/56808199)  
 [5] [cmder调用bash后方向键无法使用的问题](https://www.zhihu.com/question/57653031)  
 [6] [Github速度慢的解决方法](https://blog.csdn.net/DlMmU/article/details/79562021)  
+[7] [oh-my-zsh配置](https://www.jianshu.com/p/0f3dcec21a97)  
+[8] [Windows Subsystem for Linux Overview](https://blogs.msdn.microsoft.com/wsl/2016/04/22/windows-subsystem-for-linux-overview/)  
+[9] [Installing the Docker client on Windows Subsystem for Linux(关键文章，需要翻墙)](https://medium.com/@sebagomez/installing-the-docker-client-on-ubuntus-windows-subsystem-for-linux-612b392a44c4)  
+[10] [docker问题：Problem running hello-world image(需要翻墙)](https://www.reddit.com/r/docker/comments/7vxhdu/problem_running_helloworld_image/)  
+[11] [利用window10的Linux子系统实现docker的安装使用](https://www.jianshu.com/p/d1b2b4240256)  
+[12] [docker docs官方文档](https://docs.docker.com/)  
+
