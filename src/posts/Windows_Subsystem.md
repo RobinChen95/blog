@@ -44,22 +44,18 @@ meta:                                 # If you have cover image
 
 + 请确认你安装的是Windows 10，并且版本在 build 16299以上
 
-+ 如何查看版本？按   <i class="fab fa-windows"></i>+R，输入cmd进入命令行，输入ver即可
-
-<img src="../img/windows-version.png"/>
-
-+ 接下来按   <i class="fab fa-windows"></i>+S，在搜索框中输入“启用或关闭Windows功能”
-
-<img src="../img/search-for-windows.png"/>
-
-在下拉选项中找到适用于Linux的Windows子系统（可能需要重启）：
-
-<img src="../img/windows-function-panel.png"/>
-
-然后在Microsoft Store中搜索Linux，点击安装即可：
-
++ 如何查看版本？按   <i class="fab fa-windows"></i>+R，输入cmd进入命令行，输入ver即可  
+![查看版本](../img/windows-version.png)
++ 接下来按   <i class="fab fa-windows"></i>+S，在搜索框中输入“启用或关闭Windows功能”  
+![查看windows功能](../img/search-for-windows.png)
+在下拉选项中找到适用于Linux的Windows子系统（可能需要重启）  
+同时在适用于Linux的Windows子系统和Hyper-V打勾  
+**注意，Hyper-V只有企业版/教育版/专业版Windows可用，同时，开启此选项是高危选项，如果发现任何问题，均可以取消勾选，Hyper-V只影响
+docker安装等高级功能**  
+![windows功能面板](../img/windows-function-panel.png)  
+然后在Microsoft Store中搜索Linux，点击安装即可：  
 <img src="../img/MSstore.png"/>
-
+![微软商店](../img/MSstore.png)  
 安装完成后，需要打开界面，等待软件installing的提示结束，就安装成功啦  <i class="fas fa-grin-wink"></i>
 
 ## 安装Oh-My-Zsh、cmder  
@@ -101,12 +97,16 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ```
 ## 报错记录
 
-> 1. 当修改了Windows计算机名称时报了一个错误：WslRegisterDistribution failed with error: 0x800703fa
->> 解决方法：在运行窗口中执行“services.msc”指令，在本地服务中重启 LxssManager 服务
+1. 当修改了Windows计算机名称时报了一个错误：WslRegisterDistribution failed with error: 0x800703fa  
+解决方法：在运行窗口中执行“services.msc”指令，在本地服务中重启 LxssManager 服务 
+ 
+2. 当想用脚本cd打开到工作目录的时候，出现了一直执行`sh start.sh`还是在原目录的情况  
+这是因为Shell会fork一个子进程，然后子进程通过exec执行程序，所以每次执行完都会停留在原目录。  
+如果要强制父bash执行呢？加入修饰符`source`或者`.`，即使用指令`. ./start.sh`或者`source start.sh`  
 
-> 2. 当想用脚本cd打开到工作目录的时候，出现了一直执行`sh start.sh`还是在原目录的情况
->> 这是因为Shell会fork一个子进程，然后子进程通过exec执行程序，所以每次执行完都会停留在原目录。
->> 如果要强制父bash执行呢？加入修饰符`source`或者`.`，即使用指令`. ./start.sh`或者`source start.sh`
+3. 想用docker run hello-world报错：  
+docker: failed to register layer: Error processing tar file(exit status 1): invalid argument.  
+原因是在docker上的这一个image不兼容NTFS文件系统，未找到解决方法
 
 ## 结语
 
