@@ -91,10 +91,18 @@ git push origin master
 
 ## 问题记录
 
-1. 制作分享栏的时候，遇到了`yarn run build`与`yarn run dev`的网页效果不一样的问题。在开发的时候`yarn run dev`是没有问题的，但是`yarn run build`的时候分享列表的图标显示不出来，排查出来的问题是~/theme/components/SharePost.Vue下面引用了一个异常的类`class="share__item list"`导致了这个问题，原因不明。
-
-2. 在添加Categories的时候遇到了path错误，这个错误是因为.md文件写错了，以后注意检查
-
-3. 在Windwos下使用新建文本文档会乱码，此时需要在Notepad等软件里面制定使用UTF-8的格式编码，猜测是因为Windwos会在txt文件的开头添加一部分东西，或者指定了GBK编码导致的，[此文章曾经出现乱码](http://101.200.53.152/posts/Federation.html)。
-
-4. Windows下的截屏软件snippingtool会存储后缀名为.PNG的文件，而.PNG在Linux下编译会报错，需要修改为小写的.png
+1. 制作分享栏的时候，遇到了`yarn run build`与`yarn run dev`的网页效果不一样的问题。在开发的时候`yarn run dev`是没有问题的，
+但是`yarn run build`的时候分享列表的图标显示不出来，排查出来的问题是~/theme/components/SharePost.Vue
+下面引用了一个异常的类`class="share__item list"`导致了这个问题，原因不明。  
+2. 在添加Categories的时候遇到了path错误，这个错误是因为.md文件写错了，以后注意检查。  
+3. 在Windwos下使用新建文本文档会乱码，此时需要在Notepad等软件里面制定使用UTF-8的格式编码，猜测是因为Windwos会在txt文件的开头添加一部分东西，
+或者指定了GBK编码导致的，[此文章曾经出现乱码](http://101.200.53.152/posts/Federation.html)。  
+4. Windows下的截屏软件snippingtool会存储后缀名为.PNG的文件，而.PNG在Linux下编译会报错，需要修改为小写的.png  
+5. 服务器安装oh-my-zsh之后，yarn命令报错：ERROR: There are no scenarios; must have at least one.  
+解决方法：
+```bash
+# 此方法也可以用于重新安装yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+sudo apt install yarn

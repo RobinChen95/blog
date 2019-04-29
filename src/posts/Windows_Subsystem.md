@@ -110,8 +110,17 @@ $ echo "source \$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlight
 
 3. 想用`docker run hello-world`报错：  
 docker: failed to register layer: Error processing tar file(exit status 1): invalid argument.  
-原因是在docker上的这一个image不兼容NTFS文件系统，未找到解决方法
+原因是在docker上的这一个image不兼容NTFS文件系统，未找到解决方法  
 
+4. 服务器安装oh-my-zsh之后，yarn命令报错：ERROR: There are no scenarios; must have at least one.  
+解决方法：  
+```bash
+# 此方法也可以用于重新安装yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+sudo apt install yarn
+```
 ## 结语
 
 微软是一个人民的好公司，不仅做出了在Windwos10里面塞一个完整的Linux子系统的骚操作，还收购了Github提供了私有仓库，
