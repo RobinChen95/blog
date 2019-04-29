@@ -106,3 +106,10 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update
 sudo apt install yarn
+```
+6. 域名突然无法访问，查看nginx，报了各种错误，最后通过杀掉占用80端口的进程，重启nginx恢复成功  
+相关代码：  
+```bash
+sudo fuser -k 80/tcp #关闭占用80端口的程序
+nginx
+```
