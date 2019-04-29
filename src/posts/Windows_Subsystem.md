@@ -72,7 +72,7 @@ cmder是一个windows下一个好用的命令行软件[下载地址](https://cmd
 %windir%\system32\bash.exe ~ -cur_console:p5
 ```
 在BackGround中可以修改背景图片，最后配置好的cmder如图：  
-![cmder setting](../img/cmder.png)  
+![cmder finished](../img/cmder.png)  
 在General下，可以选择Interface Language为简体中文  
 同时，需要在粘贴选项下，将粘贴模式Ctrl+V改为多行  
 最后重启cmder即可。  
