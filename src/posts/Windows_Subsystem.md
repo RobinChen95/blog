@@ -88,6 +88,17 @@ cmder是一个windows下一个好用的命令行软件[下载地址](https://cmd
 在BackGround中可以修改背景图片，最后配置好的cmder如图：  
 ![cmder setting](../img/cmder.png)  
 最后重启cmder即可。  
+
++ 配置zsh  
+插件1：zsh-autosuggestions:  
+一个自动提示过去使用过的命令的工具
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+vim ~/.zshrc
+# 在.zshrc末尾添加： Load zsh-autosuggestions.
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+```
 ## 报错记录
 
 > 1. 当修改了Windows计算机名称时报了一个错误：WslRegisterDistribution failed with error: 0x800703fa
@@ -99,9 +110,9 @@ cmder是一个windows下一个好用的命令行软件[下载地址](https://cmd
 
 ## 结语
 
-微软是一个人民的好公司，不仅做出了在Windwos10里面塞一个完整的Linux子系统的骚操作，还收购了Github提供了私有仓库，~~感谢微软爸爸~~。今天的遭遇再次印证了当初的那个想法，Windows其实比Mac更适合编程，(~~Linus本人也夸过微软的姿势水平高~~)只是我等菜鸡还没有达到那个水平，把Mac高度集成的系统错认为了好用。
-
-记得配置cmder
+微软是一个人民的好公司，不仅做出了在Windwos10里面塞一个完整的Linux子系统的骚操作，还收购了Github提供了私有仓库，
+~~感谢微软爸爸~~。今天的遭遇再次印证了当初的那个想法，Windows其实比Mac更适合编程，
+(~~Linus本人也夸过微软的姿势水平高~~)只是我等菜鸡还没有达到那个水平，把Mac高度集成的系统错认为了好用。
 
 ## ~~安装子系统的原因~~
 
@@ -109,11 +120,15 @@ cmder是一个windows下一个好用的命令行软件[下载地址](https://cmd
 
 > 早上发现Windows的PowerShell还是太难用了，无论装什么插件都拯救不了PowerShell，所以下午刚吃完饭就打起了装个Linux的主意。
 
-+ 首先试了试Vmware，Vmware安装倒是挺方便的，但是在安装Vmware Tools的时候，软件已经提示我安装正确了，但是关闭Terminal之后还是(~~屎~~)一样的分辨率，遂放弃。
++ 首先试了试Vmware，Vmware安装倒是挺方便的，但是在安装Vmware Tools的时候，软件已经提示我安装正确了，
+但是关闭Terminal之后还是(~~屎~~)一样的分辨率，遂放弃。
 
-+ 后来又打起了装个双系统的主意，装双系统其实还是挺简单的，但是Ubuntu总是默认会覆盖掉我的Windows Boot Manager，而不会乖乖的呆在机械硬盘里，~~作为一个肥宅，没人能动我的Windows~~，遂把Ubuntu整个连根拔起，连Ubuntu的MBR都一起删了
++ 后来又打起了装个双系统的主意，装双系统其实还是挺简单的，但是Ubuntu总是默认会覆盖掉我的Windows Boot Manager，
+而不会乖乖的呆在机械硬盘里，~~作为一个肥宅，没人能动我的Windows~~，遂把Ubuntu整个连根拔起，连Ubuntu的MBR都一起删了
 
-+ 在打算放弃的时候，偶然间发现Windows可以运行Linux子系统，惊闻微软爸爸的操作，于是一顿谷歌加百度，在MicroSoft Store中找到了Ubuntu 16.04，喜出望外，一顿安装，竟然能用，不仅能用，还挺好用，唯一出了一个问题就是网络连接老是出问题，为了能联网更新apt-get安装软件，期间想了无数解决办法：
++ 在打算放弃的时候，偶然间发现Windows可以运行Linux子系统，惊闻微软爸爸的操作，于是一顿谷歌加百度，
+在MicroSoft Store中找到了Ubuntu 16.04，喜出望外，一顿安装，竟然能用，不仅能用，还挺好用，唯一出了一个问题就是网络连接老是出问题，
+为了能联网更新apt-get安装软件，期间想了无数解决办法：
 1. 尝试过更换阿里/清华/网易/中科大源，都不行
 2. 还尝试过以上四者都写入source.list，最后会报一堆的 Ing:xxx
 3. 还想过转换http和https、打开VPN等等的骚操作
