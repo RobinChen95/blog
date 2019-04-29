@@ -45,33 +45,27 @@ meta:                                 # If you have cover image
 + 请确认你安装的是Windows 10，并且版本在 build 16299以上
 
 + 如何查看版本？按   <i class="fab fa-windows"></i>+R，输入cmd进入命令行，输入ver即可  
-![查看版本](../img/windows-version.png)
+![查看版本](../img/windows-version.png)  
 + 接下来按   <i class="fab fa-windows"></i>+S，在搜索框中输入“启用或关闭Windows功能”  
-![查看windows功能](../img/search-for-windows.png)
+![查看windows功能](../img/search-for-windows.png)  
 在下拉选项中找到适用于Linux的Windows子系统（可能需要重启）  
 同时在适用于Linux的Windows子系统和Hyper-V打勾  
 **注意，Hyper-V只有企业版/教育版/专业版Windows可用，同时，开启此选项是高危选项，如果发现任何问题，均可以取消勾选，Hyper-V只影响
 docker安装等高级功能**  
 ![windows功能面板](../img/windows-function-panel.png)  
 然后在Microsoft Store中搜索Linux，点击安装即可：  
-<img src="../img/MSstore.png"/>
 ![微软商店](../img/MSstore.png)  
-安装完成后，需要打开界面，等待软件installing的提示结束，就安装成功啦  <i class="fas fa-grin-wink"></i>
+安装完成后，**需要打开界面，等待软件installing的提示结束**，就安装成功啦  <i class="fas fa-grin-wink"></i>
 
 ## 安装Oh-My-Zsh、cmder  
 在上面的步骤中，如果没有遇到报错，那么就会有一个基本能够运行的Linux子系统，到此基本的配置已经结束，Linux系统已经可以使用了，
-此节往后的内容是为了配置一个更友好的Bash界面。   
-+  安装Oh-My-Zsh：  
+此节往后的内容是为了配置一个更友好的Bash界面,可以不用配置。   
++ 首先需要更换WSL(Windows Subsystem for Linux)的源为国内，[更换方法](https://blog.csdn.net/qq_35451572/article/details/79516563)  
++ 安装Oh-My-Zsh：  
 ```bash
-$ sudo apt-get install zsh
-$ zsh --version
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
 ```
-在/home/$name/.bash_profile目录下找到.bash_profile，如果没有就建一个，这是个隐藏的文件，需要ls -a来查看。打开并在末尾加上:
-```bash
-exec zsh
-source .zshrc
-```
-禁止自动更新可以到~/.zshrc下找到DISABLE_AUTO_UPDATE一行，将行首的注释'#'去掉即可。  
+禁止Oh-My-Zsh自动更新可以到~/.zshrc下找到DISABLE_AUTO_UPDATE一行，将行首的注释'#'去掉即可。  
 
 + 安装配置cmder：  
 cmder是一个windows下一个好用的命令行软件[下载地址](https://cmder.net/)，点击Download Full，解压之后即可使用。  
@@ -83,6 +77,8 @@ cmder是一个windows下一个好用的命令行软件[下载地址](https://cmd
 ```
 在BackGround中可以修改背景图片，最后配置好的cmder如图：  
 ![cmder setting](../img/cmder.png)  
+在General下，可以选择Interface Language为简体中文  
+同时，需要在粘贴选项下，将粘贴模式Ctrl+V改为多行  
 最后重启cmder即可。  
 
 + 配置zsh  
@@ -90,7 +86,6 @@ cmder是一个windows下一个好用的命令行软件[下载地址](https://cmd
 一个自动提示过去使用过的命令的工具
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 vim ~/.zshrc
 # 在.zshrc末尾添加： Load zsh-autosuggestions.
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -140,5 +135,5 @@ docker: failed to register layer: Error processing tar file(exit status 1): inva
 [2] [Windows10终端优化方案：Ubuntu子系统+cmder+oh-my-zsh](https://zhuanlan.zhihu.com/p/34152045)  
 [3] [Mac终端配置教程](https://wyydsb.xin/other/terminal.html)  
 [4] [Windows PowerShell改造教程](https://zhuanlan.zhihu.com/p/56808199)  
-[5] [cmder调用bash后方向键无法使用的问题](https://www.zhihu.com/question/57653031)
-[6] [Github速度慢的解决方法](https://blog.csdn.net/DlMmU/article/details/79562021)
+[5] [cmder调用bash后方向键无法使用的问题](https://www.zhihu.com/question/57653031)  
+[6] [Github速度慢的解决方法](https://blog.csdn.net/DlMmU/article/details/79562021)  
