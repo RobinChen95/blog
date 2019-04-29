@@ -3,9 +3,9 @@ view: post
 layout: post                          # Only in unique we use the "layout: post"
 lang: en                              # Lang is required
 author: 陈国强
-title: Windows Linux子系统安装总结
+title: WSL安装与cmder配置
 description:
-excerpt:
+excerpt: WSL：Windows Subsystem for Linux
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
@@ -15,8 +15,8 @@ categories:
   - Back_end
 tags:
   - vue.js
-created_at: 2019-03-13 00:00
-updated_at: 2019-03-13 00:00
+created_at: 2019-04-30 04:00
+updated_at: 2019-04-30 04:00
 meta:                                 # If you have cover image
   - property: og:image
     content: /images/posts/my-first-post.png
@@ -24,41 +24,37 @@ meta:                                 # If you have cover image
     content: /images/posts/my-first-post.png
 ---
 
-# Windows Linux子系统安装总结
+## 什么是WSL？为什么安装Linux子系统？
 
----
-
-## 为什么安装Linux子系统
-
-+ **免费 免费 免费**
-
-+ 省去了安装虚拟机的麻烦，同时也没有安装双系统的风险，安装方便
-
-+ 卸载方便，就像卸载一个iPhone App一样简单
-
-+ 这个Linux App与原生Linux一样，并且**可以直接访问Windows本地的文件系统**
-
-+ 同时拥有Windows和Linux两个系统，没有虚拟机复制文件的烦恼，也省去了双系统切换的功夫，~~还能打游戏，做PPT~~ヽ（゜▽゜)ノ，完美解决了Linux所有弊端。
+> 什么是WSL？
++ WSL：Windows Subsystem for Linux，顾名思义，即是Windows下的Linux子系统  
++ WSL基本实现了Linux下所有的功能，并且**可以直接访问Windows本地的文件系统**，两个系统的文件是互通的  
++ WSL在大部分情况下可以直接替代Linux虚拟机，只有少数情况会出问题，但是用于学习与初级开发已经足够
+> 为什么安装WSL?  
++ **免费 免费 免费**  
++ 省去了安装虚拟机的麻烦，同时也没有安装双系统的风险，安装方便  
++ 卸载方便，就像卸载一个iPhone App一样简单，随时不想要随时卸载重装  
++ 同时拥有Windows和Linux两个系统，没有虚拟机复制文件的烦恼，也省去了双系统切换的功夫，~~还能打游戏，做PPT~~ヽ（゜▽゜)ノ，完美解决了Linux所有弊端。  
 
 ## 如何在Windows上启动Linux子系统
 
-+ 请确认你安装的是Windows 10，并且版本在 build 16299以上
-
++ 请确认你安装的是Windows 10，并且版本在 build 16299以上  
 + 如何查看版本？按   <i class="fab fa-windows"></i>+R，输入cmd进入命令行，输入ver即可  
 ![查看版本](../img/windows-version.png)  
 + 接下来按   <i class="fab fa-windows"></i>+S，在搜索框中输入“启用或关闭Windows功能”  
 ![查看windows功能](../img/search-for-windows.png)  
 在下拉选项中找到适用于Linux的Windows子系统（可能需要重启）  
 同时在适用于Linux的Windows子系统和Hyper-V打勾  
-**注意，Hyper-V只有企业版/教育版/专业版Windows可用，同时，开启此选项是高危选项，如果发现任何问题，均可以取消勾选，Hyper-V只影响
-docker安装等高级功能**  
+**注意，Hyper-V只有企业版/教育版/专业版Windows可用。同时，开启此选项是高危选项  
+如果发现任何问题，均可以取消勾选，Hyper-V只影响docker安装等高级功能**  
 ![windows功能面板](../img/windows-function-panel.png)  
 然后在Microsoft Store中搜索Linux，点击安装即可：  
 ![微软商店](../img/MSstore.png)  
 安装完成后，**需要打开界面，等待软件installing的提示结束**，就安装成功啦  <i class="fas fa-grin-wink"></i>
 
 ## 安装Oh-My-Zsh、cmder  
-在上面的步骤中，如果没有遇到报错，那么就会有一个基本能够运行的Linux子系统，到此基本的配置已经结束，Linux系统已经可以使用了，
+
+在上面的步骤中，如果没有遇到报错，那么就会有一个基本能够运行的Linux子系统，到此基本的配置已经结束，Linux系统已经可以使用了  
 此节往后的内容是为了配置一个更友好的Bash界面,可以不用配置。   
 + 首先需要更换WSL(Windows Subsystem for Linux)的源为国内，[更换方法](https://blog.csdn.net/qq_35451572/article/details/79516563)  
 + 安装Oh-My-Zsh：  
