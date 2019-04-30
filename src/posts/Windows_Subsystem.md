@@ -56,7 +56,8 @@ meta:                                 # If you have cover image
 ## 安装Oh-My-Zsh、cmder  
 
 在上面的步骤中，如果没有遇到报错，那么就会有一个基本能够运行的Linux子系统，到此基本的配置已经结束，Linux系统已经可以使用了  
-此节往后的内容是为了配置一个更友好的Bash界面,可以不用配置。   
+此节往后的内容是为了配置一个更友好的Bash界面,不是必要选项，配置效果：  
+![cmder finished](../img/cmder.png)  
 + 首先需要更换WSL(Windows Subsystem for Linux)的源为国内，[更换方法](https://blog.csdn.net/qq_35451572/article/details/79516563)  
 + 安装Oh-My-Zsh：  
 ```bash
@@ -67,14 +68,13 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 + 安装配置cmder：  
 cmder是一个windows下一个好用的命令行软件[下载地址](https://cmder.net/)，点击Download Full，解压之后即可使用。  
 配置cmder：在标题栏右键，选择Settings，然后选择Startup，在Comand line中输入如下：  
-![cmder setting](../img/cmder_setting.png)  
 ```bash
 # 加上后缀-cur_console:p5是为了保证在vim下方向键可用
 %windir%\system32\bash.exe ~ -cur_console:p5
 ```
-在BackGround中可以修改背景图片，最后配置好的cmder如图：  
-![cmder finished](../img/cmder.png)  
-最后在粘贴选项下，将粘贴模式Ctrl+V改为多行，并且取消勾选粘贴警告，重启cmder   
+![cmder setting](../img/cmder_setting.png)  
+在BackGround中可以修改背景为自己的图片，还可以调整透明度  
+在粘贴选项下，将粘贴模式Ctrl+V改为多行，并且取消勾选粘贴警告，重启cmder   
 
 配置zsh  
 修改~/.zshrc之后不需要source命令，因为source命令是用来使sh脚本生效的，zshrc配置好之后下次进入就可以看见效果了。  
