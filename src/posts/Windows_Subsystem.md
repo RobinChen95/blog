@@ -41,13 +41,14 @@ meta:                                 # If you have cover image
 + 请确认你安装的是Windows 10，并且版本在 build 16299以上  
 + 如何查看版本？按   <i class="fab fa-windows"></i>+R，输入cmd进入命令行，输入ver即可  
 ![查看版本](../img/windows-version.png)  
++ 打开开发者模式  
+打开设置菜单，更新和安全，开发者选项，然后选择开发者模式。  
 + 接下来按   <i class="fab fa-windows"></i>+S，在搜索框中输入“启用或关闭Windows功能”  
-![查看windows功能](../img/search-for-windows.png)  
-在下拉选项中找到适用于Linux的Windows子系统（可能需要重启）  
-同时在适用于Linux的Windows子系统和Hyper-V打勾  
+或者打开设置菜单，找到应用和功能，右方打开程序和功能，然后点击启动或者关闭windows功能。  
+向下拉，看到适用于linux的windows子系统，打上勾  
+如果需要安装Docker，则需要在Hyper-V选项上打勾，然后重启电脑  
 **注意，Hyper-V只有企业版/教育版/专业版Windows可用。同时，开启此选项是高危选项  
 如果发现任何问题，均可以取消勾选，Hyper-V只影响docker安装等高级功能**  
-![windows功能面板](../img/windows-function-panel.png)  
 然后在Microsoft Store中搜索Linux，点击安装即可：  
 ![微软商店](../img/MSstore.png)  
 安装完成后，**需要打开界面，等待软件installing的提示结束**，就安装成功啦  <i class="fas fa-grin-wink"></i>
@@ -148,7 +149,7 @@ sudo apt install yarn
 [6] [Github速度慢的解决方法](https://blog.csdn.net/DlMmU/article/details/79562021)  
 [7] [oh-my-zsh配置](https://www.jianshu.com/p/0f3dcec21a97)  
 [8] [Windows Subsystem for Linux Overview](https://blogs.msdn.microsoft.com/wsl/2016/04/22/windows-subsystem-for-linux-overview/)  
-[9] [Installing the Docker client on Windows Subsystem for Linux(关键文章，需要翻墙)](https://medium.com/@sebagomez/installing-the-docker-client-on-ubuntus-windows-subsystem-for-linux-612b392a44c4)  
+[9] [Installing the Docker client on Windows Subsystem for Linux(需要翻墙)](https://medium.com/@sebagomez/installing-the-docker-client-on-ubuntus-windows-subsystem-for-linux-612b392a44c4)  
 [10] [docker问题：Problem running hello-world image(需要翻墙)](https://www.reddit.com/r/docker/comments/7vxhdu/problem_running_helloworld_image/)  
 [11] [利用window10的Linux子系统实现docker的安装使用](https://www.jianshu.com/p/d1b2b4240256)  
 [12] [docker docs官方文档](https://docs.docker.com/)  
