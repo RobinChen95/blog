@@ -74,11 +74,9 @@ cmder是一个windows下一个好用的命令行软件[下载地址](https://cmd
 ```
 在BackGround中可以修改背景图片，最后配置好的cmder如图：  
 ![cmder finished](../img/cmder.png)  
-在General下，可以选择Interface Language为简体中文  
-同时，需要在粘贴选项下，将粘贴模式Ctrl+V改为多行  
-最后重启cmder即可。  
+最后在粘贴选项下，将粘贴模式Ctrl+V改为多行，并且取消勾选粘贴警告，重启cmder   
 
-+ 配置zsh  
+配置zsh  
 修改~/.zshrc之后不需要source命令，因为source命令是用来使sh脚本生效的，zshrc配置好之后下次进入就可以看见效果了。  
 
 插件1：zsh-autosuggestions:  
@@ -89,6 +87,7 @@ vim ~/.zshrc
 # 在.zshrc末尾添加： Load zsh-autosuggestions.
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ```
+
 插件2：zsh-syntax-highlighting:  
 一个提示shell命令是否正确的提示工具  
 ```bash
@@ -97,6 +96,7 @@ $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM
 # 此句与上一个在.zshrc末尾添加一个效果
 $ echo "source \$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
+
 ## 报错记录
 
 1. 当修改了Windows计算机名称时报了一个错误：WslRegisterDistribution failed with error: 0x800703fa  
