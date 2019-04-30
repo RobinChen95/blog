@@ -106,7 +106,7 @@ $ echo "source \$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlight
 
 3. 想用`docker run hello-world`报错：  
 docker: failed to register layer: Error processing tar file(exit status 1): invalid argument.  
-原因是在docker上的这一个image不兼容NTFS文件系统，未找到解决方法  
+原因是在docker上的这一个image不兼容NTFS文件系统  
 
 4. 服务器安装oh-my-zsh之后，yarn命令报错：ERROR: There are no scenarios; must have at least one.  
 解决方法：  
