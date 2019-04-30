@@ -5,7 +5,7 @@ lang: en                              # Lang is required
 author: 陈国强
 title: Nachos修改记录
 description:
-excerpt: 记录高级操作系统课程所学
+excerpt: 使用Docker的ubuntu镜像自制的Nachos系统
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
@@ -23,10 +23,14 @@ meta:                                 # If you have cover image
     content: /images/posts/my-first-post.png
 ---
 
-## 使用Docker安装32bit/ubuntu:16.04
+## Docker安装32bit/ubuntu  
+
+---  
 如果你是Linux/Unix系统那么不用看这一条  
-[Windows Docker安装教程](https://www.runoob.com/docker/windows-docker-install.html)  
-[Windows如何打开Hyper-V？（家庭版没有Hyper-V功能）](https://jingyan.baidu.com/article/f96699bbf2b889894f3c1b6f.html)  
+1、[Windows Docker安装教程](https://www.runoob.com/docker/windows-docker-install.html)  
+2、[Windows如何打开Hyper-V？（家庭版没有Hyper-V功能）](https://jingyan.baidu.com/article/f96699bbf2b889894f3c1b6f.html)  
+---  
+
 以下以ubuntu 16.04为例安装docker：  
 ```bash
 # 1.选择国内的云服务商，这里选择阿里云为例
@@ -50,7 +54,7 @@ sudo systemctl start docker
 # 9.测试docker
 docker -v
 ```
-使用docker安装32bit/ubuntu镜像（因为实验需要32位环境）：
+使用docker安装32bit/ubuntu镜像（因为实验需要32位环境）：  
 ```bash
 # docker拉取32bit/ubuntu:16.04镜像
 docker pull 32bit/ubuntu:16.04
