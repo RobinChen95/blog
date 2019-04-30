@@ -25,11 +25,11 @@ meta:                                 # If you have cover image
 
 ## Docker安装32bit/ubuntu  
 
----  
 如果你是Linux/Unix系统那么不用看这一条  
 1、[Windows Docker安装教程](https://www.runoob.com/docker/windows-docker-install.html)  
-2、[Windows如何打开Hyper-V？（家庭版没有Hyper-V功能）](https://jingyan.baidu.com/article/f96699bbf2b889894f3c1b6f.html)  
----  
+2、[Windows如何打开Hyper-V？（家庭版没有Hyper-V功能）](https://jingyan.baidu.com/article/f96699bbf2b889894f3c1b6f.html) 
+
+---
 
 以下以ubuntu 16.04为例安装docker：  
 ```bash
