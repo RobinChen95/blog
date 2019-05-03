@@ -1,14 +1,14 @@
 module.exports = [
   {
-    text: '打广告是不可能打广告的，这辈子都不可能打广告的',
-    link: `http://101.200.53.152/`,
+    text: 'Be social, Be modest',
+    link: `https://www.robinchen95.com/about/`,
     image: {
       src: '/general/web-development.png',
-      alt: '我的个人博客'
+      alt: 'About the author'
     },
     by: {
-      text: '我的个人博客',
-      link: `http://101.200.53.152/`
+      text: 'About the author',
+      link: `https://www.robinchen95.com/about/`
     }
   },
 ]
