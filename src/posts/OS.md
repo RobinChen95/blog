@@ -87,9 +87,51 @@ makefile定义了一系列的规则来指定，哪些文件需要先编译，哪
 C源码文件会先生成中间目标文件，再由中间文件生成执行文件，makefile文件就是告诉make命令怎么样去编译与链接程序   
 ### 2. make, make install, configure的区别  
 
-+ ./configure用于检测安装平台，是一个shell脚本  
+./configure用于检测安装平台，是一个shell脚本  
 ./configure一般用于生成MakeFile，为下一步编译做准备，例如代码：<label style="color:red">./configure --prefix=/usr</label>意为将软件安装到/usr下面  
-+ make：用于编译，从MakeFile中读取指令，然后编译  
-+ make install：用于安装，从MakeFile中读取指令，安装到特定位置，可以用make uninstall来卸载  
+make：用于编译，从MakeFile中读取指令，然后编译  
+make install：用于安装，从MakeFile中读取指令，安装到特定位置，可以用make uninstall来卸载  
+
+### 3.错误解决
+由于使用的是docker的最小化安装，所以部分软件如g++与ed没有，所以应该先行安装部分软件。
+安装软件之前先换源到阿里云，不过由于vim与nano也没有，编辑/etc/apt/sources.list时应该使用linux自带的vi编辑器编辑文本
+
+```bash
+# 先换源
+sudo vi /etc/apt/sources.list
+# 将以下内容覆盖原内容，然后保存退出
+deb http://mirrors.aliyun.com/ubuntu/ xenial main
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial main
+
+deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main
+
+deb http://mirrors.aliyun.com/ubuntu/ xenial universe
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial universe
+deb http://mirrors.aliyun.com/ubuntu/ xenial-updates universe
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates universe
+
+deb http://mirrors.aliyun.com/ubuntu/ xenial-security main
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main
+deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security universe
+# 更新源
+sudo apt-get update
+```
+然后开始安装缺少的软件与安装nachos：  
+```bash
+# 安装开发必备软件
+sudo apt-get install build-essential
+# 安装ed
+sudo apt-get install ed
+# 可以make，完成安装
+make
+# 进入 threads 子目录 cd threads
+make depend
+# 编译生成 nachos
+make nachos
+# 运行 nachos
+./nachos
+```
 
 ## Lab1
