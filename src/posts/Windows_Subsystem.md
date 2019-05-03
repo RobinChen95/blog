@@ -19,9 +19,9 @@ created_at: 2019-04-30 04:00
 updated_at: 2019-04-30 04:00
 meta:                                 # If you have cover image
   - property: og:image
-    content: /images/posts/my-first-post.png
+    content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
   - name: twitter:image
-    content: /images/posts/my-first-post.png
+    content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
 ---
 
 ## 什么是WSL？为什么安装Linux子系统？
