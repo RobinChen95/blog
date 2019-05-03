@@ -187,7 +187,7 @@
     cursor: pointer
     display: inline-flex
     top: -3px
-    color:#239a3b
+    color:#39C5BB
 
 .far
     font-size: 13px
@@ -197,7 +197,7 @@
     cursor: pointer
     display: inline-flex
     top: -3px
-    color:#239a3b
+    color:#39C5BB
 
 .fake-hide
   position: absolute;
