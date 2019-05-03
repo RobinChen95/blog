@@ -22,10 +22,11 @@ meta:                                 # If you have cover image
     content: /images/posts/my-first-post.png
 ---
 
-## 更换源为阿里或者清华
+## 更换源为阿里、清华或者网易
 更换阿里源：  
 ```bash
-# 打开apt源所在的问价，注意只有vi是linux自带的文本编辑器
+# 打开apt源的文件
+# 注意只有vi是linux自带的文本编辑器，部分mini安装的Linux没有vim与nano
 sudo vi /etc/apt/sources.list
 # 将以下内容覆盖原内容，然后保存退出
 deb http://mirrors.aliyun.com/ubuntu/ xenial main
@@ -48,7 +49,8 @@ sudo apt-get update
 ```
 更换清华源：  
 ```bash
-# 打开apt源所在的问价，注意只有vi是linux自带的文本编辑器
+# 打开apt源源的文件
+# 注意只有vi是linux自带的文本编辑器，部分mini安装的Linux没有vim与nano
 sudo vi /etc/apt/sources.list
 # 将以下内容覆盖原内容，然后保存退出
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
@@ -64,7 +66,8 @@ sudo apt-get update
 ```
 更换网易源：  
 ```bash
-# 打开apt源所在的问价，注意只有vi是linux自带的文本编辑器
+# 打开apt源源的文件
+# 注意只有vi是linux自带的文本编辑器，部分mini安装的Linux没有vim与nano
 sudo vi /etc/apt/sources.list
 # 将以下内容覆盖原内容，然后保存退出
 deb http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse
@@ -91,8 +94,8 @@ scp -r root@101.200.53.152:/myblog /mnt/c
 # 上传文件就是将scp后的参数倒过来就行
 ```
 
-## ssh与git不用输入密码的设置  
-### ssh  
+## SSH与Git不用输入密码的设置  
+### SSH  
 在本机上的操作：  
 ```bash
 # 如果没有.ssh文件夹，那么运行命令，直接按三次空格即可
@@ -110,7 +113,7 @@ cat id_rsa.pub >> authorized_keys
 rm id_rsa.pub
 ```
 ---
-### git  
+### Git  
 Github也可以按照上述操作，使用ssh的方式  
 也可以输入命令：  
 ```bash
