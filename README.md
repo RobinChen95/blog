@@ -1,7 +1,8 @@
 # Constructing now  
-**The blog is constructing, and is wait to be released**  
+**The blog is constructing, and waiting to be released**  
 ## [WebSite](https://www.robinchen95.com/)  
 ## Front-end theme:  
 A boilerplate for [vuepress-theme-ktquez](https://github.com/ktquez/vuepress-theme-ktquez)  
 ## Back-end :
 ngnix
+![Thank you](./src/img/Thank_you.jpg)
