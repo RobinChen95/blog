@@ -18,9 +18,9 @@ created_at: 2019-04-30 15:00
 updated_at: 2019-04-30 15:00
 meta:                                 # If you have cover image
   - property: og:image
-    content: /images/posts/my-first-post.png
+    content: /images/posts/watermark-logo.png
   - name: twitter:image
-    content: /images/posts/my-first-post.png
+    content: /images/posts/watermark-logo.png
 ---
 
 ## Docker安装32bit/ubuntu  
