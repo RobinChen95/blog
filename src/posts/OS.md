@@ -92,7 +92,17 @@ C源码文件会先生成中间目标文件，再由中间文件生成执行文�
 make：用于编译，从MakeFile中读取指令，然后编译  
 make install：用于安装，从MakeFile中读取指令，安装到特定位置，可以用make uninstall来卸载  
 
-### 3.错误解决
+### 3. 拷贝文件  
+Linux系统之间拷贝文件可以用scp命令：
+```bash
+# 例1：将服务器的pull.sh脚本拷贝到C盘
+scp root@101.200.53.152:/myblog/pull.sh /mnt/c
+# 例2：将服务器的/myblog脚本拷贝到C盘，加一个-r即可
+scp -r root@101.200.53.152:/myblog /mnt/c
+# 上传文件就是将scp后的参数倒过来就行
+```
+
+### 4. 错误解决
 由于使用的是docker的最小化安装，所以部分软件如g++与ed没有，所以应该先行安装部分软件。
 安装软件之前先换源到阿里云，不过由于vim与nano也没有，编辑/etc/apt/sources.list时应该使用linux自带的vi编辑器编辑文本
 
@@ -135,3 +145,6 @@ make nachos
 ```
 
 ## Lab1
+
+## 参考文章  
+[1] [Linux scp命令](https://www.cnblogs.com/webnote/p/5877920.html)

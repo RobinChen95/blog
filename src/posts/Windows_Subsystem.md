@@ -80,7 +80,7 @@ cmder是一个windows下一个好用的命令行软件[下载地址](https://cmd
 修改~/.zshrc之后不需要source命令，因为source命令是用来使sh脚本生效的，zshrc配置好之后下次进入就可以看见效果了。  
 
 插件1：zsh-autosuggestions:  
-一个自动提示过去使用过的命令的工具
+一个自动提示过去使用过的命令的工具  
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 vim ~/.zshrc
