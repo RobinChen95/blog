@@ -17,9 +17,9 @@ created_at: 2019-05-03 23:00
 updated_at: 2019-05-03 23:00
 meta:                                 # If you have cover image
   - property: og:image
-    content: /images/posts/my-first-post.png
+    content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
   - name: twitter:image
-    content: /images/posts/my-first-post.png
+    content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
 ---
 
 ## 更换源为阿里、清华或者网易
