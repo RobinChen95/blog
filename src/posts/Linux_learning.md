@@ -5,7 +5,7 @@ lang: en                              # Lang is required
 author: 陈国强
 title: 零碎的Linux笔记
 description:
-excerpt: 本文仅需要复制粘贴对应的命令就可以实现对应的功能
+excerpt: 写作本文的目的：仅需要复制粘贴对应的命令就可以实现对应的功能，不用再一个个百度谷歌了
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
@@ -144,7 +144,7 @@ sudo systemctl start docker
 # 9.测试docker
 docker -v
 ```
-使用docker安装32bit/ubuntu镜像（因为实验需要32位环境）：  
+使用docker安装32bit/ubuntu镜像：  
 ```bash
 # docker拉取32bit/ubuntu:16.04镜像
 docker pull 32bit/ubuntu:16.04

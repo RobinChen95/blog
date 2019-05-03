@@ -3,7 +3,7 @@ view: post
 layout: post                          # Only in unique we use the "layout: post"
 lang: en                              # Lang is required
 author: 陈国强
-title: WSL安装与cmder配置
+title: WSL安装与cmder配置教程
 description:
 excerpt: WSL：Windows Subsystem for Linux
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
@@ -119,14 +119,12 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt update
 sudo apt install yarn
 ```
-## 结语
-
+## 写在最后的感想  
+### 关于工具的思考    
 微软是一个人民的好公司，不仅做出了在Windwos10里面塞一个完整的Linux子系统的骚操作，还收购了Github提供了私有仓库，
 ~~感谢微软爸爸~~。今天的遭遇再次印证了当初的那个想法，Windows其实比Mac更适合编程，
 (~~Linus本人也夸过微软的姿势水平高~~)只是我等菜鸡还没有达到那个水平，把Mac高度集成的系统错认为了好用。
-
-## ~~安装子系统的原因~~
-
+### ~~安装子系统的原因~~   
 > 今天和Ubuntu鏖战了一天。
 + 早上发现Windows的PowerShell还是太难用了，无论装什么插件都拯救不了PowerShell，所以下午刚吃完饭就打起了装个Linux的主意。  
 + 首先试了试Vmware，Vmware安装倒是挺方便的，但是在安装Vmware Tools的时候，软件已经提示我安装正确了，  
