@@ -5,7 +5,7 @@ lang: en                              # Lang is required
 author: 陈国强
 title: 零碎的Linux笔记
 description:
-excerpt: Linux一般不会系统地学习，用着用着就会了，关键还是在于多练
+excerpt: 本文仅需要复制粘贴对应的命令就可以实现对应的功能
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
@@ -22,9 +22,10 @@ meta:                                 # If you have cover image
     content: /images/posts/my-first-post.png
 ---
 
-## 更换源(Ubuntu)  
+## 更换源为阿里或者清华
+更换阿里源：  
 ```bash
-# 先换源
+# 打开apt源所在的问价，注意只有vi是linux自带的文本编辑器
 sudo vi /etc/apt/sources.list
 # 将以下内容覆盖原内容，然后保存退出
 deb http://mirrors.aliyun.com/ubuntu/ xenial main
@@ -45,6 +46,40 @@ deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security universe
 # 更新源
 sudo apt-get update
 ```
+更换清华源：  
+```bash
+# 打开apt源所在的问价，注意只有vi是linux自带的文本编辑器
+sudo vi /etc/apt/sources.list
+# 将以下内容覆盖原内容，然后保存退出
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+# 更新源
+sudo apt-get update
+```
+更换网易源：  
+```bash
+# 打开apt源所在的问价，注意只有vi是linux自带的文本编辑器
+sudo vi /etc/apt/sources.list
+# 将以下内容覆盖原内容，然后保存退出
+deb http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-security main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse
+# 更新源
+sudo apt-get update
+```
 
 ## 拷贝文件到服务器与从服务器下载文件  
 Linux系统之间拷贝文件可以用scp命令：  
@@ -57,7 +92,7 @@ scp -r root@101.200.53.152:/myblog /mnt/c
 ```
 
 ## ssh与git不用输入密码的设置  
-**ssh**  
+### ssh  
 在本机上的操作：  
 ```bash
 # 如果没有.ssh文件夹，那么运行命令，直接按三次空格即可
@@ -75,7 +110,7 @@ cat id_rsa.pub >> authorized_keys
 rm id_rsa.pub
 ```
 ---
-**git**  
+### git  
 Github也可以按照上述操作，使用ssh的方式  
 也可以输入命令：  
 ```bash
