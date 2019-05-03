@@ -6,7 +6,7 @@ author: 陈国强
 title: 博客搭建总结
 description:
 excerpt: 一篇面向新手的博客搭建文章
-cover: false                         # Leave false if the post does not have cover image, if there is set to true
+cover: true                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
 categories:

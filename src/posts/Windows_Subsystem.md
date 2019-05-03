@@ -6,7 +6,7 @@ author: 陈国强
 title: WSL安装与cmder配置教程
 description:
 excerpt: WSL：Windows Subsystem for Linux
-cover: false                         # Leave false if the post does not have cover image, if there is set to true
+cover: true                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
 categories:
