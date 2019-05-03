@@ -28,27 +28,24 @@ meta:                                 # If you have cover image
 > **[博客地址](https://www.robinchen95.com/)**
 ## 预备
 
-搭建博客首先要会一点Linux，至少需要会几个常用的命令，[Linux入门教程](http://linux.vbird.org/#)
-搭建博客首先要有自己的云服务器，~~当然也可以自己搭，不推荐~~  
-服务器可以从阿里云/腾讯云/新浪云购买  
-新浪云服务器比较特殊，是三者之中唯一一个提供备案域名的，但是只能用 ~~世界上最辣鸡的语言PHP~~  
-推荐购买阿里云的服务器，东西比较全，学生优惠9.9/月  
+搭建博客首先要会一点Linux，至少需要会几个常用的命令，[Linux入门教程](http://linux.vbird.org/#)，
+搭建博客首先要有自己的云服务器，~~当然也可以自己搭，不推荐~~，服务器可以从阿里云/腾讯云/新浪云购买，
+新浪云服务器比较特殊，是三者之中唯一一个提供备案域名的，但是只能用 ~~世界上最辣鸡的语言PHP~~，推荐购买阿里云的服务器，东西比较全，学生优惠9.9/月  
 
-连接服务器：
+使用Bash/Zsh操作服务器：
 Mac可以使用自带的Terminal，或者下载iTerm使用，配置教程：  
 [Mac终端配置教程](https://wyydsb.xin/other/terminal.html)
 Windows可以使用WSL，配置教程：  ·
 [WSL安装与cmder配置教程](https://www.robinchen95.com/posts/Windows_Subsystem.html)
-
-打开终端或者PowerShell，输入：  
+一些复制粘贴就能用的Linux功能：  
+[零碎的Linux笔记](https://www.robinchen95.com/posts/Linux_learning.html)
+SSH连接服务器：  
 ```bash
 ssh root@你的IP //也可以是root之外的其他账户
 输入密码之后就进入了对应Linux服务器的root账户文件夹下
 ```
-
 开始之前，首先部署一下Github的提交脚本。  
-先在Github新建一个仓库
-在服务器使用`mkdir`命令新建一个文件夹，使用`cd`命令打开，并输入如下命令：  
+先在Github新建一个仓库，在服务器使用`mkdir`命令新建一个文件夹，使用`cd`命令打开，并输入如下命令：  
 ```bash
 git init
 git remote add origin 你新仓库的url地址
