@@ -26,7 +26,7 @@ meta:                                 # If you have cover image
 ---
 
 > **[博客地址](https://www.robinchen95.com/)**
-## 预备
+## 预备  
 
 搭建博客首先要会一点Linux，至少需要会几个常用的命令，[Linux入门教程](http://linux.vbird.org/#)，
 搭建博客首先要有自己的云服务器，~~当然也可以自己搭，不推荐~~，服务器可以从阿里云/腾讯云/新浪云购买，
