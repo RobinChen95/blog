@@ -5,8 +5,8 @@ lang: en                              # Lang is required
 author: 陈国强
 title: Nachos修改记录
 description:
-excerpt: 使用Docker的ubuntu镜像自制的Nachos系统
-cover: false                         # Leave false if the post does not have cover image, if there is set to true
+excerpt: 记录对Nachos内核的修改内容
+cover: true                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
 categories:
@@ -145,6 +145,8 @@ make nachos
 ```
 
 ## Lab1
+
+## Linux的进程
 
 ## 参考文章  
 [1] [Linux scp命令](https://www.cnblogs.com/webnote/p/5877920.html)
