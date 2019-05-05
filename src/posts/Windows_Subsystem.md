@@ -63,6 +63,8 @@ meta:                                 # If you have cover image
 ```bash
 # 如果没有zsh，需要先安装zsh
 sudo apt-get install zsh
+# 切换shell
+sudo chsh -s /bin/zsh
 # 安装Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
 ```
