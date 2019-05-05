@@ -61,6 +61,9 @@ meta:                                 # If you have cover image
 + 首先需要更换WSL(Windows Subsystem for Linux)的源为国内，[更换方法](https://blog.csdn.net/qq_35451572/article/details/79516563)  
 + 安装Oh-My-Zsh：  
 ```bash
+# 如果没有zsh，需要先安装zsh
+sudo apt-get install zsh
+# 安装Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
 ```
 禁止Oh-My-Zsh自动更新可以到~/.zshrc下找到DISABLE_AUTO_UPDATE一行，将行首的注释'#'去掉即可。  
@@ -82,7 +85,7 @@ cmder是一个windows下一个好用的命令行软件[下载地址](https://cmd
 插件1：zsh-autosuggestions:  
 一个自动提示过去使用过的命令的工具  
 ```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+sudo git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 vim ~/.zshrc
 # 在.zshrc末尾添加： Load zsh-autosuggestions.
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -92,9 +95,9 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 一个提示shell命令是否正确的提示工具  
 ```bash
 # syntax highlighting
-$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 # 此句与上一个在.zshrc末尾添加一个效果
-$ echo "source \$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+sudo echo "source \$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
 
 ## 报错记录
