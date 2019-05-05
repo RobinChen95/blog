@@ -144,7 +144,7 @@ sudo systemctl start docker
 # 9.测试docker
 docker -v
 ```
-使用docker安装32bit/ubuntu镜像：  
+使用docker安装32bit/ubuntu镜像（因为实验需要32位环境）：  
 ```bash
 # docker拉取32bit/ubuntu:16.04镜像
 docker pull 32bit/ubuntu:16.04
@@ -152,6 +152,9 @@ docker pull 32bit/ubuntu:16.04
 docker run -it 32bit/ubuntu:16.04 /bin/bash
 # 退出
 exit
+```
+每次输入以下命令进入docker：
+```bash
 # 以下是为了每次都进入同一个容器，而不是每次docker run -it都新建
 # 查看已运行的容器ID，找到32bit/ubuntu所对应的容器ID，例如0f6d789c5df9
 docker ps -a

@@ -63,6 +63,8 @@ meta:                                 # If you have cover image
 ```bash
 # 如果没有zsh，需要先安装zsh
 sudo apt-get install zsh
+# 安装必需的软件包
+sudo apt-get install build-essential
 # 切换shell
 sudo chsh -s /bin/zsh
 # 安装Oh-My-Zsh
