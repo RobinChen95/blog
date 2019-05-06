@@ -5,9 +5,9 @@ lang: en                              # Lang is required
 author: 陈国强
 title: Windows基本开发环境配置教程
 description:
-excerpt: 本文使用Windows下的Windows Subsystem for Linux，目的是在Windows下配置一个本地的Linux开发环境。
+excerpt: 本文使用Windows下的Windows Subsystem for Linux，目的是在Windows下配置一个本地的Linux开发环境，在此感谢带我入门的[慧强dalao](https://wyydsb.xin)
 cover: true                         # Leave false if the post does not have cover image, if there is set to true
-coverAlt:
+coverAlt: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
 demo:
 categories:
   - Linux
