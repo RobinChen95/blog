@@ -33,7 +33,7 @@ meta:                                 # If you have cover image
 新浪云服务器比较特殊，是三者之中唯一一个提供备案域名的，但是只能用 ~~世界上最辣鸡的语言PHP~~，推荐购买阿里云的服务器，东西比较全，学生优惠9.9/月。  
 使用Bash/Zsh操作服务器：  
 Mac可以使用自带的Terminal，或者下载iTerm使用：[Mac终端配置教程](https://wyydsb.xin/other/terminal.html)  
-Windows可以使用Linux子系统：[WSL安装与cmder配置教程](https://www.robinchen95.com/posts/Windows_Subsystem.html)  
+Windows可以使用Linux子系统：[Windows基本开发环境配置教程](https://www.robinchen95.com/posts/Windows_Subsystem.html)  
 一些复制粘贴就能用的Linux功能：[零碎的Linux笔记](https://www.robinchen95.com/posts/Linux_learning.html)  
 SSH连接服务器：  
 ```bash
