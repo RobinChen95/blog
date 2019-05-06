@@ -82,7 +82,7 @@ cmder是一个windows下一个好用的命令行软件[下载地址](https://cmd
 ```
 ![cmder setting](../img/cmder_setting.png)  
 在BackGround中可以修改背景为自己的图片，还可以调整透明度  
-在粘贴选项下，将粘贴模式Ctrl+V改为多行，并且取消勾选粘贴警告，重启cmder   
+在Keys&Macro的Paste选项下，取消勾选Multi-line paste与Long text paste，重启cmder   
 
 配置zsh  
 修改~/.zshrc之后不需要source命令，因为source命令是用来使sh脚本生效的，zshrc配置好之后下次进入就可以看见效果了。  
