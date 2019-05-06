@@ -5,7 +5,7 @@ lang: en                              # Lang is required
 author: 陈国强
 title: Windows基本开发环境配置教程
 description:
-excerpt: 本文使用Windows下的WSL(WSL: Windows Subsystem for Linux)，目的是在Windows下配置一个本地的Linux开发环境。
+excerpt: 本文使用Windows下的Windows Subsystem for Linux，目的是在Windows下配置一个本地的Linux开发环境。
 cover: true                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
