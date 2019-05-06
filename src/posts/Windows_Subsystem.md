@@ -5,9 +5,9 @@ lang: en                              # Lang is required
 author: 陈国强
 title: Windows基本开发环境配置教程
 description:
-excerpt: 本文使用Windows下的Windows Subsystem for Linux，目的是在Windows下配置一个本地的Linux开发环境，在此感谢带我入门的[慧强dalao](https://wyydsb.xin)
+excerpt: 本文使用Windows下的Windows Subsystem for Linux，目的是在Windows下配置一个本地的Linux开发环境，在此感谢带我入门的慧强dalao
 cover: true                         # Leave false if the post does not have cover image, if there is set to true
-coverAlt: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
+coverAlt: 
 demo:
 categories:
   - Linux
@@ -50,6 +50,7 @@ meta:                                 # If you have cover image
 **注意，Hyper-V只有企业版/教育版/专业版Windows可用。同时，开启此选项是高危选项  
 如果发现任何问题，均可以取消勾选，Hyper-V只影响docker安装等高级功能**  
 然后在Microsoft Store中搜索Linux，点击安装即可：  
+
 ![微软商店](../img/MSstore.png)  
 安装完成后，**需要打开界面，等待软件installing的提示结束**，就安装成功啦  <i class="fas fa-grin-wink"></i>
 
