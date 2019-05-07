@@ -19,9 +19,9 @@ created_at: 2019-04-30 04:00
 updated_at: 2019-04-30 04:00
 meta:                                 # If you have cover image
   - property: og:image
-    content: ../img/windows-version.png  
+    content: /share/watermark-logo.png  
   - name: twitter:image
-    content: ../img/windows-version.png  
+    content: /share/watermark-logo.png  
 ---
 
 ## 什么是WSL？为什么安装Linux子系统？
