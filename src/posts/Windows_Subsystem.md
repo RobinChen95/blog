@@ -5,9 +5,9 @@ lang: en                              # Lang is required
 author: 陈国强
 title: Windows基本开发环境配置教程
 description:
-excerpt: 本文使用 Windows 10 下的 Linux 子系统，目的是配置一个本地的 Linux 开发环境
+excerpt: 本文使用 Windows 10下的 Linux 子系统，目的是配置一个本地的 Linux 开发环境
 cover: true                         # Leave false if the post does not have cover image, if there is set to true
-coverAlt: 
+coverAlt: 1984957461
 demo:
 categories:
   - Linux
@@ -33,7 +33,7 @@ meta:                                 # If you have cover image
 + **免费 免费 免费**的同时省去了安装虚拟机的麻烦，也没有安装双系统的风险，安装方便,卸载也方便   
 + 同时拥有Windows和Linux两个系统，没有虚拟机复制文件的烦恼，也省去了双系统切换的功夫，~~还能打游戏，做PPT~~ヽ（゜▽゜)ノ，完美解决了Linux所有弊端。  
 
-PS: MacOs|Centos 配置Terminal思路与 Ubuntu 相同 只是apt-get -> brew | yum or 源码安装  
+> PS: Centos 配置思路与 Ubuntu 相同 只是apt-get -> yum or 源码安装  
 PPS: 在这里特别感谢带我入门的**慧强dalao** 🙇  
 
 ## 如何在Windows上启动Linux子系统
