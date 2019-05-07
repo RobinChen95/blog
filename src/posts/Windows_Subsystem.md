@@ -34,7 +34,7 @@ meta:                                 # If you have cover image
 + 同时拥有Windows和Linux两个系统，没有虚拟机复制文件的烦恼，也省去了双系统切换的功夫，~~还能打游戏，做PPT~~ヽ（゜▽゜)ノ，完美解决了Linux所有弊端。  
 
 PS: MacOs|Centos 配置Terminal思路与 Ubuntu 相同 只是apt-get -> brew | yum or 源码安装  
-PPS: 在这里特别感谢带我入门的慧强dalao 🙇  
+PPS: 在这里特别感谢带我入门的**慧强dalao** 🙇  
 
 ## 如何在Windows上启动Linux子系统
 
