@@ -5,7 +5,7 @@ lang: en                              # Lang is required
 author: 陈国强
 title: Windows基本开发环境配置教程
 description:
-excerpt: 本文使用Windows下的Windows Subsystem for Linux，目的是在Windows下配置一个本地的Linux开发环境，在此感谢带我入门的慧强dalao
+excerpt: 本文使用 Windows 10 下的 Linux 子系统，目的是配置一个本地的 Linux 开发环境
 cover: true                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt: 
 demo:
@@ -29,12 +29,12 @@ meta:                                 # If you have cover image
 > 什么是WSL？
 + WSL：Windows Subsystem for Linux，顾名思义，即是Windows下的Linux子系统  
 + WSL基本实现了Linux下所有的功能，并且**可以直接访问Windows本地的文件系统**，两个系统的文件是互通的  
-+ WSL在大部分情况下可以直接替代Linux虚拟机，只有少数情况会出问题，但是用于学习与初级开发已经足够
 > 为什么安装WSL?  
-+ **免费 免费 免费**  
-+ 省去了安装虚拟机的麻烦，同时也没有安装双系统的风险，安装方便  
-+ 卸载方便，就像卸载一个iPhone App一样简单，随时不想要随时卸载重装  
++ **免费 免费 免费**的同时省去了安装虚拟机的麻烦，也没有安装双系统的风险，安装方便,卸载也方便   
 + 同时拥有Windows和Linux两个系统，没有虚拟机复制文件的烦恼，也省去了双系统切换的功夫，~~还能打游戏，做PPT~~ヽ（゜▽゜)ノ，完美解决了Linux所有弊端。  
+
+PS: MacOs|Centos 配置Terminal思路与 Ubuntu 相同 只是apt-get -> brew | yum or 源码安装  
+PPS: 在这里特别感谢带我入门的慧强dalao 🙇  
 
 ## 如何在Windows上启动Linux子系统
 
