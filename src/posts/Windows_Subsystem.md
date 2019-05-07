@@ -7,7 +7,7 @@ title: Windows基本开发环境配置教程
 description:
 excerpt: 本文使用 Windows 10下的 Linux 子系统，目的是配置一个本地的 Linux 开发环境
 cover: true                         # Leave false if the post does not have cover image, if there is set to true
-coverAlt: 1984957461
+coverAlt: 1984957461                # Explaining the Pic
 demo:
 categories:
   - Linux
@@ -19,9 +19,9 @@ created_at: 2019-04-30 04:00
 updated_at: 2019-04-30 04:00
 meta:                                 # If you have cover image
   - property: og:image
-    content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png  
+    content: ../img/windows-version.png  
   - name: twitter:image
-    content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png  
+    content: ../img/windows-version.png  
 ---
 
 ## 什么是WSL？为什么安装Linux子系统？
