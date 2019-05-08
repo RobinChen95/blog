@@ -27,8 +27,8 @@ meta:                                 # If you have cover image
 ## 开始前的闲话  
 
 > 受到惠强dalao关于[Mac开发环境配置](https://wyydsb.xin/other/terminal.html)的启发.  
-经过不断的尝试摸索，Windows也是可以像Mac一样,担当开发重任的，只是需要在Windows的基础上进行一点配置，就可以获得与Mac基本相同的开发体验。  
 
+经过不断的尝试摸索，Windows也是可以像Mac一样,担当开发重任的，只是需要在Windows的基础上进行一点配置，就可以获得与Mac基本相同的开发体验。  
 > 什么是WSL？
 + WSL：Windows Subsystem for Linux，顾名思义，即是Windows下的Linux子系统  
 + WSL基本实现了Linux下所有的功能，并且**可以直接访问Windows本地的文件系统**，两个系统的文件是互通的  
