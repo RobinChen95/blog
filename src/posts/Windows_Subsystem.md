@@ -24,22 +24,26 @@ meta:                                 # If you have cover image
     content: ../img/windows-version.png  
 ---
 
-## 什么是WSL？为什么安装Linux子系统？
+## 开始前的闲话  
 
+> 受到惠强dalao关于[Mac开发环境配置](https://wyydsb.xin/other/terminal.html)的启发，经过不断的尝试摸索，Windows也是可以像Mac一样，
+担当开发重任的，只是需要在Windows的基础上进行一点配置，就可以获得与Mac基本相同的开发体验。  
 > 什么是WSL？
 + WSL：Windows Subsystem for Linux，顾名思义，即是Windows下的Linux子系统  
 + WSL基本实现了Linux下所有的功能，并且**可以直接访问Windows本地的文件系统**，两个系统的文件是互通的  
 > 为什么安装WSL?  
 + **免费 免费 免费**的同时省去了安装虚拟机的麻烦，也没有安装双系统的风险，安装方便,卸载也方便   
 + 同时拥有Windows和Linux两个系统，没有虚拟机复制文件的烦恼，也省去了双系统切换的功夫，~~还能打游戏，做PPT~~ヽ（゜▽゜)ノ，完美解决了Linux所有弊端。  
-
+> WSL的一些不足：  
++ 原生不支持docker，如果需要使用docker，请使用2019年6月发布的WSL2或SSH连接服务器  
++ 无法使用GPU，如果需要在本机跑AI程序，请使用其他环境  
 > PS: Centos 配置思路与 Ubuntu 相同 只是apt-get -> yum or 源码安装  
 PPS: 在这里特别感谢带我入门的**慧强dalao** 🙇  
 
 ## 如何在Windows上启动Linux子系统
 
 + 请确认你安装的是Windows 10，并且版本在 build 16299以上  
-+ 如何查看版本？按   <i class="fab fa-windows"></i>+R，输入cmd进入命令行，输入ver即可  
++ 如何查看版本？按 <i class="fab fa-windows"></i>+R，输入cmd进入命令行，输入ver即可  
 ![查看版本](../img/windows-version.png)  
 + 打开开发者模式  
 打开设置菜单，更新和安全，开发者选项，然后选择开发者模式。  
@@ -52,7 +56,7 @@ PPS: 在这里特别感谢带我入门的**慧强dalao** 🙇
 然后在Microsoft Store中搜索Linux，点击安装即可：  
 
 ![微软商店](../img/MSstore.png)  
-安装完成后，**需要打开界面，等待软件installing的提示结束**，就安装成功啦  <i class="fas fa-grin-wink"></i>
+安装完成后，**需要打开界面，等待软件installing的提示结束**，就安装成功啦<i class="fas fa-grin-wink"></i>
 
 ## 安装Oh-My-Zsh、cmder  
 
@@ -136,7 +140,7 @@ sudo apt install yarn
 > 今天和Ubuntu鏖战了一天。
 + 早上发现Windows的PowerShell还是太难用了，无论装什么插件都拯救不了PowerShell，所以下午刚吃完饭就打起了装个Linux的主意。  
 + 首先试了试Vmware，Vmware安装倒是挺方便的，但是在安装Vmware Tools的时候，软件已经提示我安装正确了，  
-但是关闭Terminal之后还是(~~屎~~)一样的分辨率，遂放弃。
+但是关闭Terminal之后还是(~~屎~~)一样的分辨率，遂放弃。  
 + 后来又打起了装个双系统的主意，装双系统其实还是挺简单的，但是Ubuntu总是默认会覆盖掉我的Windows Boot Manager，
 而不会乖乖的呆在机械硬盘里，~~作为一个肥宅，没人能动我的Windows~~，遂把Ubuntu整个连根拔起，连Ubuntu的MBR都一起删了  
 + 在打算放弃的时候，偶然间发现Windows可以运行Linux子系统，惊闻微软爸爸的操作，于是一顿谷歌加百度，
