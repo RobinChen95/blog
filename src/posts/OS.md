@@ -63,13 +63,16 @@ docker run -it 32bit/ubuntu:16.04 /bin/bash
 # 退出
 exit
 ```
-每次输入以下命令进入docker：
+开启容器，每次本机重启之后需要执行：  
 ```bash
 # 以下是为了每次都进入同一个容器，而不是每次docker run -it都新建
-# 查看已运行的容器ID，找到32bit/ubuntu所对应的容器ID，例如0f6d789c5df9
+# 查看已运行的容器CONTIANER ID，找到32bit/ubuntu所对应的容器ID，例如0f6d789c5df9
 docker ps -a
 # 开启容器
 docker start [ID]
+```
+每次输入以下命令进入docker：  
+```bash
 # 进入容器
 docker exec -it [ID] /bin/bash
 # 可以使用docker rm + 容器ID来删除多余容器
