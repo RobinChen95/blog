@@ -92,10 +92,17 @@ cmder是一个windows下一个好用的命令行软件[下载地址](https://cmd
 配置zsh  
 修改~/.zshrc之后不需要source命令，因为source命令是用来使sh脚本生效的，zshrc配置好之后下次进入就可以看见效果了。  
 
+首先需要修改~/.bashrc：  
+```bash
+# 解决部分机器需要输入zsh命令进入zsh的问题
+sudo vim ~/.bashrc
+# 在末尾添加如下
+exec zsh
+```
 插件1：zsh-autosuggestions:  
 一个自动提示过去使用过的命令的工具  
 ```bash
-sudo git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 vim ~/.zshrc
 # 在.zshrc末尾添加： Load zsh-autosuggestions.
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -105,9 +112,9 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 一个提示shell命令是否正确的提示工具  
 ```bash
 # syntax highlighting
-sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 # 此句与上一个在.zshrc末尾添加一个效果
-sudo echo "source \$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+echo "source \$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
 
 ## 报错记录
