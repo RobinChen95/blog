@@ -22,24 +22,20 @@ meta:                                 # If you have cover image
     content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
 ---
 
-## Daily Check
+## Daily Check (time order)  
 
 |项目|截止时间|
 |:----:|:----:|
 |Nachos Lab4|2019-04-21|
+|Nachos代码赶上进度|2019-05-20|
 |六级刷分|2019-06-15|
+|投资学赶上进度|---|
+|项目上线|---|
+|小程序比赛|---|
 |N3考试|2019-07-07|
-
-## 一次性能做完的事情
----
-|项目|待办|优先级|剩余时间|
-|:----:|:----:|:----:|:----:|
-|Nachos代码赶上进度|是|1|almost unlimited|
-|理清项目逻辑|是|2|unlimited|
----
+|理清项目逻辑|---|
 
 + 需要理清的项目逻辑  
-
 ---
 |项目|待办|预计完成时间|
 |:----:|:----:|:----:|
