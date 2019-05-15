@@ -117,6 +117,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 echo "source \$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
 
+## 配置SSH代理
+
 ## 报错记录
 
 1. 当修改了Windows计算机名称时报了一个错误：WslRegisterDistribution failed with error: 0x800703fa  
