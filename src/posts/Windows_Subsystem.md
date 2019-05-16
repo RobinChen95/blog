@@ -141,6 +141,15 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt update
 sudo apt install yarn
 ```
+5. yarn报错：  
+```bash
+/usr/share/yarn/lib/cli.js:45703 let { ^ SyntaxError: Unexpected token {
+```
+解决办法：  
+```bash
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+apt-get install -y nodejs
+```
 ## 写在最后的感想  
 ### 关于工具的思考    
 微软是一个人民的好公司，不仅做出了在Windwos10里面塞一个完整的Linux子系统的骚操作，还收购了Github提供了私有仓库，
