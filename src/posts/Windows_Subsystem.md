@@ -140,6 +140,8 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update
 sudo apt install yarn
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs
 ```
 5. yarn报错：  
 ```bash
@@ -148,7 +150,7 @@ sudo apt install yarn
 解决办法：  
 ```bash
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-apt-get install -y nodejs
+sudo apt-get install -y nodejs
 ```
 ## 写在最后的感想  
 ### 关于工具的思考    

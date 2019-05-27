@@ -22,8 +22,7 @@ meta:                                 # If you have cover image
     content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
 ---
 
-## 更换源为阿里、清华或者网易
-更换阿里源：  
+## 更换源为阿里
 ```bash
 # 打开apt源的文件
 # 注意只有vi是linux自带的文本编辑器，部分mini安装的Linux没有vim与nano
@@ -47,42 +46,6 @@ deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security universe
 # 更新源
 sudo apt-get update
 ```
-更换清华源：  
-```bash
-# 打开apt源源的文件
-# 注意只有vi是linux自带的文本编辑器，部分mini安装的Linux没有vim与nano
-sudo vi /etc/apt/sources.list
-# 将以下内容覆盖原内容，然后保存退出
-deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
-deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
-deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
-deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
-# 更新源
-sudo apt-get update
-```
-更换网易源：  
-```bash
-# 打开apt源源的文件
-# 注意只有vi是linux自带的文本编辑器，部分mini安装的Linux没有vim与nano
-sudo vi /etc/apt/sources.list
-# 将以下内容覆盖原内容，然后保存退出
-deb http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ wily-security main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ wily-security main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse
-# 更新源
-sudo apt-get update
-```
 
 ## 拷贝文件到服务器与从服务器下载文件  
 Linux系统之间拷贝文件可以用scp命令：  
@@ -92,6 +55,17 @@ scp root@101.200.53.152:/myblog/pull.sh /mnt/c
 # 例2：将服务器的/myblog脚本拷贝到C盘，加一个-r即可
 scp -r root@101.200.53.152:/myblog /mnt/c
 # 上传文件就是将scp后的参数倒过来就行
+```
+
+## 安装yarn
+```bash
+# 此方法也可以用于重新安装yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+sudo apt install yarn
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs
 ```
 
 ## SSH与Git不用输入密码的设置  
