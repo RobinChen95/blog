@@ -180,27 +180,27 @@ Timer 类模拟定时器。定时器每隔 X 个时钟周期就向 CPU 发一个
 问题：用户程序的启动过程  
 1.Nachos中关于用户程序启动主要在于userprog/protest.cc的StartProcess方法  
 2.主要的执行逻辑：  
-    （1）打开文件，如果能够打开，则进行第2步，否则输出无法打开文件  
-    （2）创建user address space，初始化用户程序的运行空间  
-    （3）从Nachos的文件系统中加载进内存  
-    （4）关闭文件，初始化寄存器  
-    （5）调用machine->Run()方法，转到用户程序的空间执行  
+    &emsp&emsp（1）打开文件，如果能够打开，则进行第2步，否则输出无法打开文件  
+    &emsp&emsp（2）创建user address space，初始化用户程序的运行空间  
+    &emsp&emsp（3）从Nachos的文件系统中加载进内存  
+    &emsp&emsp（4）关闭文件，初始化寄存器  
+    &emsp&emsp（5）调用machine->Run()方法，转到用户程序的空间执行  
 3.部分步骤的详细执行内容：  
-    （1）打开文件：使用传入的filename作为指针，从Nachos的文件系统中加载进内存(具体的函数定义与修改在filesys/filesys.cc的OpenFile * FileSystem::Open(char *name)中)  
-	（2）创建user address space，初始化用户程序的运行空间，函数定义在userprog/addrspace.cc的AddrSpace::AddrSpace(OpenFile *executable)方法  
-			AddrSpace::AddrSpace(OpenFile *executable)方法执行过程：  
-			1）判断打开文件是否符合可执行代码的格式，如果不符合，出错返回  
-			2）将用户程序的正文段、数据段以及栈段一起考虑，计算需要空间大小。如果大于整个模拟的物理内存空间，出错返回。  
-			3）生成用户程序线性页表。  
-			4）将用户程序的正文段和数据段依次调入内存，栈段记录的是用户程序的运行状态，它的位置紧接于数据段之后。  
-    （3）machine->Run()方法的功能： 执行在模拟内存内的用户程序。  
-			machine->Run()方法执行过程：  
-			1）将系统当前状态设置为用户模式  
-			2）调用OneInstruction方法取出一条指令  
-			3）将该指令进行解码，分析出其中的操作代码、寄存器和立即数  
-			4）根据操作代码将该指令模拟执行  
-			5）调用Onetick方法，使时钟前进一个单位  
-			6）转向2，直到用户程序执行完毕。  
+    &emsp&emsp（1）打开文件：使用传入的filename作为指针，从Nachos的文件系统中加载进内存(具体的函数定义与修改在filesys/filesys.cc的OpenFile * FileSystem::Open(char *name)中)  
+	&emsp&emsp（2）创建user address space，初始化用户程序的运行空间，函数定义在userprog/addrspace.cc的AddrSpace::AddrSpace(OpenFile *executable)方法  
+			&emsp&emsp&emsp&emspAddrSpace::AddrSpace(OpenFile *executable)方法执行过程：  
+			&emsp&emsp&emsp&emsp1）判断打开文件是否符合可执行代码的格式，如果不符合，出错返回  
+			&emsp&emsp&emsp&emsp2）将用户程序的正文段、数据段以及栈段一起考虑，计算需要空间大小。如果大于整个模拟的物理内存空间，出错返回。  
+			&emsp&emsp&emsp&emsp3）生成用户程序线性页表。  
+			&emsp&emsp&emsp&emsp4）将用户程序的正文段和数据段依次调入内存，栈段记录的是用户程序的运行状态，它的位置紧接于数据段之后。  
+    &emsp&emsp（3）machine->Run()方法的功能： 执行在模拟内存内的用户程序。  
+			&emsp&emsp&emsp&emspmachine->Run()方法执行过程：  
+			&emsp&emsp&emsp&emsp1）将系统当前状态设置为用户模式  
+			&emsp&emsp&emsp&emsp2）调用OneInstruction方法取出一条指令  
+			&emsp&emsp&emsp&emsp3）将该指令进行解码，分析出其中的操作代码、寄存器和立即数  
+			&emsp&emsp&emsp&emsp4）根据操作代码将该指令模拟执行  
+			&emsp&emsp&emsp&emsp5）调用Onetick方法，使时钟前进一个单位  
+			&emsp&emsp&emsp&emsp6）转向2，直到用户程序执行完毕。  
 
 ## Linux的进程
 
