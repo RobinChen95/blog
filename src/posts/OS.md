@@ -197,8 +197,51 @@ Timer 类模拟定时器。定时器每隔 X 个时钟周期就向 CPU 发一个
 			5）调用Onetick方法，使时钟前进一个单位  
 			6）转向2，直到用户程序执行完毕。  
 
-## Lab1  
-1、 这是整个Nachos系统的入口
+## Lab1    
+1、 main.cc  
+修改各种./nachos -x xxx的输入参数时，需要在这个函数里面修改
+是整个Nachos系统的入口，提供各种跳转指令，在 main 函数的最后，是 currentThread->Finish()语句。为什么不直接退出呢？
+这是因为 Nachos是在宿主机上运行的一个普通的进程，当 main 函数退出时，整个占用的空间要释放，进程也相应的结束。但是实际上在 Nachos 中，
+main 函数的结束并不能代表系统的结束，因为可能还有其它的就绪线程。所以在这里我们只是将 main 函数作为 Nachos 中一个特殊线程进行处理，
+该线程结束只是作为一个线程的结束，系统并不会退出。  
+2、thread.cc    
+Thread 类实现了操作系统的线程控制块，与PCB有相似之处，Nachos的thread.cc类里面定义了tid、uid，并且也没有将 PCB 分成 proc 结构和 user 结构，  
+不存在实际操作系统中 proc 结构常驻内存，而 user 结构可以存放在盘交换区上的情况，Nachos 线程是一并在宿主机上运行的。  
+> Fork():创建一个新线程  
 
+执行过程：申请栈空间、初始化栈空间、保存之前的中断状态、使用scheduler->ReadyToRun(this)将该线程放入就绪队列，恢复原来的中断状态  
+> Yield ()：当前线程让出CPU  
+
+执行过程：关闭终端并记录原来的中断状态、调用scheduler->FindNextToRun()方法，如果有线程能够运行，那么就本线程放入就绪队列，调度其他线程运行，然后恢复中断  
+> Sleep():  线程进入睡眠状态
+
+
+执行过程：将当前线程状态设为Blocked，并判断就绪队列是否为空，如果为空，调用interrupt->Idle()，如果不为空，取出就绪队列运行  
+## Lab2
+ThreadRoot函数，它是所有线程运行的入口；另一个函数是 SWITCH，它负责线程之间的切换。 
+在 Nachos 中，当一个线程运行结束时，同样需要将线程所占用的空间释放。但是 Nachos 线程不能释放自己的空间，因为此时它还运行在自己
+的栈段上。所以当线程结束时调用 Finish 方法，Finish 方法的作用是设置全局变量threadToBeDestroyed，说明该线程已经运行结束，
+需要释放栈空间。Finish 紧接着切换到其它线程运行，该运行线程释放 threadToBeDestoryed 线程栈空间。Scheduler 类中的 Run 方法才有机会删除 
+threadToBeDestroyed 线程栈空间。当系统中没有就绪线程和中断等待处理时，系统会退出而不会切换到其它线程，只有借助于系统释放空间的机制来释放
+threadToBeDestroyed 线程的空间。  
+1、scheduler.cc   
+Scheduler 类用于实现线程的调度。所有 Scheduler 中定义的方法都有一个前提条件：必须是原子操作，不允许中断。它维护一个就绪线程队列，
+当一个线程可以占用处理机时，就可以调用 ReadyToRun 方法把这个线程放入就绪线程队列，并把线程状态改成就绪态。
+FindNextToRun 方法根据调度策略，取出下一个应运行的线程，并把这个线程从就绪线程队列中删除。如果就绪线程队列为空，则此函数返回空(NULL)。
+现有的调度策略是先进先出策略(FIFO)。  
+> ReadyToRun(Thread* thread)：设置一个线程为就绪态  
+
+> FindNextToRun()：找出下一个处于就绪态的线程  
+
+> Run(Thread *nextThread)：当前运行强制切换到 nextThread 就绪线程运行  
+
+执行过程：如果是用户线程，保存当前虚拟机的状态、检查当前堆栈是否溢出、将 nextThread 的状态设置成运行态，并作为 currentThread 现运行线程
+（在调用 Run 方法之前，当前运行线程已经放入就绪队列中，变成就绪态）  
+（以上是运行在现有的线程栈空间上，以下是运行在 nextThread 的栈空间上）  
+切换到 nextThread 线程运行、释放 threadToBeDestroyed 线程需要栈空间（如果有的话）、如果是用户线程，恢复当前虚拟机的状态
+
+## Lab3  
+1、synch.cc  
+这是Nachos关于同步互斥的函数类，Lab3中实现锁需要修改此类  
 ## 参考文章  
 [1] [Linux scp命令](https://www.cnblogs.com/webnote/p/5877920.html)
