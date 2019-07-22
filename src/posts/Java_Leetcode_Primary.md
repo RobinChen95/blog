@@ -3,7 +3,7 @@ view: post
 layout: post                          # Only in unique we use the "layout: post"
 lang: en                              # Lang is required
 author: 陈国强
-title: Leetcode初级算法题解
+title: Leetcode题解
 description: 使用Java语言的Leetcode解题记录
 excerpt: 使用Java语言的Leetcode解题记录
 cover: false                         # Leave false if the post does not have cover image, if there is set to true
@@ -14,23 +14,14 @@ categories:
   - Software_course
 tags: 
   - Leetcode
-created_at: 2019-04-02 01:00
-updated_at: 2019-04-02 01:00
+created_at: 2019-07-22 01:00
+updated_at: 2019-07-22 01:00
 meta:                                 # If you have cover image
   - property: og:image
     content: /images/posts/my-first-post.png
   - name: twitter:image
     content: /images/posts/my-first-post.png
 ---
-
-## 题解说明  
-
-> 本片文章是为了方便实验班的同学们查阅所作的题解  
-本文提供的是Java语言的解法，可能会调用Java自带的API  
-因为算法笔试的时候就是这么要求的，不要重复造轮子  
-如果本文有错误的地方，~~那我也是不会负责的~~  
-本题解仅记录的是我的解法，如果更好的解法，欢迎讨论  
-欢迎其他同学补充更好的解法或者提供其他语言的题解  
 
 
 ## 数组  
@@ -371,4 +362,140 @@ public boolean isAnagram(String s, String t) {
             return false;
     return true;
 }
+```
+
+## 队列与栈  
+
+### [设计一个循环队列](https://leetcode-cn.com/explore/learn/card/queue-stack/216/queue-first-in-first-out-data-structure/865/)  
+
+```Java
+设计你的循环队列实现。 循环队列是一种线性数据结构，其操作表现基于 FIFO（先进先出）原则并且队尾被连接在队首之后以形成一个循环。它也被称为“环形缓冲器”。
+
+循环队列的一个好处是我们可以利用这个队列之前用过的空间。在一个普通队列里，一旦一个队列满了，我们就不能插入下一个元素，即使在队列前面仍有空间。但是使用循环队列，我们能使用这些空间去存储新的值。
+
+你的实现应该支持如下操作：
+
+MyCircularQueue(k): 构造器，设置队列长度为 k 。
+Front: 从队首获取元素。如果队列为空，返回 -1 。
+Rear: 获取队尾元素。如果队列为空，返回 -1 。
+enQueue(value): 向循环队列插入一个元素。如果成功插入则返回真。
+deQueue(): 从循环队列中删除一个元素。如果成功删除则返回真。
+isEmpty(): 检查循环队列是否为空。
+isFull(): 检查循环队列是否已满。
+ 
+
+示例：
+MyCircularQueue circularQueue = new MycircularQueue(3); // 设置长度为 3
+circularQueue.enQueue(1);  // 返回 true
+circularQueue.enQueue(2);  // 返回 true
+circularQueue.enQueue(3);  // 返回 true
+circularQueue.enQueue(4);  // 返回 false，队列已满
+circularQueue.Rear();  // 返回 3
+circularQueue.isFull();  // 返回 true
+circularQueue.deQueue();  // 返回 true
+circularQueue.enQueue(4);  // 返回 true
+circularQueue.Rear();  // 返回 4
+
+提示：
+
+所有的值都在 0 至 1000 的范围内；
+操作数将在 1 至 1000 的范围内；
+请不要使用内置的队列库。
+```
+
+**解题思路**  
+1、使用模%运算，实现循环  
+2、注意队列为空与队列满的判断条件  
+我的设计是head == -1 && tail == -1时为空，同时，移除最后一个元素时，将head与tail均赋值为-1
+
+```Java
+class MyCircularQueue {
+
+    int[] queue;
+    int head;
+    int tail;
+
+    /**
+     * Initialize your data structure here. Set the size of the queue to be k.
+     */
+    public MyCircularQueue(int k) {
+        queue = new int[k];
+        head = -1;
+        tail = -1;
+    }
+
+    /**
+     * Insert an element into the circular queue. Return true if the operation is successful.
+     */
+    public boolean enQueue(int value) {
+        if (isFull()) return false;
+        else if (isEmpty()) {
+            head = (head + 1) % queue.length;
+            tail = (tail + 1) % queue.length;
+            queue[tail] = value;
+        } else {
+            tail = (tail + 1) % queue.length;
+            queue[tail] = value;
+        }
+        return true;
+    }
+
+    /**
+     * Delete an element from the circular queue. Return true if the operation is successful.
+     */
+    public boolean deQueue() {
+        if (isEmpty()) return false;
+            // 如果是最后一个元素
+        else if (head == tail) {
+            head = -1;
+            tail = -1;
+        } else {
+            head = (head + 1) % queue.length;
+        }
+        return true;
+    }
+
+    /**
+     * Get the front item from the queue.
+     */
+    public int Front() {
+        if (isEmpty()) return -1;
+        return queue[head];
+    }
+
+    /**
+     * Get the last item from the queue.
+     */
+    public int Rear() {
+        if (isEmpty()) return -1;
+        return queue[tail];
+    }
+
+    /**
+     * Checks whether the circular queue is empty or not.
+     */
+    public boolean isEmpty() {
+        if (head == -1 && tail == -1) return true;
+        return false;
+    }
+
+    /**
+     * Checks whether the circular queue is full or not.
+     */
+    public boolean isFull() {
+        if ((tail + 1) % queue.length == head) return true;
+        return false;
+    }
+}
+
+/**
+ * Your MyCircularQueue object will be instantiated and called as such:
+ * MyCircularQueue obj = new MyCircularQueue(k);
+ * boolean param_1 = obj.enQueue(value);
+ * boolean param_2 = obj.deQueue();
+ * int param_3 = obj.Front();
+ * int param_4 = obj.Rear();
+ * boolean param_5 = obj.isEmpty();
+ * boolean param_6 = obj.isFull();
+ */
 ```
