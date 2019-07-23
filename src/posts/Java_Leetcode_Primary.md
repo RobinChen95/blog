@@ -499,3 +499,110 @@ class MyCircularQueue {
  * boolean param_6 = obj.isFull();
  */
 ```
+
+## 深度优先搜索  
+
+### [岛屿数量](https://leetcode-cn.com/explore/learn/card/queue-stack/217/queue-and-bfs/872/)  
+```Java
+给定一个由 '1'（陆地）和 '0'（水）组成的的二维网格，计算岛屿的数量。一个岛被水包围，并且它是通过水平方向或垂直方向上相邻的陆地连接而成的。你可以假设网格的四个边均被水包围。
+
+示例 1:
+输入:
+11110
+11010
+11000
+00000
+
+输出: 1
+
+示例 2:
+输入:
+11000
+11000
+00100
+00011
+
+输出: 3
+```
+
+**解题思路**  
+本题首先要想到：搜索过的置0、向四个方向遍历符号'1'、如何处理数组越界
++ **解法一：深度优先搜索**  
+```Java
+public int numIslands(char[][] grid) {
+    int count = 0;
+    for (int i = 0; i < grid.length; i++) {
+        for (int j = 0; j < grid[0].length; j++) {
+            if (grid[i][j] == '1') {
+                dfs(i, j, grid);
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+private void dfs(int i, int j, char[][] grid) {
+    if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == '0') {
+        return;
+    }
+    grid[i][j] = '0';
+    dfs(i - 1, j, grid);
+    dfs(i, j + 1, grid);
+    dfs(i + 1, j, grid);
+    dfs(i, j - 1, grid);
+}
+```
++ **解法二：广度优先搜索**  
+广度优先搜索不用递归，而是利用方向数组达到改变搜索方向的目的
+```Java
+public class numIslands {
+
+    int count = 0;
+    
+    public int numIslands(char[][] grid) {
+        if (grid.length == 0 || grid[0].length == 0) return 0;
+        int n = grid.length;
+        int m = grid[0].length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (grid[i][j] == '1') {
+                    bfs(i, j, grid);
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    public void bfs(int x, int y, char[][] grid) {
+        //能改变的方向四个
+        int[][] change = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+        //bfs队列
+        Queue<int[]> q = new LinkedList<>();
+        //存入到队列中的第一个元素
+        int[] d = {x, y};
+        q.add(d);
+        //循环遍历把所有队列中的元素遍历完（也就是把最近的能符合条件的遍历完）
+        while (!q.isEmpty()) {
+            //弹出当前队头元素进行对他周围的进行判断是否符合相应的条件
+            int[] oq = q.poll();
+            //四个方向
+            for (int i = 0; i < 4; i++) {
+                int nx = oq[0] + change[i][0];
+                int ny = oq[1] + change[i][1];
+                //在边界之内 grid寻找岛的边界
+                if (nx >= 0 && nx < grid.length && ny >= 0 && ny < grid[0].length && grid[nx][ny] == '1') {
+                    int[] qs = {nx, ny};
+                    //当前满足条件的值加入队列
+                    q.add(qs);
+                    //加入队列后进行标志
+                    grid[nx][ny] = '0';
+                }
+            }
+        }
+    }
+
+}
+
+```
