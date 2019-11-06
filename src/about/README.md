@@ -2,7 +2,7 @@
 view: page
 title: About me
 description: 
-excerpt: Student of SEI, PKU
+excerpt: Chen Guoqiang, present student of SEI, PKU
 ctaContact: true
 meta:
   - property: og:image
@@ -15,20 +15,12 @@ meta:
 
 # [Guoqiang's CV in Chinese](https://www.robinchen95.com/Intro.pdf)  
 
-# Guoqiang’s Intro  
+## Brief Intro to Guoqiang   
 
 Chen Guoqiang, born in 1995, now is a student majors in Software Engineering of Peking University.  
-He has a large range of interets in the entire computer ecosystem, from computer manufacture/repairing to CPU/Memory work principle.  
+He has a large range of interets in the entire computer ecosystem.    
 He has been learnt about the software enginering systematiclly for more than five years, and is experiential in many projects.  
 He has done lots of work on software researching, compiler, operating system, artificial intelligence, and Big data.  
-
-
----
-
-## Brief Intro to Guoqiang  
-
-He has a large range of interets in the entire computer ecosystem, from computer manufacture/repairing 
-to CPU/Memory work principle, also in artificial intelligence.   
 
 ---
 
@@ -42,7 +34,7 @@ to CPU/Memory work principle, also in artificial intelligence.
 ## Awards & certificate
 
 + Second award at campus innovation competition  
-+ Top3 student of Bionogy in 2014 CEE of Sichuan Province,(ranks 3/360,000)  
++ Top3 student of Bionogy in 2014 CEE of Sichuan Province (ranks 3/360,000)  
 + English certificate of CET-6  
 + Japanese certificate of N5  
 
