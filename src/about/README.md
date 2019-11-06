@@ -13,38 +13,38 @@ meta:
 
 ---
 
-# Chen Guoqiang’s Intro
+# [Guoqiang's CV in Chinese](https://www.robinchen95.com/Intro.pdf)  
 
-Chen Guoqiang, born in 1995, now is a student majors in Software Engineering of Peking University.
+# Guoqiang’s Intro  
 
-He has a large range of interets in the entire computer ecosystem, from computer manufacture/repairing to CPU/Memory work principle.
-
-He has been learnt about the software enginering systematiclly for more than five years, and is experiential in many projects.
-
-He has done lots of work on software researching, compiler, operating system, artificial intelligence, and Big data.
+Chen Guoqiang, born in 1995, now is a student majors in Software Engineering of Peking University.  
+He has a large range of interets in the entire computer ecosystem, from computer manufacture/repairing to CPU/Memory work principle.  
+He has been learnt about the software enginering systematiclly for more than five years, and is experiential in many projects.  
+He has done lots of work on software researching, compiler, operating system, artificial intelligence, and Big data.  
 
 
 ---
 
-## Brief Intro to Chen
+## Brief Intro to Guoqiang  
 
-He has a large range of interets in the entire computer ecosystem, from computer manufacture/repairing to CPU/Memory work principle, also in artificial intelligence. 
+He has a large range of interets in the entire computer ecosystem, from computer manufacture/repairing 
+to CPU/Memory work principle, also in artificial intelligence.   
 
 ---
 
 ## Education Background
 
-+ Form 2014 to 2018, admitted as a student of XJTU major in Software Engineering
-
-+ From 2018 to now, admitted as a student of PKU major in Software Engineering
++ Form 2014 to 2018, admitted as a student of XJTU major in Software Engineering  
++ From 2018 to now, admitted as a student of PKU major in Software Engineering  
 
 ------
 
 ## Awards & certificate
 
-+ Top3 student of Bionogy in 2014 CEE of Sichuan Province,(ranks 3/360,000)
-
-+ English certificate of CET-6 without any review
++ Second award at campus innovation competition  
++ Top3 student of Bionogy in 2014 CEE of Sichuan Province,(ranks 3/360,000)  
++ English certificate of CET-6  
++ Japanese certificate of N5  
 
 ## Selected Project Experience
 
