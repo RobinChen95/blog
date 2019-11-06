@@ -13,7 +13,7 @@ meta:
 
 ---
 
-# [Guoqiang's CV in Chinese](https://www.robinchen95.com/Intro.pdf)  
+# [中文简历](https://www.robinchen95.com/Intro.pdf)  
 
 ## Brief Intro to Guoqiang   
 
