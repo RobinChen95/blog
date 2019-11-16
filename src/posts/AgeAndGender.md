@@ -3,9 +3,9 @@ view: post
 layout: post                          # Only in unique we use the "layout: post"
 lang: en                              # Lang is required
 author: 陈国强
-title: 人脸识别小程序的搭建
+title: 人脸识别程序的搭建
 description:
-excerpt: 包含微信小程序(html,css,js)、后台(nginx,uwsgi,flask,python,tensorflow等)服务器的搭建技术
+excerpt: 包含微信小程序(html,css,js)、后台(nginx,uwsgi,supervisord,flask,python,tensorflow等)服务器的搭建技术
 cover: true                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
 demo:
@@ -22,5 +22,12 @@ meta:                                 # If you have cover image
     content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
 ---
 
-## Abstract  
+## 实现效果  
+
+(感谢吴彦祖同学提供的测试照)  
+![](../img/test_result.jpg)  
+
+## 项目结构  
+
+
 

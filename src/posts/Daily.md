@@ -6,14 +6,14 @@ author: 陈国强
 title: 提醒事项
 description:
 excerpt:
-cover: false                         # Leave false if the post does not have cover image, if there is set to true
+cover: true                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
 categories:
   - Life
 tags: 
   - HTML
-created_at: 2019-03-18 19:00
+created_at: 2019-04-18 19:00
 updated_at: 2019-04-12 14:00
 meta:                                 # If you have cover image
   - property: og:image
@@ -28,7 +28,6 @@ meta:                                 # If you have cover image
 ---
 |项目|待办|预计完成时间|
 |:----:|:----:|:----:|
-|AI后端|是|part-time one week|
 |Java mq|是|part-time one week|
 |Java compiler|是|full-time two week|
 ---  
