@@ -6,7 +6,7 @@ author: 陈国强
 title: Leetcode题解
 description: 使用Java语言的Leetcode解题记录
 excerpt: 使用Java语言的Leetcode解题记录
-cover: false                         # Leave false if the post does not have cover image, if there is set to true
+cover: true                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
 categories:

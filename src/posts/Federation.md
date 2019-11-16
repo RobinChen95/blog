@@ -6,7 +6,7 @@ author: 陈国强
 title: 联邦制与邦联制的区别
 description:
 excerpt:
-cover: false                         # Leave false if the post does not have cover image, if there is set to true
+cover: true                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
 categories:

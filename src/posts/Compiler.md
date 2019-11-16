@@ -6,7 +6,7 @@ author: 陈国强
 title: Compiler Reform
 description:
 excerpt:
-cover: false                         # Leave false if the post does not have cover image, if there is set to true
+cover: true                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt:
 demo:
 categories:
