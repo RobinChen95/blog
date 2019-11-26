@@ -29,5 +29,7 @@ meta:                                 # If you have cover image
 
 ## 项目结构  
 
+![](../img/AI_Structure.png)  
+
 
 
