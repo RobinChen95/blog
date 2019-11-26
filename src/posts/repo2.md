@@ -14,7 +14,7 @@ categories:
   - Blog
   - Back_end
 tags:
-  - vue.js
+  - vue.js``
 created_at: 2019-11-20 00:00
 updated_at: 2019-11-20 00:00
 meta:                                 # If you have cover image

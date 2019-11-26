@@ -5,7 +5,7 @@ lang: en                              # Lang is required
 author: 陈国强
 title: 人脸识别程序的搭建
 description:
-excerpt: 包含微信小程序(html,css,js)、后台(nginx,uwsgi,supervisord,flask,python,tensorflow等)服务器的搭建技术
+excerpt: 包含三部分：微信小程序(html,css,js)、后台(nginx,uwsgi,supervisord,flask,python等)、AI模型(Inception-Resnet、IMDB、dlib、opencv)
 cover: true                         # Leave false if the post does not have cover image, if there is set to true
 coverAlt: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
 demo:
@@ -30,6 +30,18 @@ meta:                                 # If you have cover image
 ## 项目结构  
 
 ![](../img/AI_Structure.png)  
+
+## 准备工作  
+
+## 微信前端  
+
+## 后端服务  
+
+## AI实现  
+
+## 性能优化  
+
+## 项目测试
 
 
 
