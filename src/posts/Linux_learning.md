@@ -7,7 +7,7 @@ title: 零碎的Linux笔记
 description:
 excerpt: 写作本文的目的：仅需要复制粘贴对应的命令就可以实现对应的功能，不用再一个个百度谷歌了
 cover: true                         # Leave false if the post does not have cover image, if there is set to true
-coverAlt: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
+coverAlt: 
 demo:
 categories:
   - Linux

@@ -7,7 +7,7 @@ title: 人脸识别程序的搭建
 description:
 excerpt: 包含三部分：微信小程序(html,css,js)、后台(nginx,uwsgi,supervisord,flask,python等)、AI模型(Inception-Resnet、IMDB、dlib、opencv)
 cover: true                         # Leave false if the post does not have cover image, if there is set to true
-coverAlt: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
+coverAlt: 
 demo:
 categories:
   - Linux
@@ -41,7 +41,7 @@ meta:                                 # If you have cover image
 + 无备案域名  
 无备案域名可以从新浪云购买服务器，为什么选择新浪云？因为据了解仅有新浪云提供带备案的域名，而其他云服务仅提供公网IP，而微信小程序添加备案过的
 域名作为request请求域，不可以直接使用公网IP，但是，新浪云仅提供带PHP环境的服务器，所以，需要用PHP做一次请求转发，而图片保存在本地。  
-```Vue
+```php
 <?php
 header('Content-Type:application/json');  //此声明非常重要
 //----------------------------------------------------------------  
