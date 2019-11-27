@@ -32,8 +32,8 @@ meta:                                 # If you have cover image
 ![](../img/AI_Structure.png)  
 
 ## 准备工作  
-
-[微信小程序的申请流程](https://robinchen95.com/documents/wx02.pdf)  
+### 微信小程序申请  
+> **[微信小程序的申请流程](https://robinchen95.com/documents/wx02.pdf)**  
 
 ## 微信前端  
 
