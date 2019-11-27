@@ -33,6 +33,8 @@ meta:                                 # If you have cover image
 
 ## 准备工作  
 
+[微信小程序的申请流程](https://robinchen95.com/documents/wx02.pdf)  
+
 ## 微信前端  
 
 ## 后端服务  
@@ -41,7 +43,7 @@ meta:                                 # If you have cover image
 
 ## 性能优化  
 
-## 项目测试
+## 项目测试  
 
 
 
