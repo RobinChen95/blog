@@ -33,11 +33,11 @@ meta:                                 # If you have cover image
 
 ## 准备工作  
 1.微信小程序申请  
-> **[微信小程序的申请流程](https://robinchen95.com/documents/wx02.pdf)**  
+> **[微信小程序的申请及开发工具的使用](https://robinchen95.com/documents/wx02.pdf)**  
 
 2.备案域名的处理  
 + 有备案域名  
-有备案域名请跳过本节
+有备案域名请跳过本节  
 + 无备案域名  
 无备案域名可以从新浪云购买服务器，为什么选择新浪云？因为据了解仅有新浪云提供带备案的域名，而其他云服务仅提供公网IP，而微信小程序添加备案过的
 域名作为request请求域，不可以直接使用公网IP，但是，新浪云仅提供带PHP环境的服务器，所以，需要用PHP做一次请求转发，而图片保存在本地。  
@@ -82,7 +82,6 @@ if(is_uploaded_file($_FILES['file']['tmp_name'])) {
 }
 //----------------------------------------------------------------  
 
-
 // 本节为发送http请求的函数
 function send_post($url, $post_data) {
 	$postdata = http_build_query($post_data);
@@ -100,8 +99,11 @@ function send_post($url, $post_data) {
 }
 ?>
 ```
+3.为域名部署https证书  
+> **[阿里云的证书部署](https://www.cnblogs.com/SemiconductorKING/p/9106971.html)**  
 
 ## 微信前端  
+
 
 ## 后端服务  
 
@@ -110,6 +112,4 @@ function send_post($url, $post_data) {
 ## 性能优化  
 
 ## 项目测试  
-
-
 
