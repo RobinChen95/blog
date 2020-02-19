@@ -16,7 +16,7 @@ categories:
 tags:
   - vue.js``
 created_at: 2019-11-20 00:00
-updated_at: 2019-11-20 00:00
+updated_at: 2020-02-19 12:00
 meta:                                 # If you have cover image
   - property: og:image
     content: /share/windows-version.png  
