@@ -25,7 +25,7 @@ module.exports = {
   copy: `京ICP备19001126号`,
   footer: {
     nav1: {
-      title: '陈国强个人介绍',
+      title: '关于我',
       items: [
         {
           label: 'ABOUT',
