@@ -22,10 +22,7 @@ module.exports = {
     provider: 'mailchimp',
     action: ''
   },
-  copy: `京ICP备19001126号-2 - 
-        <a href="https://vuepress.vuejs.org/" rel="noopener" target="_blank">
-          MADE WITH VUEPRESS
-        </a>`,
+  copy: `京ICP备19001126号`,
   footer: {
     nav1: {
       title: '陈国强个人介绍',
