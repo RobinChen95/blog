@@ -22,7 +22,7 @@ module.exports = {
     provider: 'mailchimp',
     action: ''
   },
-  copy: `2019 © La Rosa - 
+  copy: `京ICP备19001126号-2 - 
         <a href="https://vuepress.vuejs.org/" rel="noopener" target="_blank">
           MADE WITH VUEPRESS
         </a>`,
@@ -53,11 +53,11 @@ module.exports = {
         },
         {
           label: '西安交通大学',
-          link: 'http://www.xjtu.edu.cn/'   
+          link: 'http://www.xjtu.edu.cn/'
         },
 		{
           label: '慧强dalao博客',
-          link: 'https://wyydsb.xin/'   
+          link: 'https://wyydsb.xin/'
         }
       ]
     }
