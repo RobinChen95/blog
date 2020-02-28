@@ -35,12 +35,9 @@ meta:                                 # If you have cover image
 1.微信小程序申请  
 > **[微信小程序的申请及开发工具的使用](https://robinchen95.com/documents/wx02.pdf)**  
 
-2.备案域名的处理  
-+ 有备案域名  
-有备案域名请跳过本节  
-+ 无备案域名  
-无备案域名可以从新浪云购买服务器，为什么选择新浪云？因为据了解仅有新浪云提供带备案的域名，而其他云服务仅提供公网IP，而微信小程序添加备案过的
-域名作为request请求域，不可以直接使用公网IP，但是，新浪云仅提供带PHP环境的服务器，所以，需要用PHP做一次请求转发，而图片保存在本地。  
+2.无备案域名的处理，有备案域名请跳过本节   
+无备案域名可以从新浪云购买服务器，为什么选择新浪云？因为根据目前了解到的情况，仅有新浪云提供带备案的域名，而其他云服务仅提供公网IP，而微信小程序添加备案过的
+域名作为request请求域，不可以直接使用公网IP，但是，新浪云仅提供带PHP环境的服务器，所以，需要用PHP做一次请求转发，而图片保存在新浪云服务器。  
 ```php
 <?php
 header('Content-Type:application/json');  //此声明非常重要
@@ -101,6 +98,8 @@ function send_post($url, $post_data) {
 ```
 3.为域名部署https证书  
 > **[阿里云的证书部署](https://www.cnblogs.com/SemiconductorKING/p/9106971.html)**  
+> 此处应该注意的是，https监听的是443端口，而http监听的是80端口，所以针对http请求需要配置一下转发，会在接下来的Nginx配置中介绍  
+> 比如访问[http://robinchen95.com](http://robinchen95.com),会自动转发到https监听的443端口  
 
 ## 微信前端  
 
