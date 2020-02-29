@@ -11,6 +11,10 @@ coverAlt:
 demo:
 categories:
   - Linux
+  - Fore_end
+  - Back_end
+  - Python
+  - Java
 tags: 
   - Linux
 created_at: 2020-02-25 00:00
@@ -36,10 +40,10 @@ meta:                                 # If you have cover image
 ![](../img/AI_Structure.png)  
 
 ## 准备工作  
-**1.微信小程序申请**  
+**1. 微信小程序申请**  
 > **[微信小程序的申请及开发工具的使用](https://robinchen95.com/documents/wx02.pdf)**  
 
-**2.购买具有公网IP的云主机，阿里云、腾讯云、新浪云等等均可**  
+**2. 购买具有公网IP的云主机，阿里云、腾讯云、新浪云等等均可**  
 做第一版架构时，由于没有备案过的域名，所以此项目曾经有过这样的架构版本：  
 由于微信小程序只能添加备案过的域名作为request请求域，不可以直接使用公网IP，所以，需要做一次请求转发，目的是绕过腾讯域名审核。 
 而只有新浪云会提供带有备案域名的服务器，为了绕过域名备案，第一版架构购买了一个新浪云服务器。但由于新浪云只提供基于PHP语言环境的服务器，
@@ -118,7 +122,7 @@ function send_post($url, $post_data) {
 }
 ?>
 ```
-**3.为域名部署https证书**  
+**3. 为域名部署https证书**  
 > **[阿里云的证书部署](https://www.cnblogs.com/SemiconductorKING/p/9106971.html)**  
 > 此处应该注意的是，https监听的是443端口，而http监听的是80端口，所以针对http请求需要配置一下转发，会在接下来的Nginx配置中介绍  
 > 比如访问[http://robinchen95.com](http://robinchen95.com),会自动转发到https监听的443端口  
