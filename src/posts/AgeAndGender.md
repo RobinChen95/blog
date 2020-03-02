@@ -40,10 +40,10 @@ meta:                                 # If you have cover image
 ![](../img/AI_Structure.png)  
 
 ## 三、准备工作  
-**1. 微信小程序申请**  
+### (1)微信小程序申请  
 > **[微信小程序的申请及开发工具的使用](https://robinchen95.com/documents/wx02.pdf)**  
 
-**2. 购买具有公网IP的云主机，阿里云、腾讯云、新浪云等等均可**  
+### (2)购买具有公网IP的云主机，阿里云、腾讯云、新浪云等等均可  
 做第一版架构时，由于没有备案过的域名，所以此项目曾经有过这样的架构版本：  
 由于微信小程序只能添加备案过的域名作为request请求域，不可以直接使用公网IP，所以，需要做一次请求转发，目的是绕过腾讯域名审核。 
 而只有新浪云会提供带有备案域名的服务器，为了绕过域名备案，第一版架构购买了一个新浪云服务器。但由于新浪云只提供基于PHP语言环境的服务器，
@@ -122,31 +122,153 @@ function send_post($url, $post_data) {
 }
 ?>
 ```
-**3. 为域名部署https证书**  
+### (3)为域名部署https证书  
 > **[阿里云的证书部署](https://www.cnblogs.com/SemiconductorKING/p/9106971.html)**  
 > 此处应该注意的是，https监听的是443端口，而http监听的是80端口，所以针对http请求需要配置一下转发，会在接下来的Nginx配置中介绍  
 > 比如访问[http://robinchen95.com](http://robinchen95.com),会自动转发到https监听的443端口  
 
 ## 四、微信前端  
-### 前端分析  
+### (1)前端分析  
 **1. 为什么前端会用微信小程序呢？**  
     a.因为微信小程序是实现`跨平台`的最好方法，可以同时兼容安卓、iOS、桌面操作系统，一言蔽之，只要能装微信的地方，都可以运行  
     b.为了使程序具有趣味性，需要用户能够实时上传照片或拍照，那么最好该设备能具有摄像头，那么最好的载体自然是手机，能够随时随地使用而不受限制  
+    
 **2. 微信前端开发中需要使用的工具与语言**  
     a.首先需要下载微信开发者工具[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)  
     b.与一般的前端开发相同，需要使用HTML(WXML)、CSS(WXSS)、JS进行开发，同时，微信开发工具里集成了很多API，部分功能都不需要自己实现  
+    
 **3. 微信前端需要实现的功能分析**  
     a.无论后端架构如何改变，微信前端的任务是：`获取图片，发送图片，接收结果`。至于后端使用了几个服务器，如何做了存证，架构怎样，前端一概不关心。
     b.获取图片：从用户的角度而言，需要有两种获取图片的方式：实时拍照上传与上传相册照片
     c.发送图片：获取到图片之后，向目标URL发送一次https请求，并请求回复
     d.接受结果：前端接收到返回的结果后，将数据经过解析展现在屏幕上  
+    
 **4. 微信开发配置**  
     a.配置安全域：在微信公众平台中登录已经申请过的微信小程序，在开发-开发设置-服务器域名中设置服务器的配置，只有经过这一步之后，小程序才能使用腾讯之外的URL
     ![](../img/SetUrl.png)  
+    
 **5. 微信版本管理**  
     a.微信小程序必须经过腾讯审核才能发布，在微信开发工具中写好的小程序需要上传，然后再微信公众平台通过审核之后发布才能对用户开放  
 
-### 前端代码  
+### (2)前端代码解析    
+![](../img/WX_Simu.png)   
+经过上述分析，前端代码的任务是：获取图片，发送图片，接收结果，那么依据此思路进行设计：
+对于位置与天气信息的更新涉及到百度API与开发者账号的申请，此处略去不表，可以将此处换成其他信息，需要展示的数据都是可以自定义的，
+包括图片与文字内容，比如对于位置天气等信息，是先前端使用占位符，等待js请求的数据获取到之后进行更新，图片同理。  
+
+**1. 获取图片的设计要点**    
+```html
+<!--关键代码-->
+<view class="container">
+    <view class="nowWeather">
+        <view class="flexs">
+          <!-- 对位置与天气信息进行展位，等待JS实时更新-->
+          <view class="left">{{city}} {{district}} </view>
+          <view class="right">{{curdate}}</view>
+        </view>
+        <view class="flexs">
+            <view class="left f40">{{author}} </view>
+            <view class="right">
+              <text class="f30 w b">{{weather}}</text>
+            </view>
+        </view>
+    </view>
+    <form>
+        <view class="button">
+            <!-- 按钮信息，bindtap='selectPhoto'指的是点击时执行对应的js文件中的selectPhoto函数-->
+            <button form-type="submit" bindtap='selectPhoto'>点击上传照片</button>
+        </view>
+    </form>
+    <view>
+        <!-- 对图片同样是先进行占位，等待用户拍照或者选择照片之后更新-->
+        <image class="touxiang" src="{{pic}}"></image>
+    </view>
+    <!-- 服务器解析之后的年龄与性别信息-->
+    <view class="w b center displaytext f40">{{age}}</view>
+    <view class="w b center displaytext f40">{{gender}}</view>
+    <view class="w b center displaytext f40">{{reminder}}</view>
+</view>
+```
+
+**2. 发送图片与接收结果的设计要点**  
+发送图片主要涉及用户拍照与选择相册上传、向服务器上传用户上传的图片  
+```javascript
+// 解决用户拍照与选择相册上传
+ selectPhoto:function(){
+    var that = this;
+    // 询问用户是拍照还是从相册选择照片
+    wx.showActionSheet({
+      itemList: ['从相册中选择', '拍照'],
+      itemColor: "#39C5BB",
+      success: function (res) {
+        if (!res.cancel) {
+          if (res.tapIndex == 0) {
+            that.chooseWxImage('album')
+          } else if (res.tapIndex == 1) {
+            that.chooseWxImage('camera')
+          }
+        }
+      }
+    })
+  }
+```
+接收结果主要是上传成功之后的回调函数，对于用户上传的恶作剧图片(不包含人脸的图片)，识别结果"-1"并输出图片错误结果；对于正常图片，则解析后展示      
+```javascript
+    // 用户做完选择之后，向服务器上传照片
+ chooseWxImage: function (type) {
+    var that = this;
+    var id = '001';
+    // 注意，此处只能使用在微信公众平台配置的安全域URL
+    var url = "https://www.robinchen95.com/upload";
+    wx.chooseImage({
+      sizeType: ['original', 'compressed'],
+      sourceType: [type],
+      success: function (res) {
+        console.log(res);
+        // 用户上传完图片之后到接收到服务器相应之前，设置响应内容  
+        that.setData({
+          tempFilePaths:res.tempFilePaths,
+          age: "请稍候（>﹏<）",
+          gender: "正在提交服务器判断",
+
+        }) 
+        //-----上传图片-----
+        wx.uploadFile({
+          url: url,
+          filePath: res.tempFilePaths[0],
+          name: 'file',
+          // 上传成功的回调函数
+          success: function (res) {
+            console.log(res.data);
+            // 经过多数用户使用之后，发现部分用户会上传恶作剧图片或者不合格的图片，此时识别后端返回的"-1"
+            if (res.data=="-1"){
+              that.setData({
+                age:  " 请提交人脸图片！",
+                gender:  "请不要恶作剧！（╯‵□′）╯︵┴─┴",
+              })
+            } 
+            // 对于识别正常的用户，展示结果，此时返回的结果是一个自定义的字符串，解析后进行展示  
+            else{
+              var res_gender = res.data.split('"')[5];
+              if (res_gender == "Male") {res_gender="男";}
+              if (res_gender == "Female") {res_gender = "女";}
+              that.setData({
+                age: "经AI推测，您的年龄是：" + res.data.split(':')[1].split(',')[0],
+                gender: "经AI推测，您的性别是：" + res_gender, 
+                reminder:"测试误差在±5岁以内哦o(*￣︶￣*)o",
+              })
+            }
+          }
+        })
+      // 此处是用户上传完照片之后，将图片更改为用户选择的图片
+      var imgPath = res.tempFilePaths[0];
+      that.setData({
+        pic:imgPath,
+      })
+      }
+    })
+  }
+```
 
 
 ## 五、后端服务  
