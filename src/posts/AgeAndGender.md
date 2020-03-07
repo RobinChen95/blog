@@ -464,7 +464,7 @@ autorestart=true
 + [介绍残差网络在深度学习中的应用，用以解决深层神经网络的梯度消失/爆炸的问题，CVPR 2016](https://robinchen95.com/documents/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)  
 + [介绍Inception网络在图像识别领域中的应用，CVPR 2016](https://robinchen95.com/documents/Rethinking_the_Inception_CVPR_2016_paper.pdf)  
 + Inception-Resnet结构:
-![](../img/InceptionV4结果.png)
+![](../img/InceptionV4.png)
   
 > 同时，由于是学生，拿不到商业公司的数据集，所以就用的是开源的IMDB数据集，总计两百多G，但由于机器性能限制，本次跑的是精简版数据集   
 
