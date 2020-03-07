@@ -508,3 +508,6 @@ autorestart=true
 |剔除不合格数据|自己写的逻辑|
 |图片预处理与转换|CV2|
 
+**2. 关键代码解析**  
+[年龄与性别检测AI代码解析](https://robinchen95.com/documents/AGE.pdf)
+
