@@ -40,10 +40,10 @@ meta:                                 # If you have cover image
 ![](../img/AI_Structure.png)  
 
 ## 三、准备工作  
-### (1) 微信小程序申请  
+### 「1」 微信小程序申请  
 > **[微信小程序的申请及开发工具的使用](https://robinchen95.com/documents/wx02.pdf)**  
 
-### (2) 购买具有公网IP的云主机，阿里云、腾讯云、新浪云等等均可  
+### 「2」 购买具有公网IP的云主机  
 做第一版架构时，由于没有备案过的域名，所以此项目曾经有过这样的架构版本：  
 由于微信小程序只能添加备案过的域名作为request请求域，不可以直接使用公网IP，所以，需要做一次请求转发，目的是绕过腾讯域名审核。 
 而只有新浪云会提供带有备案域名的服务器，为了绕过域名备案，第一版架构购买了一个新浪云服务器。但由于新浪云只提供基于PHP语言环境的服务器，
@@ -122,13 +122,13 @@ function send_post($url, $post_data) {
 }
 ?>
 ```
-### (3) 为域名部署https证书  
+### 「3」 为域名部署https证书  
 > **[阿里云的证书部署](https://www.cnblogs.com/SemiconductorKING/p/9106971.html)**  
 > 此处应该注意的是，https监听的是443端口，而http监听的是80端口，所以针对http请求需要配置一下转发，会在接下来的Nginx配置中介绍  
 > 比如访问[http://robinchen95.com](http://robinchen95.com),会自动转发到https监听的443端口  
 
 ## 四、微信前端  
-### (1) 前端分析  
+### 「1」 前端分析  
 **1. 为什么前端会用微信小程序呢？**  
     a.因为微信小程序是实现`跨平台`的最好方法，可以同时兼容安卓、iOS、桌面操作系统，一言蔽之，只要能装微信的地方，都可以运行  
     b.为了使程序具有趣味性，需要用户能够实时上传照片或拍照，那么最好该设备能具有摄像头，那么最好的载体自然是手机，能够随时随地使用而不受限制  
@@ -150,7 +150,7 @@ function send_post($url, $post_data) {
 **5. 微信版本管理**  
     a.微信小程序必须经过腾讯审核才能发布，在微信开发工具中写好的小程序需要上传，然后再微信公众平台通过审核之后发布才能对用户开放  
 
-### (2) 前端代码解析    
+### 「2」 前端代码解析    
 ![](../img/WX_Simu.png)   
 经过上述分析，前端代码的任务是：获取图片，发送图片，接收结果，那么依据此思路进行设计：
 对于位置与天气信息的更新涉及到百度API与开发者账号的申请，此处略去不表，可以将此处换成其他信息，需要展示的数据都是可以自定义的，
@@ -273,10 +273,186 @@ function send_post($url, $post_data) {
 
 
 ## 五、后端服务  
-### (1) 后端分析  
+### 「1」 后端分析  
+后端采用Nginx + uWSGI + flask + supervisord 实现
 
+**1. 后端功能分析**  
+后端需要实现：通过URL实现用户上传文件、将文件传入AI模型解析、返回AI模型解析的结果  
++ Nginx：Nginx是一个开源的Web服务器，用于接收请求，起到反向代理的作用  
++ uWSGI：用于在Nginx与Flask应用之间通信  
++ Flask：Flask是一个Python的轻量级Web框架，用于定义一个网络服务，例如跑AI模型  
++ supervisord：是一个守护进程，能够让某个进程即使关闭SSH窗口也能一直在后台运行  
+整体架构：  
+![](../img/Back_Arch.png)  
+
+**2. Nginx配置解析**  
+Nginx是主Web服务器，同时提供了[本网站主页](https://robinchen95.com/)与文件上传的分发功能  
+Nginx的配置可参考：[在linux上通过nginx配置微信小程序服务器](https://www.jianshu.com/p/95f617564de5)  
+Nginx也需要同时配置upload module用于上传文件，参考文章[Nginx上传模块](https://www.cnblogs.com/lidabo/p/4169721.html)  
+Nginx建议使用编译安装，方便后续配置添加模块  
+Nginx.conf详解：  
+```shell script
+# 启用一个工作线程，与CPU线程数有关
+worker_processes  1;
+
+# Nginx的事件模块
+events {
+    # 同时允许1024个连接
+    worker_connections  1024;
+}
+
+# Nginx的http模块，在其中用server{ ... }添加指定server，可以添加多个server
+http {
+    include       mime.types;
+    client_max_body_size 100M;
+    default_type  application/octet-stream;
+    sendfile        on;
+    keepalive_timeout  65;
+
+    # 添加的一个server，用于监听http的80端口，将http强制转换为https
+    server {
+        listen       80;
+        server_name  robinchen95.com;
+        # 强制http转到https
+     return 301 https://$host$request_uri;
+    }
+        
+    # 添加的第二个server，同样也是用server{ ... }添加指定server
+    # 本处的server写的是监听https的443端口
+    # location用于识别域名后的uri，例如location /upload{ ... }用于监听到https://robinchen95.com/upload 时服务器的行为
+    server {
+         listen 443 ssl;
+         charset utf-8;
+         client_max_body_size 100M;
+         server_name robinchen95.com;
+         ssl_certificate   cert/2017351_www.robinchen95.com.pem;
+         ssl_certificate_key  cert/2017351_www.robinchen95.com.key;
+         ssl_session_timeout 5m;
+         ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+         ssl_prefer_server_ciphers on;
+    
+         # 配置博客主页访问
+         location / {
+             root /myblog/src/.vuepress/dist;
+             index index.html index.htm;
+         }
+    
+        # 配置图片上传
+        # 需要在此处配置uWSGI的参数
+        location /upload {
+            include uwsgi_params;         # 导入uwsgi配置                                            
+            uwsgi_pass  127.0.0.1:8081;    # 转发端口，需要和uwsgi配置当中的监听端口一致                                             
+            uwsgi_param UWSGI_PYHOME /root/env/;       # Python解释器所在的路径（这里为虚拟环境）      
+            uwsgi_param UWSGI_CHDIR /root/env;             # 项目根目录     
+            uwsgi_param UWSGI_SCRIPT test:app; #（比如你测试用test.py文件，文件中app = Flask(__name__)，那么这里就填  test：app)
+            #return 200 "success";
+        }
+        
+        # 配置document文件夹的访问，输入https://robinchen95.com/documents 即可访问
+        location /documents{
+            root    /;
+            autoindex on;
+        }
+      }	
+}
+
+```
+
+**3. uWSGI配置解析**  
+uWSGI起到的作用是连接Nginx与flask进程，将Nginx转发的请求发给flask解析并向Nginx返回结果  
+uWSGI的安装配置教程[Python uWSGI 安装配置](https://www.runoob.com/python3/python-uwsgi.html)  
+uWSGI的配置文件：  
+```shell script
+[uwsgi]
+# 由于外部还要嵌套Nginx，这里可以使用socket进行通信，如果Nginx和uwsgi部署在同一台机器上，直接使用127.0.0.1
+# 如果外部直接通过uwsgi访问服务，需将socket改为http-socket或者http，将127.0.0.1改为0.0.0.0
+socket = 127.0.0.1:8081
+# 这行一定要加上，不然请求时会出现-- unavailable modifier requested: 0 --错误提示 
+plugins = python   
+# 项目目录                                               
+chdir = /root/env
+# 虚拟环境所在路径
+virtualenv =/root/env
+# 编写flask代码的py文件
+wsgi-file = test.py
+# Flask应用对象
+callable = app
+```
+
+**4. Flask配置解析**  
+Flask相当于是一个时刻都在运行的python服务，使得python应用可以通过指定的端口访问到  
+Flask基础教程[Flask官方文档](https://dormousehole.readthedocs.io/en/latest/)  
+test.py文件解析：
+
+```python
+# coding=utf-8
+import os
+import sys
+sys.path.append("/root/env")
+import app_wx
+from flask import Flask, request
+# 加密上传的文件，可以去掉 
+from werkzeug import secure_filename   
+app = Flask(__name__)
+# 在此处加载AI模型，这个很重要，可以减少很多重复加载时间
+model_cv = app_wx.Application("./models")
+
+@app.route('/upload', methods=['GET','POST'])
+def upload_img():
+    if request.method == 'GET':   # 如果是 GET 请求方式
+        return "请不要通过浏览器访问！来自python2.7"
+    if request.method == 'POST':   # 如果是 POST 请求方式
+        file = request.files['file']   # 获取上传的文件
+    if file:
+        # 获取加密后的文件名
+        filename = secure_filename(file.filename)   
+        file.save(os.path.join('/img', '{}'.format(filename)))
+        # 调用加载好的模型预测
+        pre_result=model_cv.predict(os.path.join('/img', '{}'.format(filename)))
+        # 预测成功
+        return pre_result   
+    return "failed"
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=8081)
+
+```
+
+**5. supervisord配置解析**  
+supervisord是一个守护进程，用于守护uWSGI进程，让其能够一直在后台运行，而不是因为断开SSH连接而停止  
+supervisord教程：[supervisord守护进程的使用](https://www.cnblogs.com/lemon-flm/articles/9283664.html)  
+supervisord配置文件解析：  
+```
+; supervisor config file
+
+[unix_http_server]
+file=/var/run/supervisor.sock   ; (the path to the socket file)
+chmod=0700                       ; sockef file mode (default 0700)
+
+[supervisord]
+logfile=/var/log/supervisor/supervisord.log ; (main log file;default $CWD/supervisord.log)
+pidfile=/var/run/supervisord.pid ; (supervisord pidfile;default supervisord.pid)
+childlogdir=/var/log/supervisor            ; ('AUTO' child log dir, default $TEMP)
+
+supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+
+[supervisorctl]
+serverurl=unix:///var/run/supervisor.sock ; use a unix:// URL  for a unix socket
+; 主要是配置在此之下的内容
+[include]
+files = /etc/supervisor/conf.d/*.conf
+
+[program:uwsgi]
+; 配置命令，指定uwsgi运行
+command= /usr/local/bin/uwsgi --ini /root/uwsgi.ini
+user=root
+autostart=true
+autorestart=true
+```
 
 ## 六、AI实现  
+
 
 ## 七、性能优化  
 
