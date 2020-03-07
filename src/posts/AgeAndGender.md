@@ -17,8 +17,8 @@ categories:
   - Java
 tags: 
   - Linux
-created_at: 2020-02-25 00:00
-updated_at: 2020-02-25 00:00
+created_at: 2020-03-08 00:00
+updated_at: 2020-03-08 00:00
 meta:                                 # If you have cover image
   - property: og:image
     content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
