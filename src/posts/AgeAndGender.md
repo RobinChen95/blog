@@ -275,8 +275,6 @@ function send_post($url, $post_data) {
 ## 五、后端服务  
 ### 「1」 后端分析  
 后端采用Nginx + uWSGI + flask + supervisord 实现
-
-**1. 后端功能分析**  
 后端需要实现：通过URL实现用户上传文件、将文件传入AI模型解析、返回AI模型解析的结果  
 + Nginx：Nginx是一个开源的Web服务器，用于接收请求，起到反向代理的作用  
 + uWSGI：用于在Nginx与Flask应用之间通信  
@@ -285,7 +283,9 @@ function send_post($url, $post_data) {
 整体架构：  
 ![](../img/Back_Arch.png)  
 
-**2. Nginx配置解析**  
+### 「2」 关键代码解析  
+
+**1. Nginx配置解析**  
 Nginx是主Web服务器，同时提供了[本网站主页](https://robinchen95.com/)与文件上传的分发功能  
 Nginx的配置可参考：[在linux上通过nginx配置微信小程序服务器](https://www.jianshu.com/p/95f617564de5)  
 Nginx也需要同时配置upload module用于上传文件，参考文章[Nginx上传模块](https://www.cnblogs.com/lidabo/p/4169721.html)  
@@ -359,7 +359,7 @@ http {
 
 ```
 
-**3. uWSGI配置解析**  
+**2. uWSGI配置解析**  
 uWSGI起到的作用是连接Nginx与flask进程，将Nginx转发的请求发给flask解析并向Nginx返回结果  
 uWSGI的安装配置教程[Python uWSGI 安装配置](https://www.runoob.com/python3/python-uwsgi.html)  
 uWSGI的配置文件：  
@@ -380,7 +380,7 @@ wsgi-file = test.py
 callable = app
 ```
 
-**4. Flask配置解析**  
+**3. Flask配置解析**  
 Flask相当于是一个时刻都在运行的python服务，使得python应用可以通过指定的端口访问到  
 Flask基础教程[Flask官方文档](https://dormousehole.readthedocs.io/en/latest/)  
 test.py文件解析：
@@ -419,7 +419,7 @@ if __name__ == "__main__":
 
 ```
 
-**5. supervisord配置解析**  
+**4. supervisord配置解析**  
 supervisord是一个守护进程，用于守护uWSGI进程，让其能够一直在后台运行，而不是因为断开SSH连接而停止  
 supervisord教程：[supervisord守护进程的使用](https://www.cnblogs.com/lemon-flm/articles/9283664.html)  
 supervisord配置文件解析：  
@@ -452,9 +452,17 @@ autorestart=true
 ```
 
 ## 六、AI实现  
+### 「1」AI分析
+![](../img/AI_Arch.png)  
 
+**1. 关于AI算法与数据集的选择**  
+> 由于CV方向的迭代速度相当快，经常上月发布的最新算法就已经过时被替代，所以在算法的选择方面只需要选择近几年的顶会论文即可，没有过于苛求新网络
+、新算法。所以本次选择的是2017年发布与AAAI的Inception-Resnet，同时，参考了两篇CVPR 2016的论文，链接如下：
+>[介绍Inception-Resnet，结合Inception与Resnet，给出深度残差网络的结论，AAAI 2017](https://robinchen95.com/documents/InceptionV4.pdf)  
+>[介绍残差网络在深度学习中的应用，用以解决深层神经网络的梯度消失/爆炸的问题，CVPR 2016](https://robinchen95.com/documents/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)  
+>[介绍Inception网络在图像识别领域中的应用，CVPR 2016](https://robinchen95.com/documents/Rethinking_the_Inception_CVPR_2016_paper.pdf)
+  
+> 同时，由于是学生，拿不到商业公司的数据集，所以就用的是开源的IMDB数据集，总计两百多G，但本次跑的是精简版数据集  
 
-## 七、性能优化  
-
-## 八、项目测试  
+### 「2」关键代码解析
 
