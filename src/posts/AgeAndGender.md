@@ -276,12 +276,14 @@ function send_post($url, $post_data) {
 ### 「1」 后端分析  
 后端采用Nginx + uWSGI + flask + supervisord 实现
 后端需要实现：通过URL实现用户上传文件、将文件传入AI模型解析、返回AI模型解析的结果  
+
 |框架|作用|
 |:----:|:----:|
 |Nginx|一个开源的Web服务器，用于接收请求，起到反向代理的作用|
 |uWSGI|用于在Nginx与Flask应用之间通信|
 |Flask|一个Python的轻量级Web框架，用于定义一个网络服务，用于解析内容|
 |supervisord|一个守护进程，能够让某个进程即使关闭SSH窗口也能一直在后台运行|
+
 整体架构：  
 ![](../img/Back_Arch.png)  
 
@@ -495,6 +497,7 @@ autorestart=true
 |Python版本|Python2.7|Python2.7|
 
 **3. 实现结果分析**  
+
 |项目|准确率|
 |:----:|:----:|
 |年龄|±4.54岁|
@@ -502,6 +505,7 @@ autorestart=true
 
 ### 「2」关键代码解析  
 **1. 关于数据集处理**  
+
 |处理方式|使用的库|
 |:----:|:----:|
 |脸部校正与识别|dlib|
