@@ -276,10 +276,12 @@ function send_post($url, $post_data) {
 ### 「1」 后端分析  
 后端采用Nginx + uWSGI + flask + supervisord 实现
 后端需要实现：通过URL实现用户上传文件、将文件传入AI模型解析、返回AI模型解析的结果  
-+ Nginx：Nginx是一个开源的Web服务器，用于接收请求，起到反向代理的作用  
-+ uWSGI：用于在Nginx与Flask应用之间通信  
-+ Flask：Flask是一个Python的轻量级Web框架，用于定义一个网络服务，例如跑AI模型  
-+ supervisord：是一个守护进程，能够让某个进程即使关闭SSH窗口也能一直在后台运行  
+|框架|作用|
+|:----:|:----:|
+|Nginx|一个开源的Web服务器，用于接收请求，起到反向代理的作用|
+|uWSGI|用于在Nginx与Flask应用之间通信|
+|Flask|一个Python的轻量级Web框架，用于定义一个网络服务，用于解析内容|
+|supervisord|一个守护进程，能够让某个进程即使关闭SSH窗口也能一直在后台运行|
 整体架构：  
 ![](../img/Back_Arch.png)  
 
@@ -423,7 +425,7 @@ if __name__ == "__main__":
 supervisord是一个守护进程，用于守护uWSGI进程，让其能够一直在后台运行，而不是因为断开SSH连接而停止  
 supervisord教程：[supervisord守护进程的使用](https://www.cnblogs.com/lemon-flm/articles/9283664.html)  
 supervisord配置文件解析：  
-```Assembly
+```python
 ; supervisor config file
 
 [unix_http_server]
@@ -472,12 +474,16 @@ autorestart=true
 |:----:|:----:|:----:|
 |CPU|8核16线程 |1核1线程|
 |GPU|RTX 2060s 8G|无|
-|RAM|64G DDR4|2GB |
+|RAM|64G DDR4|2GB|
 
 > 软件环境
 
-+ Anaconda
-+ Python2.7
+|软件|训练环境|使用环境|
+|:----:|:----:|:----:|
+|操作系统|windows 10|Ubuntu 16.04LTS|
+|虚拟环境|Anaconda|flask虚拟环境|
+|Python版本|Python2.7|Python2.7|
+
 
 
 
