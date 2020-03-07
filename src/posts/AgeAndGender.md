@@ -291,7 +291,7 @@ Nginx的配置可参考：[在linux上通过nginx配置微信小程序服务器]
 Nginx也需要同时配置upload module用于上传文件，参考文章[Nginx上传模块](https://www.cnblogs.com/lidabo/p/4169721.html)  
 Nginx建议使用编译安装，方便后续配置添加模块  
 Nginx.conf详解：  
-```shell script
+```python
 # 启用一个工作线程，与CPU线程数有关
 worker_processes  1;
 
@@ -363,7 +363,7 @@ http {
 uWSGI起到的作用是连接Nginx与flask进程，将Nginx转发的请求发给flask解析并向Nginx返回结果  
 uWSGI的安装配置教程[Python uWSGI 安装配置](https://www.runoob.com/python3/python-uwsgi.html)  
 uWSGI的配置文件：  
-```shell script
+```python
 [uwsgi]
 # 由于外部还要嵌套Nginx，这里可以使用socket进行通信，如果Nginx和uwsgi部署在同一台机器上，直接使用127.0.0.1
 # 如果外部直接通过uwsgi访问服务，需将socket改为http-socket或者http，将127.0.0.1改为0.0.0.0
@@ -423,7 +423,7 @@ if __name__ == "__main__":
 supervisord是一个守护进程，用于守护uWSGI进程，让其能够一直在后台运行，而不是因为断开SSH连接而停止  
 supervisord教程：[supervisord守护进程的使用](https://www.cnblogs.com/lemon-flm/articles/9283664.html)  
 supervisord配置文件解析：  
-```
+```Assembly
 ; supervisor config file
 
 [unix_http_server]
