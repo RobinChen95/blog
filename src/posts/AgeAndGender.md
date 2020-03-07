@@ -458,11 +458,21 @@ autorestart=true
 **1. 关于AI算法与数据集的选择**  
 > 由于CV方向的迭代速度相当快，经常上月发布的最新算法就已经过时被替代，所以在算法的选择方面只需要选择近几年的顶会论文即可，没有过于苛求新网络
 、新算法。所以本次选择的是2017年发布与AAAI的Inception-Resnet，同时，参考了两篇CVPR 2016的论文，链接如下：
->[介绍Inception-Resnet，结合Inception与Resnet，给出深度残差网络的结论，AAAI 2017](https://robinchen95.com/documents/InceptionV4.pdf)  
->[介绍残差网络在深度学习中的应用，用以解决深层神经网络的梯度消失/爆炸的问题，CVPR 2016](https://robinchen95.com/documents/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)  
->[介绍Inception网络在图像识别领域中的应用，CVPR 2016](https://robinchen95.com/documents/Rethinking_the_Inception_CVPR_2016_paper.pdf)
+> [介绍Inception-Resnet，结合Inception与Resnet，给出深度残差网络的结论，AAAI 2017](https://robinchen95.com/documents/InceptionV4.pdf)  
+> [介绍残差网络在深度学习中的应用，用以解决深层神经网络的梯度消失/爆炸的问题，CVPR 2016](https://robinchen95.com/documents/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)  
+> [介绍Inception网络在图像识别领域中的应用，CVPR 2016](https://robinchen95.com/documents/Rethinking_the_Inception_CVPR_2016_paper.pdf)
   
-> 同时，由于是学生，拿不到商业公司的数据集，所以就用的是开源的IMDB数据集，总计两百多G，但本次跑的是精简版数据集  
+> 同时，由于是学生，拿不到商业公司的数据集，所以就用的是开源的IMDB数据集，总计两百多G，但由于机器性能限制，本次跑的是精简版数据集  
+> 数据集下载地址：https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/  
+
+**2. AI模型运行环境**  
+> 硬件环境
+>> CPU: AMD Ryzen 3800x
+>> GPU: RTX 2060 Super 8G
+>> Mem: 64G
+> 软件环境
+>> Anaconda
+>> Python2.7
 
 ### 「2」关键代码解析
 
