@@ -9,7 +9,7 @@ module.exports = {
   head,
   themeConfig,
   base: '/',
-  title: `La Rosa`,
+  title: `Proletarier aller Länder, vereinigt euch!`,
   evergreen: true,  // For modern browsers
   serviceWorker: true,
   locales: {

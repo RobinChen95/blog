@@ -17,8 +17,8 @@ categories:
   - Java
 tags: 
   - Linux
-created_at: 2020-03-08 00:00
-updated_at: 2020-03-08 00:00
+created_at: 2020-11-03 00:00
+updated_at: 2020-11-03 00:00
 meta:                                 # If you have cover image
   - property: og:image
     content: https://ktquez.com/share/essential-guide-to-improve-seo-in-single-page-application-vuejs.png
@@ -44,6 +44,7 @@ meta:                                 # If you have cover image
 > **[微信小程序的申请及开发工具的使用](https://robinchen95.com/documents/wx02.pdf)**  
 
 ### 「2」 购买具有公网IP的云主机  
+**本节为没有备案域名时的临时解决方案，有的备案域名的请跳过**    
 做第一版架构时，由于没有备案过的域名，所以此项目曾经有过这样的架构版本：  
 由于微信小程序只能添加备案过的域名作为request请求域，不可以直接使用公网IP，所以，需要做一次请求转发，目的是绕过腾讯域名审核。 
 而只有新浪云会提供带有备案域名的服务器，为了绕过域名备案，第一版架构购买了一个新浪云服务器。但由于新浪云只提供基于PHP语言环境的服务器，

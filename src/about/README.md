@@ -13,21 +13,22 @@ meta:
 
 ---
 
-# [CV in Chinese(中文简历)](https://www.robinchen95.com/documents/Intro.pdf)  
+# [CV in Chinese](https://www.robinchen95.com/documents/Intro.pdf)  
 
 ## Brief Intro to Guoqiang   
 
-Chen Guoqiang, born in 1995, now is a student majors in Software Engineering of Peking University.  
-He has a large range of interets in the entire computer ecosystem.    
-He has been learnt about the software enginering systematiclly for more than five years, and is experiential in many projects.  
-He has done lots of work on software researching, compiler, operating system, artificial intelligence, and Big data.  
+Chen Guoqiang, born in 1995, he is:  
+
+A programming enthusiast  
+A postgraduate student of Peking University  
+A member of Communist Party of China  
 
 ---
 
 ## Education Background
 
-+ Form 2014 to 2018, admitted as a student of XJTU major in Software Engineering  
-+ From 2018 to now, admitted as a student of PKU major in Software Engineering  
++ Form 2014 to 2018, admitted as a student of XJTU majors in Software Engineering  
++ From 2018 to 2021, admitted as a student of PKU majors in Software Engineering  
 
 ------
 

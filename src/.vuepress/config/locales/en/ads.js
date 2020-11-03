@@ -1,6 +1,6 @@
 module.exports = [
   {
-    text: 'Be social, Be modest',
+    text: 'Proletarier aller Länder \n vereinigt euch!',
     link: `https://www.robinchen95.com/about/`,
     image: {
       src: '/general/web-development.png',

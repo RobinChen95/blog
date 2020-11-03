@@ -3,7 +3,7 @@ view: post
 layout: post                          # Only in unique we use the "layout: post"
 lang: en                              # Lang is required
 author: 陈国强
-title: 工作汇报
+title: 研二工作汇报
 description:
 excerpt: 
 cover: true                         # Leave false if the post does not have cover image, if there is set to true
