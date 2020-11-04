@@ -108,7 +108,7 @@ meta:                                 # If you have cover image
             + 没有在代码中实现python反射
             + python端对象管理、模块管理、环境管理不够完善，无法运行
             + java端中仅仅实现了定义，并没有实现
-        ![](../img/孟亮：Python程序库的实现框架.png)
+        ![](../img/mengliang:python%20framework.png)
 
 + **3.工作计划**
 
