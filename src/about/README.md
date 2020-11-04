@@ -19,11 +19,10 @@ meta:
 
 Chen Guoqiang, born in 1995, he is:  
 
-**A 7 years' programming enthusiast**  
-**A postgraduate student of Peking University**  
-**A member of Communist Party of China**  
-**A super special offer candidate of Tencent 2021 campus recruit**  
-**An anime enthusiast**  
+A 7 years' programming enthusiast  
+A postgraduate student of Peking University  
+A member of Communist Party of China  
+An anime enthusiast  
 
 ---
 
