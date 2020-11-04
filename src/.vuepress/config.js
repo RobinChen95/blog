@@ -9,7 +9,7 @@ module.exports = {
   head,
   themeConfig,
   base: '/',
-  title: `Proletarier aller Länder, vereinigt euch!`,
+  title: `国强的摸鱼家园`,
   evergreen: true,  // For modern browsers
   serviceWorker: true,
   locales: {
