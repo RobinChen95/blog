@@ -22,7 +22,7 @@ module.exports = {
     provider: 'mailchimp',
     action: ''
   },
-  copy: `京ICP备19001126号`,
+  copy: `京ICP备19001126号-1`,
   footer: {
     nav1: {
       title: '关于我',

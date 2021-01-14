@@ -1,4 +1,4 @@
-
+w
 module.exports = [
   ['meta', { 'http-equiv': 'x-ua-compatible', content: 'ie=edge' }],
   ['meta', { name: 'apple-mobile-web-app-title', content: `MY APPLE TITLE` }],
