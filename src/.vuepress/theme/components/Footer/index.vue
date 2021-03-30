@@ -69,7 +69,8 @@
             </div>
           </div>
         </div>
-        <div class="column sm-100 footer-copy" v-html="$themeLocaleConfig.copy">
+        <div class="column sm-100 footer-copy" v-html="$themeLocaleConfig.copy" href="https://beian.miit.gov.cn/">
+          <ul></ul>
           <a href="https://beian.miit.gov.cn/"></a>
         </div>
       </div>
