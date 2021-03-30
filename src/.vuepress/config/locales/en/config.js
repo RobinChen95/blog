@@ -24,12 +24,12 @@ module.exports = {
   },
   copy:
       {
-        text: `京ICP备19001126号-1`,
+        text: `京ICP备19001126号-2`,
         link: `https://beian.miit.gov.cn/`
       },
   footer: {
     nav1: {
-      title: '关于我',
+      title: '关于我ss',
       items: [
         {
           label: 'ABOUT',
