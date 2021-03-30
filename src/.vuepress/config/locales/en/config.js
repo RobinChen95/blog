@@ -24,8 +24,8 @@ module.exports = {
   },
   copy:
       {
-        text: `京ICP备19001126号-2`,
-        link: `https://beian.miit.gov.cn/`
+        text: '京ICP备19001126号-2',
+        link: 'https://beian.miit.gov.cn/'
       },
   footer: {
     nav1: {
