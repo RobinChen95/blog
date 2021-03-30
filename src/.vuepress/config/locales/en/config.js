@@ -29,7 +29,7 @@ module.exports = {
       },
   footer: {
     nav1: {
-      title: '关于我ss',
+      title: '关于我',
       items: [
         {
           label: 'ABOUT',
