@@ -22,11 +22,7 @@ module.exports = {
     provider: 'mailchimp',
     action: ''
   },
-  copy:
-      {
-        text: '京ICP备19001126号-2',
-        link: 'https://beian.miit.gov.cn/'
-      },
+  copy: `京ICP备19001126号-2`,
   footer: {
     nav1: {
       title: '关于我',
