@@ -70,8 +70,16 @@
           </div>
         </div>
         <div class="column sm-100 footer-copy" v-html="$themeLocaleConfig.copy" href="https://beian.miit.gov.cn/">
-          <ul></ul>
-          <a href="https://beian.miit.gov.cn/"></a>
+          <ul>
+            <li
+                class="footer-nav2__item"
+                v-for="(item, index) in $themeLocaleConfig.copy.items"
+                :key="`${item.label}-${index}`">
+              <router-link v-if="item.path" :to="item.path">{{ item.label }}</router-link>
+              <a v-if="item.link" :href="item.link" rel="noopener nofollow" target="_blank">{{ item.label }}</a>
+            </li>
+          </ul>
+
         </div>
       </div>
 
