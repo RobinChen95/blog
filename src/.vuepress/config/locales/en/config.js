@@ -22,15 +22,7 @@ module.exports = {
     provider: 'mailchimp',
     action: ''
   },
-  copy:     {
-    items: [
-      {
-        label: '京ICP备19001126号-2',
-        link: `href="https://beian.miit.gov.cn/`
-      },
-    ],
-
-  },
+  copy: `京ICP备19001126号-2`,
   footer: {
     nav1: {
       title: '关于我',
@@ -50,20 +42,16 @@ module.exports = {
       ]
     },
     nav2: {
-      title: '友情链接',
+      title: '备案号',
       items: [
         {
-          label: '北京大学',
-          link: 'https://www.pku.edu.cn/'
+          label: '京ICP备19001126号-2',
+          link: 'https://beian.miit.gov.cn/'
         },
         {
-          label: '西安交通大学',
-          link: 'http://www.xjtu.edu.cn/'
+          label: '工信部查询链接',
+          link: 'https://beian.miit.gov.cn/'
         },
-		{
-          label: '慧强dalao博客',
-          link: 'https://wyydsb.xin/'
-        }
       ]
     }
   },
