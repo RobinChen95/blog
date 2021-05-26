@@ -37,15 +37,16 @@ meta:                                 # If you have cover image
 + 最初的目的是为了向北大数瑞拓展python预言的支持，之前北大数瑞的做法是反射  
 + 在研究过程中发现，使用预言机将深度学习等计算场景复杂的技术放在预言机中进行是一个解决问题的好方法  
 + 本次设计的预言机达到了以下的目的：  
-    + 可以直接在数瑞合约IDE中编写python代码，并通过预言机运行  
-    + 可以通过预言机提供的API执行写好的深度学习模型  
-    + 根据协议设计了预言机的通信、运行、拓展与安全机制  
+
+    1. 可以直接在数瑞合约IDE中编写python代码，并通过预言机运行  
+    2. 可以通过预言机提供的API执行写好的深度学习模型  
+    3. 根据协议设计了预言机的通信、运行、拓展与安全机制  
 
 ### 文献阅读    
-+[参考文献地址，建议从中文开始](https://robinchen95.com/documents/Refer)  
+[参考文献地址，建议从中文开始](https://robinchen95.com/documents/Refer)  
 > 重要参考文献  
 
-|编号|摘要|评级|地址|
+|编号|摘要|重要性|地址|
 |:----:|:----:|:----:|:----:|
 |01|提出预言机的概念，p172-p173|重要|[SYSTEMS OF LOGIC BASED ON ORDINALS](https://robinchen95.com/documents/Refer/01-SYSTEMS%20OF%20LOGIC%20BASED%20ON%20ORDINALS.pdf)|
 |02|RSA加密算法|简单了解原理|[RFC2246](https://robinchen95.com/documents/Refer/12-rfc2246.pdf)|
