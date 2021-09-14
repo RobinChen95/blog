@@ -9,7 +9,7 @@ module.exports = {
   head,
   themeConfig,
   base: '/',
-  title: `陈国强的摸鱼家园`,
+  title: `Be social, Be modest`,
   evergreen: true,  // For modern browsers
   serviceWorker: true,
   locales: {
