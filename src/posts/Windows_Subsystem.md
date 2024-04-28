@@ -105,7 +105,7 @@ exec zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 vim ~/.zshrc
 # 在.zshrc末尾添加： Load zsh-autosuggestions.
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
 
 插件2：zsh-syntax-highlighting:  
